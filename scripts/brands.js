@@ -38,3 +38,4 @@ export function renderBrands(){
 }
 
 console.log("Hello world")
+console.log("Hello world")
