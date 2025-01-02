@@ -1,4 +1,4 @@
-import {renderBrands} from './brands.js'
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Get the menu toggle button and the menu
