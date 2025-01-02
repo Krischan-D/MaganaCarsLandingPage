@@ -1,0 +1,62 @@
+
+
+@media screen and (max-width: 900px) {
+    .logo {
+      padding-left: 1.5rem; /* Adjusted padding */
+    }
+    header .hamburger {
+      display: block;
+      cursor: pointer;
+      padding-right: 1.5rem;
+    }
+    header .hamburger .line {
+      width: 25px;
+      height: 3px;
+      background-color: #E0E0E0;
+      margin: 0.4rem;
+    }
+    header nav {
+      height: 0;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      background-color: black;
+      transition: height 0.5s ease-in-out;
+    
+      overflow: hidden;
+      padding: 0; /* Removed padding to ensure clean slide-in effect */
+    }
+    header nav ul {
+      flex-direction: column;
+      align-items: center;
+     
+      opacity: 0;
+      margin: 0;
+      transition: opacity 0.5s ease-in-out;
+      padding-top: 2rem; /* Add space above the menu items */
+    
+    }
+    header nav ul li {
+      padding: 0.2rem 0;
+    }
+    header nav ul .log-sign {
+      width: 100%;
+      border-top: 1px solid #E0E0E0;
+      align-items: center;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+    header .nav-bar.active {
+      height: 400px; /* Adjust height for the expanded nav */
+      transition: height 0.5s ease-out;
+   
+    }
+    header .nav-bar.active ul {
+      opacity: 1;
+    }
+}
