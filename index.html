@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mediaQueries.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -57,7 +59,7 @@
   </section>
 
 
-  <section>
+  <section class="brands-section">
     <div class="car-brands">
       <h1>Explore Our Car Brands</h1>
       <div class="cars-container"></div>
@@ -95,7 +97,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section class="recommended-section"> 
     <div class="recommended-cars">
       <h1>Recommended Cars for You</h1>
       <div class="cars-container">
@@ -262,6 +264,64 @@
       </div>
     </div>
   </section>
+
+
+  <section class="hero-section">
+    <div class="left-col">
+
+      <h1>Get Your Dream Car Now!</h1>
+      <p>We are here to help you find the perfect car with exceptional service and deals.</p>
+
+      <ul>
+        <li>Affordable pricing</li>
+        <li>Quality guaranteed</li>
+        <li>  Hassle-free experience</li>
+      </ul>
+
+    <a href="" class="button">Get Started <i class='bx bx-right-arrow-alt' style='color:#ffffff'  ></i></a>
+    </div>
+
+    <div class="right-col">
+      <div class="image-container">
+        <img src="images/img2.png" alt="">
+      </div>
+    </div>
+  </section>
+  <section class="testimonial-wrapper">
+    
+    <div class="testimonial-container">
+      <div class="testimonial-carousel">
+        <div class="testimonial-card">
+          <img src="images/img1.png" alt="Testimonial 1" />
+          <p class="testimonial-text">"This is an amazing service! Highly recommended."</p>
+          <p class="testimonial-author">- John Doe</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/img2.png" alt="Testimonial 2" />
+          <p class="testimonial-text">"Great experience, will definitely use again."</p>
+          <p class="testimonial-author">- Jane Smith</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/img3.jpg" alt="Testimonial 3" />
+          <p class="testimonial-text">"Excellent support and quality work."</p>
+          <p class="testimonial-author">- Mike Johnson</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/img1.png" alt="Testimonial 4" />
+          <p class="testimonial-text">"Very professional and timely delivery."</p>
+          <p class="testimonial-author">- Sarah Lee</p>
+        </div>
+      </div>
+    </div>
+   <div class="testimonial-card-buttons">
+    <i class="fa-solid fa-arrow-left button" id="testimonial-prev"></i>
+    <i class="fa-solid fa-arrow-right button" id="testimonial-next"></i>
+   </div>
+    <div class="testimonial-dot-indicators">
+      <!-- Dots will be dynamically added by JavaScript -->
+    </div>
+  </section>
+
   <script type="module" src="scripts/index.js"></script>
 </body>
 

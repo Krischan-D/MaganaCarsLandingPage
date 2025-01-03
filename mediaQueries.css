@@ -1,62 +1,138 @@
-
-
-@media screen and (max-width: 900px) {
-    .logo {
-      padding-left: 1.5rem; /* Adjusted padding */
-    }
-    header .hamburger {
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
       display: block;
-      cursor: pointer;
-      padding-right: 1.5rem;
     }
-    header .hamburger .line {
-      width: 25px;
-      height: 3px;
-      background-color: #E0E0E0;
-      margin: 0.4rem;
+  
+    .container {
+      justify-content: space-between;
     }
-    header nav {
-      height: 0;
+  
+    .menu {
       position: absolute;
-      top: 80px;
+      top: 60px;
       left: 0;
       right: 0;
-      width: 100vw;
-      background-color: black;
-      transition: height 0.5s ease-in-out;
-    
+      background-color: blue;
       overflow: hidden;
-      padding: 0; /* Removed padding to ensure clean slide-in effect */
+      height: 0;
+      transition: height 0.3s ease-in-out; /* Added transition for height */
     }
-    header nav ul {
+  
+    .login-menu {
+      display: none;
+    }
+  
+    .menu ul {
       flex-direction: column;
-      align-items: center;
-     
-      opacity: 0;
-      margin: 0;
-      transition: opacity 0.5s ease-in-out;
-      padding-top: 2rem; /* Add space above the menu items */
+      padding: 1em;
+    }
+  
+    .menu ul li {
+      margin-top: 1em;
+    }
+  
+    .menu.active {
+      height: 350px; /* Adjust height to fit content */
+    }
+  
+    /* Adjust slider for smaller screens */
+    .wrapper {
+      height: 50vh; /* Reduce height for smaller screens */
+    }
+  
+    .carousel img {
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+    }
+  
+    .magana-information{
+      flex-direction: column;
+    }
+    .magana-information .left-col, .right-col{
+        width: 100%;
+    }
+  
+    .magana-information .right-col{
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .magana-information .left-col h1{
+        width: 100%;
+        text-align: center;
+      }
+
+    .hero-section{
+        flex-direction: column;
+
+    }
+
+    .hero-section .left-col, .right-col{
+        width: 100%;
+        padding: 1em
+    }
+
+
+    .testimonial-wrapper {
+        padding: 1em; /* Reduce padding on smaller screens */
+      }
     
+      .testimonial-card {
+        flex: 0 0 100%; /* Show 1 card per row on mobile */
+        /* height: auto; Allow height to adjust based on content */
+        padding: 1em 0.5em; /* Adjust padding for smaller screens */
+      }
+    
+      .testimonial-carousel {
+        gap: 10px; /* Reduce gap between cards on smaller screens */
+      }
+    
+      .testimonial-card img {
+        width: 80px; /* Reduce image size on smaller screens */
+        height: 80px;
+      }
+    
+      .testimonial-text {
+        font-size: 0.9em; /* Reduce font size for better readability */
+      }
+    
+      .testimonial-author {
+        font-size: 0.8em;
+      }
+    
+      .button-container {
+        margin-top: 10px; /* Reduce margin for better spacing */
+      }
+    
+      .testimonial-dot-indicators {
+        margin-top: 10px; /* Adjust margin for better spacing */
+      }
+  }
+
+
+  @media (max-width: 480px) {
+    .testimonial-wrapper {
+      padding: 0.5em; /* Further reduce padding on very small screens */
     }
-    header nav ul li {
-      padding: 0.2rem 0;
+  
+    .testimonial-card {
+      padding: 1em 0.25em; /* Further reduce padding for very small screens */
     }
-    header nav ul .log-sign {
-      width: 100%;
-      border-top: 1px solid #E0E0E0;
-      align-items: center;
-      margin: 1rem 0;
-      display: flex;
-      flex-direction: column;
-      margin-top: 1rem;
-      padding-top: 1rem;
+  
+    .testimonial-carousel {
+      gap: 5px; /* Further reduce gap between cards */
     }
-    header .nav-bar.active {
-      height: 400px; /* Adjust height for the expanded nav */
-      transition: height 0.5s ease-out;
-   
+  
+    .testimonial-card img {
+      width: 60px; /* Further reduce image size */
+      height: 60px;
     }
-    header .nav-bar.active ul {
-      opacity: 1;
+  
+    .testimonial-text {
+      font-size: 0.8em; /* Further reduce font size */
     }
-}
+  
+    .testimonial-author {
+      font-size: 0.75em;
+    }
+  }

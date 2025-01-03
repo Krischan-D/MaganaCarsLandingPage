@@ -87,3 +87,71 @@ document.addEventListener('DOMContentLoaded', function () {
         updateDots();
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const testimonialCarousel = document.querySelector('.testimonial-carousel');
+    const testimonialPrevButton = document.getElementById('testimonial-prev');
+    const testimonialNextButton = document.getElementById('testimonial-next');
+    const testimonialDotIndicators = document.querySelector('.testimonial-dot-indicators');
+    let currentTestimonialIndex = 0;
+  
+    // Get the width of a single card including its gap
+    const cardStyle = window.getComputedStyle(testimonialCarousel.children[0]);
+    const cardWidth = testimonialCarousel.children[0].offsetWidth; // Width of a single card
+    const cardMarginRight = parseFloat(cardStyle.marginRight); // Gap between cards
+    const cardTotalWidth = cardWidth + cardMarginRight; // Total width to slide
+  
+    // Create dot indicators for testimonials
+    const testimonialCards = testimonialCarousel.querySelectorAll('.testimonial-card');
+    testimonialCards.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('testimonial-dot');
+      if (index === currentTestimonialIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        currentTestimonialIndex = index;
+        moveTestimonialCarousel();
+        updateTestimonialDots();
+      });
+      testimonialDotIndicators.appendChild(dot);
+    });
+  
+    // Function to move the testimonial carousel
+    function moveTestimonialCarousel() {
+      const offset = -currentTestimonialIndex * cardTotalWidth; // Calculate the offset based on card width + gap
+      testimonialCarousel.style.transform = `translateX(${offset}px)`; // Move the carousel
+    }
+  
+    // Function to update the active dot
+    function updateTestimonialDots() {
+      const dots = testimonialDotIndicators.querySelectorAll('.testimonial-dot');
+      dots.forEach((dot, index) => {
+        if (index === currentTestimonialIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+  
+    // Event listener for the previous button
+    testimonialPrevButton.addEventListener('click', function () {
+      if (currentTestimonialIndex > 0) {
+        currentTestimonialIndex--;
+      } else {
+        currentTestimonialIndex = testimonialCards.length - 1; // Loop to the last card
+      }
+      moveTestimonialCarousel();
+      updateTestimonialDots();
+    });
+  
+    // Event listener for the next button
+    testimonialNextButton.addEventListener('click', function () {
+      if (currentTestimonialIndex < testimonialCards.length - 1) {
+        currentTestimonialIndex++;
+      } else {
+        currentTestimonialIndex = 0; // Loop to the first card
+      }
+      moveTestimonialCarousel();
+      updateTestimonialDots();
+    });
+  });
