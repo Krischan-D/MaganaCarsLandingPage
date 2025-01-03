@@ -6,6 +6,25 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+
+button{
+  padding: .75em 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Navbar Styles */
 .navbar {
   background-color: white;
@@ -130,7 +149,7 @@ i#next {
 
 /* Image Container Styles */
 .image-container {
-  height: 70%;
+  height: 80%;
   width: 100%;
   overflow: hidden;
 }
@@ -158,7 +177,7 @@ i#next {
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 100;
+  z-index: 9;
 }
 
 .dot-indicators .dot {
@@ -172,6 +191,8 @@ i#next {
 
 .dot-indicators .dot.active {
   background-color: #343f4f;
+  width: 20px;
+  border-radius: 30%;
 }
 
 section{
@@ -181,9 +202,10 @@ section{
 .car-brands{
   width: 100%; /* Full width of the viewport */
   max-width: 1400px;
-  height: 400px;
+  height: auto;
   /* border: 1px solid red; */
   margin: 0 auto;
+  padding-bottom: 4rem;
   
 }
 
@@ -223,23 +245,161 @@ section{
 }
 
 
+.magana-information{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  padding: 4rem 0;
+  border: 1px solid red;
+  /* padding-bottom: 2em; */
+
+  flex-wrap: wrap;
+}
+
+.magana-information .left-col, .right-col{
+  flex: 1;
+  border: 1px solid red;
+  padding: 2em;
+  height: inherit;
+}
+
+.magana-information .left-col{
+  display: flex;
+  justify-content: start;
+  align-items: center
+}
+
+.magana-information .left-col h1{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.magana-information .left-col h1 strong{
+  font-size: 2.5rem;
+}
+
+
+.magana-information .right-col{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.magana-information .right-col .info-container{
+  border: 1px solid red;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.magana-information .right-col .info-container svg{
+  height: 60px;
+}
+
+.magana-information .right-col .info-container h1{
+  font-size: 1rem;
+  width: 50%;
+  text-align: center;
+}
+
+.recommended-cars{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid red;
+  height: 100%;
+}
+
+.recommended-cars h1{
+  text-align: center;
+}
+
+.recommended-cars .cars-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1em;
+  flex-wrap: wrap;
+}
 
 
 
+.recommended-cars .cars-container .car-card{
+  width: 300px;
+  height: 370px;
+  border: 1px solid red;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.recommended-cars .cars-container .car-card  .img-container {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.recommended-cars .cars-container .car-card  .img-container img {
+  height: 100%;
+  width: 100%;
+  
+}
+
+.recommended-cars .cars-container .car-card .car-information {
+  padding: 1em;
+}
+
+.recommended-cars .cars-container .car-card .car-information h1{
+  text-align: start;
+  margin: 0;
+  font-size: 1rem;
+}
 
 
+.recommended-cars .cars-container .car-card .car-information .car-specification-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 2px solid gray;
+}
 
+.recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: .5em;
+}
 
+.recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications svg{
+  height: 30px;
+  width: 30px;
+}
 
+.recommended-cars .cars-container .car-card .car-information .price-button{
+ width: 100%;
+ display: flex;
+ align-items: center;
+  padding: .2em;
+}
 
+.recommended-cars .cars-container .car-card .car-information .price-button span{
+  margin-right: auto;
+  font-weight: bold;
+ 
+ }
+ .recommended-cars .cars-container .car-card .car-information .price-button button{
 
+  border-radius: 10px;
+  border: none;
+  background-color: #ff4c4c;
+  color: #fff;
 
-
-
-
-
-
-
+ 
+ }
+ 
 
 
 
@@ -295,5 +455,13 @@ section{
   .carousel img {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+  }
+
+  .magana-information{
+    flex-direction: column;
+  }
+
+  .magana-information .right-col{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
