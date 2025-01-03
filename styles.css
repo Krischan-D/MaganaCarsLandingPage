@@ -653,7 +653,7 @@ i.button:active {
   padding-inline: 1em;
 }
 
-.faqs-section h1,p{
+.faqs-section >{
   text-align: center;
 }
 
