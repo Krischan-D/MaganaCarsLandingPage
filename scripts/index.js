@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menuToggle.addEventListener('click', function () {
             // Toggle the 'active' class on the menu
             menu.classList.toggle('active');
-
+            document.body.classList.toggle("overlay-active");
             // Update the aria-expanded attribute
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.setAttribute('aria-expanded', !isExpanded);

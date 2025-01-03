@@ -191,4 +191,9 @@
         gap: 1em;
         padding: 1em;
     }
+
+    .footer-container .footer-columns .left-footer .newsletter-input {
+        flex-direction: column;
+     
+      }
 }
