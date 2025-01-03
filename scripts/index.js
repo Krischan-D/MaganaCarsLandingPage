@@ -1,4 +1,5 @@
 import { renderBrands } from "./brands.js";
+import { renderFAQs } from "./faqs.js";
 
 document.addEventListener('DOMContentLoaded', function () {
     // Get the menu toggle button and the menu
@@ -155,3 +156,18 @@ document.addEventListener('DOMContentLoaded', function () {
       updateTestimonialDots();
     });
   });
+
+
+
+
+
+  const buttons = document.querySelectorAll('.question-container .question button');
+  buttons.forEach(button => {
+    button.addEventListener('click',   function (){
+        const answer = this.closest('.question-container').querySelector('.answer');
+        answer.classList.toggle('open');
+        
+        const icon = this.querySelector('i')
+        icon.classList.toggle('rotate')
+    })
+  })

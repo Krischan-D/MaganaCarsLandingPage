@@ -605,3 +605,134 @@ i.button:active {
   gap: 1.5em;
   padding-left: 1em;
 }
+
+
+.contact-buttons{
+  display: flex;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.contact-buttons a{
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  padding: .5em 1em;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+
+.contact-buttons a i{
+  margin-right: .5em;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.contact-section .left-col{
+  p{
+    margin: 0;
+    margin-top: .5em;
+    text-align: start;
+  }
+}
+
+
+.faqs-section{
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-inline: 1em;
+}
+
+.faqs-section h1,p{
+  text-align: center;
+}
+
+.faqs-section h1{
+  font-size: 2.5rem;
+}
+
+.faqs-section .faqs-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 4em;
+
+  
+}
+
+.faqs-section .faqs-container svg{
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  padding: .3em;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 5px 8px hsl(0, 0%, 95%);
+}
+
+
+.faqs-container  .question-container {
+  padding: 1em;
+  background-color: #fff;
+  border: 1px solid hsl(0, 0%, 90%);;
+  border-radius: 1em; 
+  margin-top: 1em;
+  box-shadow: 0px 5px 8px hsl(0, 0%, 95%);
+}
+.faqs-container .question-container .question {
+  height: 50px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.faqs-container .question-container .question button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.faqs-container .question-container .question .icon-text {
+ display: flex;
+ align-items: center;
+ gap: .8em;
+}
+
+
+.faqs-container .question-container .question button i{
+  font-size: 2rem;
+  background-color: none;
+}
+
+
+.faqs-container .question-container .answer{
+  margin-left: calc(30px + .8em);
+  width: 90%;
+  line-height: 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faqs-container .question-container .answer.open {
+  max-height: 200px; /* Set a max height for the expanded state */
+  opacity: 1; /* Make content visible */
+}
+
+.rotate{
+  transform: rotate(180deg);
+}

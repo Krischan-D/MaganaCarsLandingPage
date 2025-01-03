@@ -1,4 +1,20 @@
 /* Responsive Styles */
+@media (max-width: 1024px) {
+    .testimonial-card {
+      flex: 0 0 calc((100% - 20px) / 2); /* Show 2 cards per row on tablets */
+    }
+
+    .faqs-section .faqs-container{
+        width: 80%;
+      }
+  }
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     .menu-toggle {
       display: block;
@@ -38,7 +54,7 @@
   
     /* Adjust slider for smaller screens */
     .wrapper {
-      height: 50vh; /* Reduce height for smaller screens */
+      height: 70vh; /* Reduce height for smaller screens */
     }
   
     .carousel img {
@@ -71,6 +87,10 @@
         width: 100%;
         padding: 1em
     }
+
+    .hero-section .right-col{ height: 100%; }
+    
+    .hero-section .left-col{ order: 2;}
 
 
     .testimonial-wrapper {
@@ -106,6 +126,10 @@
     
       .testimonial-dot-indicators {
         margin-top: 10px; /* Adjust margin for better spacing */
+      }
+
+      .faqs-section .faqs-container{
+        width: 100%;
       }
   }
 
