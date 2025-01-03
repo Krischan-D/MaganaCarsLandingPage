@@ -131,6 +131,23 @@
       .faqs-section .faqs-container{
         width: 100%;
       }
+      .footer-container .footer-columns{
+        flex-direction: column;
+      }
+
+      .footer-container .footer-columns .left-footer, .right-footer {
+        width: 100%;
+        padding: 1em;
+      }
+      .footer-container .footer-columns .left-footer p, .newsletter-input {
+        width: 100%;
+     
+      }
+
+      .footer-container .footer-columns .left-footer .newsletter-input {
+        width: 100%;
+     
+      }
   }
 
 
@@ -159,4 +176,19 @@
     .testimonial-author {
       font-size: 0.75em;
     }
-  }
+  
+    .footer-container .right-footer .links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .footer-container .right-footer .links .col {
+        
+        width: 100%;
+    }
+
+    .copyrights{
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+    }
+}
