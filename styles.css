@@ -610,6 +610,7 @@ i.button:active {
 .contact-buttons{
   display: flex;
   gap: 1em;
+  flex-wrap: wrap;
   margin-top: 2em;
 }
 
