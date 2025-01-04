@@ -375,7 +375,8 @@ section{
 .recommended-cars .cars-container .car-card{
   width: 300px;
   height: 370px;
-  border: 1px solid #ccc;
+  border: 1px solid #e5e7eb;
+  
   border-radius: 1em;
   overflow: hidden;
 }
@@ -413,16 +414,21 @@ section{
 
 .recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications{
  display: flex;
- justify-content: center;
+ /* justify-content: center; */
  align-items: center;
  gap: .5em;
  margin-top: .5em;
+
+ p{
+  font-size: .9rem;
+ }
 
 }
 
 .recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications svg{
   height: 30px;
   width: 30px;
+  flex-shrink: 0
 }
 
 .recommended-cars .cars-container .car-card .car-information .price-button{
@@ -570,17 +576,19 @@ section{
 .testimonial-card {
   flex: 0 0 calc((100% - 40px) / 3); /* Adjust width to account for the gap */
   box-sizing: border-box;
-  padding: 1em;
+  padding: 1.5em;
   height: 300px;
   text-align: center;
   background: #f9f9f9; /* Optional: Add background color to cards */
   border-radius: 10px; /* Optional: Add rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual separation */
+  position: relative;
 }
 
-.testimonial-card img {
-  width: 100px;
-  height: 100px;
+
+.testimonial-card .profile-name img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1em;
@@ -590,7 +598,30 @@ section{
   font-size: 1em;
   color: #333;
   margin-bottom: 0.5em;
+  text-align: left;
+ 
+  p{
+    margin-top: 1.5em;
+    line-height: 1.5rem;
+  }
 }
+
+.testimonial-card .testimonial-text span{
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+
+}
+
+.testimonial-card .profile-name{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  position: absolute;
+  bottom: 5%;
+}
+
 
 .testimonial-author {
   font-size: 0.9em;

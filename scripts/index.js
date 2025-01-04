@@ -1,5 +1,8 @@
 import { renderBrands } from "./brands.js";
 import { renderFAQs } from "./faqs.js";
+import { renderTestimonials } from "./testimonial.js";
+import {renderRecommendedCars} from "./product.js"
+
 document.addEventListener('DOMContentLoaded', function () {
   // Get the menu toggle button and the menu
   const menuToggle = document.getElementById('menu-toggle');
