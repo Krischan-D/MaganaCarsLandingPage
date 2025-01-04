@@ -47,7 +47,7 @@ const car_information = [
       id: "5",
       brand: "Toyota",
       model_name: "Corolla",
-      image:'../images/recommendCars/corolla.avif',
+      image:'images/recommendCars/corolla.avif',
       model_year: "2023",
       color: "White, Blue",
       price: "₱1,200,000", // Added price
