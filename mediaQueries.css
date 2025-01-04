@@ -16,7 +16,21 @@
 
 
 @media (max-width: 768px) {
-    .menu-toggle {
+
+  .container {
+    margin: 0 1em;
+  }
+  section{
+    margin-left: 1em;
+    padding: 0;
+    margin-right: 1em;
+  }  
+
+  .wrapper{
+    margin: 0 1em;
+    margin-top: 4em;
+  }
+  .menu-toggle {
       display: block;
     }
   
@@ -26,12 +40,16 @@
   
     .menu {
       position: absolute;
-      top: 60px;
+      top: 72px;
       left: 0;
       right: 0;
-      background-color: blue;
+      background-color: #f3f4f6;
+      border: 1px solid #f6f6f6;
       overflow: hidden;
+      width: inherit;
+      margin: 0 1em;
       height: 0;
+      border-radius: 10px;
       transition: height 0.3s ease-in-out; /* Added transition for height */
     }
   
@@ -42,6 +60,7 @@
     .menu ul {
       flex-direction: column;
       padding: 1em;
+      width: 100%;
     }
   
     .menu ul li {
@@ -80,22 +99,28 @@
 
     .hero-section{
         flex-direction: column;
-
+        width: 100%;
+        padding: 1em;
+        width: calc(100% - 32px); /* Adjust width to account for margins */
     }
 
     .hero-section .left-col, .right-col{
         width: 100%;
-        padding: 1em
+        padding: 0;
     }
 
     .hero-section .right-col{ height: 100%; }
     
     .hero-section .left-col{ order: 2;}
+    .hero-section .left-col h1{ margin-top: 1em;}
 
 
     .testimonial-wrapper {
-        padding: 1em; /* Reduce padding on smaller screens */
-      }
+      margin-left: 16px; /* Add left margin */
+      margin-right: 16px; /* Add right margin */
+      width: calc(100% - 32px); /* Adjust width to account for margins */
+    }
+  
     
       .testimonial-card {
         flex: 0 0 100%; /* Show 1 card per row on mobile */
@@ -131,6 +156,14 @@
       .faqs-section .faqs-container{
         width: 100%;
       }
+
+      .faqs-section{
+        width: calc(100% - 32px)
+      }
+
+      .footer-container{
+        width: calc(100% - 32px)
+      }
       .footer-container .footer-columns{
         flex-direction: column;
       }
@@ -148,10 +181,17 @@
         width: 100%;
      
       }
+
+      
   }
 
 
   @media (max-width: 480px) {
+
+  
+    .magana-information .left-col {
+      padding: 1em;
+    }
     .testimonial-wrapper {
       padding: 0.5em; /* Further reduce padding on very small screens */
     }
@@ -195,5 +235,9 @@
     .footer-container .footer-columns .left-footer .newsletter-input {
         flex-direction: column;
      
+      }
+
+      .hero-section .right-col .image-container{
+        height: 100%;
       }
 }

@@ -116,9 +116,9 @@ button, .button{
 /* Image Slider Styles */
 .wrapper {
   display: flex;
-  width: 100%; /* Full width of the viewport */
+  /* width: 100%; Full width of the viewport */
   max-width: 1400px; /* Maximum width for larger screens */
-  height: 100vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
   margin: 0 auto;
   background: #fff;
   align-items: self-start;
@@ -131,7 +131,7 @@ button, .button{
 /* Button Styles */
 .wrapper i.button {
   position: absolute;
-  top: 38%;
+  top: 50%;
   transform: translateY(-10%);
   height: 36px;
   width: 36px;
@@ -162,7 +162,7 @@ i#next {
 
 /* Image Container Styles */
 .image-container {
-  height: 80%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -185,7 +185,7 @@ i#next {
 
 .dot-indicators {
   position: absolute;
-  bottom: 35%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -213,6 +213,9 @@ section{
   min-height: 100vh;
 } */
 
+.brands-section{
+  padding-top: 4em;
+}
 .car-brands{
   width: 100%; /* Full width of the viewport */
   max-width: 1400px;
@@ -261,7 +264,7 @@ section{
 
 
 .magana-information{
-  width: 100%;
+  /* width: 100%; */
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -288,6 +291,7 @@ section{
   font-size: 2rem;
   display: flex;
   flex-direction: column;
+
 }
 
 .magana-information .left-col h1 strong{
@@ -422,6 +426,7 @@ section{
 
 .hero-section{
   height: 80vh;
+  height: 100%;
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -492,7 +497,7 @@ section{
 
 
 .hero-section .right-col .image-container{
-  height: 70%;
+  height: 100%;
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -873,3 +878,14 @@ width: 50%;
   }
 
 }
+
+
+section{
+  max-width: 1400px;
+  /* width: 100%; */
+  margin: 0 auto;
+}
+
+  /* *{
+    border: 1px solid red;
+  } */
