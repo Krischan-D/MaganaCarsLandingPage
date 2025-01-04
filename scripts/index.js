@@ -181,3 +181,17 @@ document.addEventListener('DOMContentLoaded', function () {
         icon.classList.toggle('rotate')
     })
   })
+
+
+  
+  const navlinks = document.querySelectorAll('.nav-link')
+  navlinks.forEach((link)=>{
+    link.addEventListener('click', ()=>{
+
+      navlinks.forEach((otherLink) => {
+        otherLink.classList.remove('active');
+      });
+
+      link.classList.add('active')
+    })
+  })
