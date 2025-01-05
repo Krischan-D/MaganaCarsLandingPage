@@ -347,14 +347,17 @@ section{
 .magana-information .left-col{
   display: flex;
   justify-content: start;
-  align-items: center
+  align-items: start;
+  flex-direction: column;
 }
 
 .magana-information .left-col h1{
   font-size: clamp(2rem, 5vw, 3rem);
   display: flex;
   flex-direction: column;
+  width: 100%;
   color: #333333;
+ 
  
 
 }
@@ -678,6 +681,8 @@ section{
   margin-bottom: 1em;
 }
 
+
+
 .testimonial-text {
   font-size: 1em;
   color: #333;
@@ -687,6 +692,7 @@ section{
   p{
     margin-top: 1.5em;
     line-height: 1.5rem;
+    font-size: clamp(.8rem, 2vw, 1.1rem); /* Responsive font size */
   }
 }
 
@@ -694,18 +700,20 @@ section{
   width: 100%;
   text-align: left;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
 
 }
 
 .testimonial-card .profile-name{
   display: flex;
+  width: 100%;
   align-items: center;
   gap: 1em;
   position: absolute;
   bottom: 5%;
-}
 
+
+}
 
 .testimonial-author {
   font-size: 0.9em;

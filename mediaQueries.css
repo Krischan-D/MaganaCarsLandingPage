@@ -94,7 +94,7 @@
 
     .magana-information .left-col h1{
         width: 100%;
-        text-align: center;
+        justify-content: center;
       }
 
     .hero-section{
@@ -207,20 +207,19 @@
   
     .testimonial-card {
       flex: 0 0 calc((100% - 20px) / 1); /* 2 cards per row on tablets */
+      padding: 1em;
     }
   
     .testimonial-carousel {
       gap: 5px; /* Further reduce gap between cards */
     }
   
-    .testimonial-card img {
-      width: 60px; /* Further reduce image size */
-      height: 60px;
+    .testimonial-card .profile-name  img {
+      width: 40px; /* Further reduce image size */
+      height: 40px;
+      margin: 0;
     }
-  
-    .testimonial-text {
-      font-size: 0.8em; /* Further reduce font size */
-    }
+ 
   
     .testimonial-author {
       font-size: 0.75em;
