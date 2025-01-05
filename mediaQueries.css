@@ -193,6 +193,16 @@
     .magana-information .left-col {
       padding: 1em;
     }
+
+    .recommended-cars{
+      min-height: 100vh;
+      padding-bottom: 2em;
+      padding: 0;
+    }
+    .recommended-cars h1{
+  
+      margin-bottom: 1em;
+    }
     .testimonial-wrapper {
       padding: 0.5em; /* Further reduce padding on very small screens */
     }
