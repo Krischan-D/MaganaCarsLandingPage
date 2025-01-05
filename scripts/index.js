@@ -174,17 +174,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  const buttons = document.querySelectorAll('.question-container .question button');
-  buttons.forEach(button => {
-    button.addEventListener('click',   function (){
-        const answer = this.closest('.question-container').querySelector('.answer');
-        answer.classList.toggle('open');
-        
-        const icon = this.querySelector('i')
-        icon.classList.toggle('rotate')
-    })
-  })
+  const faqs = document.querySelectorAll('.question-container');
 
+  faqs.forEach(faq => {
+    faq.addEventListener('click', function(event) {
+      // Check if the clicked element is the button or its child (icon)
+      const isButton = event.target.closest('button');
+  
+      if (isButton || event.currentTarget === faq) {
+        const answer = faq.querySelector('.answer');
+        const icon = faq.querySelector('i');
+  
+        // Toggle the 'open' class on the answer
+        answer.classList.toggle('open');
+  
+        // Toggle the 'rotate' class on the icon
+        icon.classList.toggle('rotate');
+      }
+    });
+  });
 
   
   
@@ -233,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Scroll to the corresponding section
       const targetId = link.getAttribute('href');
       console.log(targetId)
-      
+
     const targetSection = document.querySelector(targetId);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth' });
