@@ -123,11 +123,9 @@
     }
   
     
-      .testimonial-card {
-        flex: 0 0 100%; /* Show 1 card per row on mobile */
-        /* height: auto; Allow height to adjust based on content */
-        padding: 2em; /* Adjust padding for smaller screens */
-      }
+    .testimonial-card {
+      flex: 0 0 calc((100% - 20px) / 2); /* 2 cards per row on tablets */
+    }
     
       .testimonial-carousel {
         gap: 10px; /* Reduce gap between cards on smaller screens */
@@ -208,7 +206,7 @@
     }
   
     .testimonial-card {
-      padding: 1.5em;
+      flex: 0 0 calc((100% - 20px) / 1); /* 2 cards per row on tablets */
     }
   
     .testimonial-carousel {

@@ -589,9 +589,15 @@ section{
   color: #fff;
   background-color: #ff4c4c;
   display: flex;
+  align-items: center;
   width: fit-content;
   border-radius: 10px;
-  margin-top: 2em;
+  margin-top: 2em; 
+
+  i{
+    font-size: 1.4rem;
+    margin-left: .3em;
+  }
 }
 
  
@@ -639,22 +645,23 @@ section{
 
 .testimonial-carousel {
   display: flex;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease;
   gap: 20px; /* Add gap between cards */
   padding: 0 10px; /* Optional: Add padding to prevent cards from touching the edges */
 }
 
 .testimonial-card {
-  flex: 0 0 calc((100% - 40px) / 3);
+  flex: 0 0 calc((100% - 40px) / 3); /* Default: 3 cards per row */
   box-sizing: border-box;
   padding: 1.5em;
   height: 300px;
   text-align: center;
-  background: linear-gradient(135deg, #f9f9f9, #e0e0e0); /* Gradient background */
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  transition: all 0.3s ease; /* Smooth transition */
+  transition: all 0.3s ease;
+  margin-right: 1em; /* Add margin between cards */
 }
 
 .testimonial-card:hover {
