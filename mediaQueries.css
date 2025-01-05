@@ -126,7 +126,7 @@
       .testimonial-card {
         flex: 0 0 100%; /* Show 1 card per row on mobile */
         /* height: auto; Allow height to adjust based on content */
-        padding: 1em 0.5em; /* Adjust padding for smaller screens */
+        padding: 2em; /* Adjust padding for smaller screens */
       }
     
       .testimonial-carousel {

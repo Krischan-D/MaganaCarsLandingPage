@@ -207,24 +207,25 @@ i#next {
   border-radius: 2em;
 }
 
-
 .image-container .text-overlay {
-  position: absolute; /* Position the overlay absolutely within .image-container */
+  position: absolute;
   text-align: center;
   width: 100%;
-  top: 10%;
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font size */;
+  top: 20%; /* Adjust position */
+  font-size: clamp(2rem, 6vw, 4rem); /* Larger font size */
   color: white;
-  z-index: 2; /* Ensure the overlay is above the images */
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow */
 }
 
 .carousel img {
   height: 100%;
-  width: 100%; /* Each image takes full width of the container */
-  object-fit: cover; /* Ensure images cover the entire area */
-  flex-shrink: 0; 
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
+  filter: brightness(0.5); /* Darken images for better contrast */
 }
 
 .dot-indicators {
@@ -257,7 +258,7 @@ section{
   min-height: 100vh;
 } */
 
-.brands-section{
+.brands-section {
   padding-top: 6em;
 }
 .car-brands{
@@ -281,7 +282,7 @@ section{
   margin-top: 2em;
 }
 
-.car-brands  .brand{
+.car-brands .brand {
   height: 200px;
   width: 200px;
   border: 1px solid hsl(0, 0%, 80%);
@@ -291,8 +292,14 @@ section{
   justify-content: center;
   border-radius: 1em;
   margin-top: 1em;
+  transition: all 0.3s ease; /* Smooth transition */
+  cursor: pointer;
 }
 
+.car-brands .brand:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
 
 .car-brands  .brand .image-container{
   height: 70px;
@@ -413,14 +420,20 @@ section{
 
 
 
-.recommended-cars .cars-container .car-card{
+.recommended-cars .cars-container .car-card {
   width: 300px;
   height: 370px;
   border: 1px solid #e5e7eb;
-  
   border-radius: 1em;
   overflow: hidden;
+  transition: all 0.3s ease; /* Smooth transition */
 }
+
+.recommended-cars .cars-container .car-card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
 
 .recommended-cars .cars-container .car-card  .img-container {
   height: 50%;
@@ -446,11 +459,12 @@ section{
 }
 
 
-.recommended-cars .cars-container .car-card .car-information .car-specification-container{
+.recommended-cars .cars-container .car-card .car-specification-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-bottom: 2px solid gray;
   padding-bottom: 1em;
+  gap: 0.5em; /* Add gap between items */
 }
 
 .recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications{
@@ -615,15 +629,21 @@ section{
 }
 
 .testimonial-card {
-  flex: 0 0 calc((100% - 40px) / 3); /* Adjust width to account for the gap */
+  flex: 0 0 calc((100% - 40px) / 3);
   box-sizing: border-box;
   padding: 1.5em;
   height: 300px;
   text-align: center;
-  background: #f9f9f9; /* Optional: Add background color to cards */
-  border-radius: 10px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual separation */
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0); /* Gradient background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
 
 
@@ -865,13 +885,16 @@ i.button:active {
 }
 
 
-.footer-container{
-  max-width: 1200px;
+.footer-container {
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  height: 70vh;
+  min-height: 70vh;
   margin-top: 4em;
-
+  background: linear-gradient(135deg, #343f4f, #1a1a1a); /* Gradient background */
+  color: white; /* White text for contrast */
+  border-radius: 1em; /* Rounded corners */
+  padding: 2em; /* Add padding */
 }
 
 .footer-container .footer-columns{  display: flex;}
@@ -891,11 +914,12 @@ i.button:active {
 }
 
 
-.footer-container  .footer-columns .left-footer  p{
+.footer-container .footer-columns .left-footer p {
   margin: 0;
   margin-top: 1em;
-  font-size: .9rem ;
+  font-size: 0.9rem;
   width: 70%;
+  color: #ccc; /* Lighter text for better readability */
 }
 
 .footer-container .left-footer .newsletter-input{
@@ -910,6 +934,7 @@ i.button:active {
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
+    font-size: 1.1rem;
   }
 
   button{
@@ -980,16 +1005,34 @@ width: 50%;
     display: inline-flex;
     margin-right: auto;
   }
-
+  a{
+    color: #fff;
+    margin-right: 1em;
+  }
 }
 
 
-section{
-  max-width: 1400px;
-  /* width: 100%; */
-  margin: 0 auto;
+section {
+  padding: 4rem 1em; /* Add more padding */
+  margin-bottom: 2rem; /* Add margin between sections */
 }
 
   /* *{
     border: 1px solid red;
   } */
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  section {
+    animation: fadeIn 0.8s ease-in-out;
+  }
