@@ -187,14 +187,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   
+  
+  
+  
+  const sections = document.getElementsByTagName('section')
+  const observer = new IntersectionObserver( entries =>{
+    entries.forEach((entry)=>{
+      if (entry.isIntersecting) {
+        // Get the ID of the intersecting section
+        const sectionId = entry.target.id;
+        
+        // Remove the 'active' class from all nav links
+        navlinks.forEach((link) => {
+          link.classList.remove('active');
+        });
+        
+        // Find the corresponding nav link and add the 'active' class
+        const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        if (correspondingLink) {
+          correspondingLink.classList.add('active');
+        }
+      }
+    })  
+  },{threshold: 0.30})
+  
+  Array.from(sections).forEach((section)=>{
+    observer.observe(section)
+  })
+  
+  
+  
   const navlinks = document.querySelectorAll('.nav-link')
   navlinks.forEach((link)=>{
-    link.addEventListener('click', ()=>{
-
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      
+      // Remove the 'active' class from all nav links
       navlinks.forEach((otherLink) => {
         otherLink.classList.remove('active');
       });
-
-      link.classList.add('active')
-    })
-  })
+      
+      // Add the 'active' class to the clicked link
+      link.classList.add('active');
+      
+      // Scroll to the corresponding section
+      const targetId = link.getAttribute('href');
+      console.log(targetId)
+      
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+})
