@@ -251,11 +251,15 @@ brandsCard.forEach((card) => {
 // Close modal logic
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
+  modal.classList.remove("show");
+ modal.querySelector(".modal-content").classList.remove("slide-up")
 });
 
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
+    modal.classList.remove("show");
+    modal.querySelector(".modal-content").classList.remove("slide-up")
   }
 });
 
