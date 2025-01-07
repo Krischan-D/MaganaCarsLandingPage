@@ -1,0 +1,298 @@
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 calc((100% - 20px) / 2); /* Show 2 cards per row on tablets */
+  }
+
+  .faqs-section .faqs-container {
+    width: 80%;
+  }
+
+  /* Modal adjustments for tablets */
+  .modal-content {
+    width: 90vw; /* Reduce modal width on tablets */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .car-item {
+    flex: 0 0 calc((100% - 20px) / 2); /* Show 2 cars per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 1em;
+  }
+
+  section {
+    margin-left: 1em;
+    padding: 0;
+    margin-right: 1em;
+  }
+
+  .wrapper {
+    margin: 0 1em;
+    margin-top: 4em;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+  .menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: #f3f4f6;
+    border: 1px solid #f6f6f6;
+    overflow: hidden;
+    width: inherit;
+    margin: 0 1em;
+    height: 0;
+    border-radius: 10px;
+    transition: height 0.3s ease-in-out; /* Added transition for height */
+  }
+
+  .login-menu {
+    display: none;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+  }
+
+  .menu ul li {
+    margin-top: 1em;
+  }
+
+  .menu.active {
+    height: 350px; /* Adjust height to fit content */
+  }
+
+  /* Adjust slider for smaller screens */
+  .wrapper {
+    height: 70vh; /* Reduce height for smaller screens */
+  }
+
+  .carousel img {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  }
+
+  .magana-information {
+    flex-direction: column;
+  }
+
+  .magana-information .left-col,
+  .right-col {
+    width: 100%;
+  }
+
+  .magana-information .right-col {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .magana-information .left-col h1 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    padding-top: 6em;
+    width: calc(100% - 32px); /* Adjust width to account for margins */
+  }
+
+  .hero-section .left-col,
+  .right-col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero-section .right-col {
+    height: 100%;
+  }
+
+  .hero-section .left-col {
+    order: 2;
+  }
+
+  .hero-section .left-col h1 {
+    margin-top: 1em;
+  }
+
+  .testimonial-wrapper {
+    margin-left: 16px; /* Add left margin */
+    margin-right: 16px; /* Add right margin */
+    width: calc(100% - 32px); /* Adjust width to account for margins */
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc((100% - 20px) / 2); /* 2 cards per row on tablets */
+  }
+
+  .testimonial-carousel {
+    gap: 10px; /* Reduce gap between cards on smaller screens */
+  }
+
+  .testimonial-card img {
+    width: 80px; /* Reduce image size on smaller screens */
+    height: 80px;
+  }
+
+  .testimonial-text {
+    font-size: 0.9em; /* Reduce font size for better readability */
+  }
+
+  .testimonial-author {
+    font-size: 0.8em;
+  }
+
+  .button-container {
+    margin-top: 10px; /* Reduce margin for better spacing */
+  }
+
+  .testimonial-dot-indicators {
+    margin-top: 10px; /* Adjust margin for better spacing */
+  }
+
+  .faqs-section .faqs-container {
+    width: 100%;
+  }
+
+  .faqs-section {
+    width: calc(100% - 32px);
+  }
+
+  .footer-container {
+    width: calc(100% - 32px);
+  }
+
+  .footer-container .footer-columns {
+    flex-direction: column;
+  }
+
+  .footer-container .footer-columns .left-footer,
+  .right-footer {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .footer-container .footer-columns .left-footer p,
+  .newsletter-input {
+    width: 100%;
+  }
+
+  .footer-container .footer-columns .left-footer .newsletter-input {
+    width: 100%;
+  }
+
+  /* Modal adjustments for smaller screens */
+  .modal-content {
+    width: 90vw; /* Reduce modal width on smaller screens */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .car-item {
+    flex: 0 0 calc((100% - 20px) / 1); /* Show 1 car per row on mobile */
+  }
+
+  .car-name {
+    font-size: 16px; /* Reduce font size for better readability */
+  }
+
+  .view-button {
+    font-size: 12px; /* Reduce button font size */
+    padding: 6px 12px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .magana-information .left-col {
+    padding: 1em;
+  }
+
+  .recommended-cars {
+    min-height: 100vh;
+    padding-bottom: 2em;
+    padding: 0;
+  }
+
+  .recommended-cars h1 {
+    margin-bottom: 1em;
+  }
+
+  .testimonial-wrapper {
+    padding: 0.5em; /* Further reduce padding on very small screens */
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc((100% - 20px) / 1); /* 1 card per row on mobile */
+    padding: 1em;
+  }
+
+  .testimonial-carousel {
+    gap: 5px; /* Further reduce gap between cards */
+  }
+
+  .testimonial-card .profile-name img {
+    width: 40px; /* Further reduce image size */
+    height: 40px;
+    margin: 0;
+  }
+
+  .testimonial-author {
+    font-size: 0.75em;
+  }
+
+  .footer-container .right-footer .links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-container .right-footer .links .col {
+    width: 100%;
+  }
+
+  .copyrights {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .footer-container .footer-columns .left-footer .newsletter-input {
+    flex-direction: column;
+  }
+
+  .hero-section .right-col .image-container {
+    height: 100%;
+  }
+
+  /* Modal adjustments for very small screens */
+  .modal-content {
+    width: 95vw; /* Further reduce modal width */
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .car-item {
+    flex: 0 0 calc((100% - 10px) / 1); /* Ensure 1 car per row */
+  }
+
+  .car-name {
+    font-size: 14px; /* Further reduce font size */
+  }
+
+  .view-button {
+    font-size: 11px; /* Further reduce button font size */
+    padding: 5px 10px; /* Further adjust button padding */
+  }
+}

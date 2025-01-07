@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Brand Modal with Slider</title>
+  <link rel="stylesheet" href="modalstyles.css">
+</head>
+<body>
+  <div class="button-container">
+    <!-- Brand buttons use only the "data-brand" attribute -->
+    <button class="brand-button" data-brand="Toyota">Toyota</button>
+    <button class="brand-button" data-brand="Mitsubishi">Mitsubishi</button>
+    <button class="brand-button" data-brand="Nissan">Nissan</button>
+    <button class="brand-button" data-brand="Hyundai">Hyundai</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="brand-info">
+        <h2 id="brand-title" class="brand-title"></h2>
+        <p id="brand-description" class="brand-description"></p>
+      </div>
+      <img id="brand-logo" alt="Brand Logo" class="brand-logo">
+      <div class="car-container">
+        <div id="car-list" class="car-list"></div>
+      </div>
+      <div class="carousel-controls">
+        <button id="prev-btn" class="carousel-btn">&lt;</button>
+        <div id="page-indicators" class="page-indicators"></div>
+        <button id="next-btn" class="carousel-btn">&gt;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/modalscript.js"></script>
+</body>
+</html>
