@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/loginstyles.css">
     <link rel="icon" type="image/png" href="images/logos/magnalogo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Login</title>
 </head>
 <body>
     <div class="main-container">
         
-        <form>
+        <form id="form">
             <div class="login-title">
                 <img src="images/logos/magnalogo.png" alt="">
                 <span>MAGNA CARS</span>
@@ -24,14 +25,17 @@
                     <h2 id="login">LOG IN</h2>
                     <p id="Welcome">Welcome to Magana Cars!</p>
                </div>
+               <small id="error"></small>
                 <div class="input-field">
-                    <label for="">Enter Username</label>
-                    <input type="text" class="inputFname" id="fname" placeholder="e.g  jhonedoe">
+                    <label for="username">Enter Username</label>
+                    <input type="text" class="inputFname" id="username" placeholder="e.g  jhonedoe">
                     <div class="error"></div>
                 </div>
                 <div class="input-field">
-                    <label for="">Enter Password</label>
-                    <input type="password" class="inputFname" id="fname" placeholder="Enter password">
+                    <label for="password">Enter Password</label>
+                    <input type="password" class="inputFname" id="password" placeholder="Enter password">
+                    <i class='bx bx-hide hide-icon password-icon' ></i>
+                    <i class='bx bx-show show-icon password-icon'></i>
                     <div class="error"></div>
                 </div>
                 <div class="forgot-password-container">

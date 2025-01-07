@@ -55,3 +55,85 @@ lineIndicators.forEach((line, index) => {
         lineIndicators[currentIndex].classList.add("active");
     });
 });
+
+
+
+const form = document.getElementById('form')
+const username = document.getElementById('username')
+const password = document.getElementById('password')
+const errorMessage = document.getElementById('error')
+
+
+username.addEventListener('input', () => validateField(username));
+password.addEventListener('input', () => validateField(password));
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const usernameValue = username.value.trim()
+    const passwordValue = password.value.trim()
+    console.log(usernameValue)
+    
+    if(usernameValue === '' && passwordValue === '') {
+        setErrorFor(username, password, 'Please fill up the form field')
+    }   
+    else if(usernameValue === '') {
+        setErrorFor(username,'', 'Username cannot be blank')
+    } else if(passwordValue === ''){
+        setErrorFor('', password, 'Password cannot be blank' )
+    }else{
+        setSuccess()
+    }
+})
+
+
+function setErrorFor(inputValueUsername = '', inputValuePassword ='', message){
+    if(inputValueUsername === username && inputValuePassword === password){
+        username.style.borderColor = 'red'
+        password.style.borderColor = 'red'
+        errorMessage.innerHTML = message
+    }   
+    else if(inputValueUsername === username){
+        username.style.borderColor = 'red'
+        errorMessage.innerHTML = message
+    }else if(inputValuePassword === password){
+        password.style.borderColor = 'red'
+        errorMessage.innerHTML = message
+    }   
+}
+
+function setSuccess(){
+    username.style.borderColor = 'green'
+    password.style.borderColor = 'green'
+    errorMessage.innerHTML = ' '
+}
+
+function validateField(param){
+    if(param === username){
+        username.style.borderColor = 'green'
+    }else if(param === password){
+         password.style.borderColor = 'green'
+
+    }
+}
+
+
+const hidePasswordIcon = document.querySelector('.hide-icon')
+const showPasswordIcon = document.querySelector('.show-icon')
+
+hidePasswordIcon.addEventListener('click', showPassword)
+showPasswordIcon.addEventListener('click', showPassword)
+
+
+function showPassword(){
+    const password = document.getElementById('password')
+    if(password.type === 'password'){
+        password.type = 'text'
+        showPasswordIcon.style.display = 'block'
+        hidePasswordIcon.style.display = 'none'
+    }else{
+        password.type = 'password'
+        showPasswordIcon.style.display = 'none'
+        hidePasswordIcon.style.display = 'block'
+    }
+}
