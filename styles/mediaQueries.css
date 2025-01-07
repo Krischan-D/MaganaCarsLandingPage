@@ -65,17 +65,21 @@
   .menu ul {
     flex-direction: column;
     padding: 1em;
+    gap: 1em;
     width: 100%;
   }
 
   .menu ul li {
-    margin-top: 1em;
+    margin-right: 0;
   }
 
   .menu.active {
-    height: 350px; /* Adjust height to fit content */
+    height: 400px; /* Adjust height to fit content */
   }
 
+  .for-dropdown{
+    display: block;
+  }
   /* Adjust slider for smaller screens */
   .wrapper {
     height: 70vh; /* Reduce height for smaller screens */
