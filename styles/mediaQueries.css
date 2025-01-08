@@ -108,6 +108,9 @@
     padding: 0;
   }
 
+  .recommended-cars {
+    padding-top: 2em;
+  }
   .hero-container{
     flex-direction: column;
     width: 100%;
@@ -172,6 +175,7 @@
 
   .faqs-section{
     width: 100%;
+    padding-top: 6em;
     padding-inline: 0;
   }
 
@@ -234,8 +238,12 @@
   }
 
 
+  .brands-section{
+    padding-top: 6em;
+  }
+
   .recommended-cars {
-    padding-top: 4em; /* Reduce padding for smaller screens */
+    padding-top: 2em; /* Reduce padding for smaller screens */
     padding-bottom: 1em; /* Add padding at the bottom */
   }
 
@@ -262,7 +270,7 @@
   }
 
   .testimonial-wrapper {
-    padding: 0.5em; /* Further reduce padding on very small screens */
+    padding: 0.5em auto; /* Further reduce padding on very small screens */
   }
 
   .testimonial-card {
@@ -274,12 +282,22 @@
     gap: 5px; /* Further reduce gap between cards */
   }
 
+
+
   .testimonial-card .profile-name img {
     width: 40px; /* Further reduce image size */
     height: 40px;
     margin: 0;
   }
+  .testimonial-wrapper i.button {
+    position: relative;
+    top: -30px;
+  }
 
+  .testimonial-dot-indicators{
+    position: relative;
+    top: -50px;
+  }
   .testimonial-author {
     font-size: 0.75em;
   }
