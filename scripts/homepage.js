@@ -1,3 +1,8 @@
+import { renderRecommendedCars } from "./product.js";
+import { renderServices } from "./services.js";
+import { renderTestimonials, testimonialFunction } from "./testimonial.js";
+import { renderBlogs } from "./blogs.js";
+
 document.addEventListener('DOMContentLoaded', function () {
     // Get the menu toggle button and the menu
     const menuToggle = document.getElementById('menu-toggle');

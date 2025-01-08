@@ -1,0 +1,291 @@
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .testimonial-card {
+        flex: 0 0 calc((100% - 20px) / 2); /* Show 2 cards per row on tablets */
+      }
+    
+    .services-container{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .blog-card{
+        flex: 0 0 calc((100% - 40px) / 2);
+    }
+
+
+
+    
+}
+
+@media (max-width: 768px) {
+    
+    .services-container{
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+    .service {
+        height: auto; /* Allow height to adjust to content */
+        padding: 1.5em;
+      }
+    
+      .service h2 {
+        margin-top: 2em; /* Adjust margin for smaller screens */
+      }
+    
+      .service p {
+        margin-top: 0.5em; /* Adjust margin for smaller screens */
+      }
+    .blog-card {
+        flex: 0 0 calc(100% - 40px); /* 1 card per row on mobile */
+        height: auto; /* Allow height to adjust to content */
+      }
+    
+      .learn-more-button {
+        position: static; /* Remove absolute positioning */
+        margin-top: 1em; /* Add margin for spacing */
+      }
+    .menu-toggle {
+        display: block;
+    }
+    
+      .container {
+        justify-content: space-between;
+      }
+    
+      .menu {
+        position: absolute;
+        top: 100%; /* Position below the navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        right: 0;
+        width: 95%;
+        background-color: rgba(255, 255, 255, 0.2); /* Glass morphism effect */
+        backdrop-filter: blur(10px); /* Blur effect */
+        border-radius: 10px;
+        overflow: hidden;
+        height: 0;
+        transition: height 0.3s ease;
+        z-index: 1000; /* Ensure the menu is above other content */
+      }
+    
+    
+      .login-menu {
+        display: none;
+      }
+    
+      .menu ul {
+        flex-direction: column;
+        padding: 0;
+        gap: 1em;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .menu ul li {
+        margin-right: 0;
+        width: 90%;
+        margin-top: 1em;
+      }
+    
+      .menu.active {
+        height: 400px; /* Adjust height to fit content */
+      }
+    
+      .for-dropdown{
+        display: block;
+      }
+
+    
+
+    .hero-container{
+        flex-direction: column;
+        width: 100%;
+        padding-top: 6em;
+        width: calc(100% - 32px);
+      }
+      .hero-section .left-col,
+      .right-col {
+        width: 100%;
+        padding: 0;
+      }
+    
+      .hero-section .right-col {
+        height: 100%;
+      }
+    
+      .hero-section .left-col {
+        order: 2;
+      }
+    
+      .hero-section .left-col h1 {
+        margin-top: 1em;
+      }
+    
+      .testimonial-section{
+        padding-inline: 0;
+      }
+    
+      .testimonial-wrapper {
+        width: calc(100% - 32px); /* Adjust width to account for margins */
+      }
+    
+    
+      .testimonial-card {
+        flex: 0 0 calc((100% - 20px) / 2); /* 2 cards per row on tablets */
+      }
+    
+      .testimonial-carousel {
+        gap: 10px; /* Reduce gap between cards on smaller screens */
+      }
+    
+      .testimonial-card img {
+        width: 80px; /* Reduce image size on smaller screens */
+        height: 80px;
+      }
+    
+      .testimonial-text {
+        font-size: 0.9em; /* Reduce font size for better readability */
+      }
+    
+      .testimonial-author {
+        font-size: 0.8em;
+      }
+    
+      .button-container {
+        margin-top: 10px; /* Reduce margin for better spacing */
+      }
+    
+      .testimonial-dot-indicators {
+        margin-top: 10px; /* Adjust margin for better spacing */
+      }
+    
+      .footer-container .footer-columns {
+        flex-direction: column;
+      }
+    
+      .footer-container .footer-columns .left-footer,
+      .right-footer {
+        width: 100%;
+        padding: 1em;
+      }
+    
+      .footer-container .footer-columns .left-footer p,
+      .newsletter-input {
+        width: 100%;
+      }
+    
+      .footer-container .footer-columns .left-footer .newsletter-input {
+        width: 100%;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .hero-text p {
+        width: 100%; /* Adjust width for smaller screens */
+      }
+    .hero-container{
+        padding: 0;
+    }
+    .blog-container{
+        padding: 0;
+    }
+
+    .blog-card{
+        flex: 0 0 calc((100%))  ;
+        height: fit-content;
+    }
+
+    .blogs-container{
+        gap: 1em;
+    }
+
+    .services-section {
+        padding-top: 3em; /* Reduce padding for smaller screens */
+    }
+    
+    .services-container {
+        gap: 1em; /* Reduce gap between items */
+        row-gap: 2em;
+    }
+
+    .service {
+    padding: 1em;
+    }
+
+    .icon-container {
+        height: 60px; /* Reduce icon size for smaller screens */
+        width: 60px;
+        top: -30px;
+    }
+
+    .testimonial-wrapper {
+        padding: 0.5em auto; /* Further reduce padding on very small screens */
+      }
+    
+      .testimonial-card {
+        flex: 0 0 calc((100% - 20px) / 1); /* 1 card per row on mobile */
+        padding: 1em;
+      }
+    
+      .testimonial-carousel {
+        gap: 5px; /* Further reduce gap between cards */
+      }
+    
+    
+    
+      .testimonial-card .profile-name img {
+        width: 40px; /* Further reduce image size */
+        height: 40px;
+        margin: 0;
+      }
+      .testimonial-wrapper i.button {
+        position: relative;
+        top: -30px;
+      }
+    
+      .testimonial-dot-indicators{
+        position: relative;
+        top: -50px;
+      }
+      .testimonial-author {
+        font-size: 0.75em;
+      }
+
+      .footer-container .footer-columns .left-footer{
+        width: 100%;
+      }
+
+
+
+      .footer-container .right-footer .links {
+        flex-direction: column;
+        width: 100%;
+      }
+    
+      .footer-container .right-footer .links .col {
+        width: 100%;
+      }
+    
+      .copyrights {
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+      }
+    
+      .footer-container .footer-columns .left-footer .newsletter-input {
+        flex-direction: column;
+      }
+    
+}

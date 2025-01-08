@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MagnaCars</title>
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/mediaQueries.css">
+    <!-- <link rel="stylesheet" href="styles/mediaQueries.css"> -->
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/homapageMediaQueries.css">
     <link rel="icon" type="image/png" href="images/logos/favicon.png">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +20,7 @@
     <nav class="navbar homepage-navbar">
         <div class="container homepage-container">
           <a href="#" class="logo">
-            <!-- <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="logo-img" /> -->
+            <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
             <span class="logo-text">MaganaCars</span>
           </a>
           <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
@@ -45,7 +47,7 @@
         </div>
     
     </nav>
-    <section class="hero-section">
+    <section class="main-hero-section">
         <div class="container hero-container">
             <div class="hero-text">
                 <h1>Drive Your Dream Car Today!</h1>
@@ -57,6 +59,198 @@
             </div>
         </div>
     </section>
-      <script src="scripts/homepage.js"></script>
+    <section class="recommended-section" id="recomended-section">
+      <div class="container">
+        <div class="recommended-cars">
+          <h1>Recommended Cars for You</h1>
+          <div class="cars-container" id="cars-container">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services-section">
+      <h1>Our Services</h1>
+      <div class="container services">
+        <div class="services-container" id="services-container">
+          <div class="service">
+            <div class="icon-container">
+              <img src="images/services/services.png" alt="">
+            </div>
+            <h2>Financing Options</h2>
+            <p>We provide flexible loan and lease plans to suit various budgets, 
+              ensuring you can drive away in your desired vehicle with manageable payments.</p>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    <section class="testimonial-section">
+
+      <div class="container testimonial-wrapper">
+        <div class="testimonial-container">
+          <div class="testimonial-carousel">
+    
+            <div class="testimonial-card">
+              <div class="text-profile">
+                <div class="testimonial-text">
+                  <span>Good Job</span>
+                  <p>“Lorem ipsum odor amet, consectetuer adipiscing elit. Sed taciti cras elit montes aenean.
+                    Felis at primis accumsan habitant turpis purus ante scelerisque. “</p>
+                </div>
+                <div class="profile-name">
+                  <div>
+                    <img src="images/img1.png" alt="Profile 1" />
+    
+                  </div>
+                  <span class="rating"><img src="images/stars.png" alt=""></span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <img src="images/img2.png" alt="Testimonial 2" />
+              <p class="testimonial-text">"Great experience, will definitely use again."</p>
+              <p class="testimonial-author">- Jane Smith</p>
+            </div>
+            <div class="testimonial-card">
+              <img src="images/img3.jpg" alt="Testimonial 3" />
+              <p class="testimonial-text">"Excellent support and quality work."</p>
+              <p class="testimonial-author">- Mike Johnson</p>
+            </div>
+            <div class="testimonial-card">
+              <img src="images/img1.png" alt="Testimonial 4" />
+              <p class="testimonial-text">"Very professional and timely delivery."</p>
+              <p class="testimonial-author">- Sarah Lee</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card-buttons">
+          <i class="fa-solid fa-arrow-left button" id="testimonial-prev"></i>
+          <i class="fa-solid fa-arrow-right button" id="testimonial-next"></i>
+        </div>
+        <div class="testimonial-dot-indicators">
+          <!-- Dots will be dynamically added by JavaScript -->
+        </div>
+      </div>
+    </section>
+    <section class="blogs-section">
+      <div class="container blog-container">
+        <h1>Latest Blog</h1>
+        <div class="blogs-container" id="blog-container">
+          <div class="blog-card">
+            <div class="image-container">
+              <img src="images/hero-image.webp" alt="">
+              <span class="blog-label">Tips</span>
+            </div>
+            <div class="blog-desription">
+              <p class="blog-date">January 1, 2025</p>
+              <h1 class="blog-title">Car Maintenance Tips</h1>
+              <p class="blog-description">Provide practical advice to help car owners maintain their vehicles, ensuring longevity and optimal performance.</p>
+            </div>
+            <button class="accent-button learn-more-button">Learn more</button>
+          </div>
+          <div class="blog-card">
+            <div class="image-container">
+              <img src="images/hero-image.webp" alt="">
+              <span class="blog-label">News</span>
+            </div>
+            <div class="blog-desription">
+              <p class="blog-date">January 1, 2025</p>
+              <h1 class="blog-title">Car Maintenance Tips</h1>
+              <p class="blog-description">Provide practical advice to help car owners maintain their vehicles, ensuring longevity and optimal performance.</p>
+            </div>
+            <button class="accent-button">Learn more</button>
+          </div>
+          <div class="blog-card">
+            <div class="image-container">
+              <img src="images/hero-image.webp" alt="">
+              <span class="blog-label">Tips</span>
+            </div>
+            <div class="blog-desription">
+              <p class="blog-date">January 1, 2025</p>
+              <h1 class="blog-title">Car Maintenance Tips</h1>
+              <p class="blog-description">Provide practical advice to help car owners maintain their vehicles, ensuring longevity and optimal performance.</p>
+            </div>
+            <button class="accent-button">Learn more</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="hero-section contact-section" id="contact-section">
+      <div class="container hero-container">
+        <div class="right-col">
+          <div class="image-container">
+            <img src="images/hero-image.jpg" alt="">
+          </div>
+        </div>
+        <div class="left-col">
+    
+          <h1>Have More Questions? Don’t Hesitate To Reach Us </h1>
+          <p>Barangay Purok 7 eme</p>
+          <p>Tacloban City</p>
+    
+          <div class="contact-buttons">
+            <a href=""><i class='bx bxs-phone' style='color:#000'></i>09999999</a>
+            <a href=""><i class='bx bx-envelope' style='color:#000'></i>maganacars@gmail.com</a>
+          </div>
+    
+          <a href="" class="button">Get Started <i class='bx bx-right-arrow-alt' style='color:#ffffff'></i></a>
+        </div>
+      </div>
+  
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-columns">
+          <div class="left-footer">
+            <div class="logo-container">
+              <a href="#" class="logo">
+                <!-- <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="logo-img" /> -->
+                <span class="logo-text">MaganaCars</span>
+              </a>
+            </div>
+  
+            <p>Subscribe to our newsletter for the latest updates on features and promotions.</p>
+  
+            <div class="newsletter-input">
+              <input type="text" placeholder="Enter email">
+              <button>Join</button>
+            </div>
+  
+            <p>By subscribing, you consent to receive updates in accordance with our Privacy Policy.</p>
+          </div>
+          <div class="right-footer">
+            <div class="links">
+              <div class="col">
+                <span>Company</span>
+                <ul>
+                  <li>About us</li>
+                  <li>Faqs</li>
+                  <li>Idk</li>
+                  <li>didi</li>
+                </ul>
+              </div>
+              <div class="col">
+                <span>Connect With Us </span>
+                <ul>
+                  <li><i class='bx bxl-facebook-square' undefined></i>Facebook</li>
+                  <li><i class='bx bxl-instagram'></i>Instagram</li>
+                  <li><i class='bx bxl-twitter'></i>Twitter</li>
+                  <li> <i class='bx bxl-youtube'></i>YouTube</li>
+                  <li> <i class='bx bxl-linkedin-square'></i>LinkedIn</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyrights">
+          <p>© 2024 MaganaCars.com. All rights reserved</p>
+          <a href="">Privacy & Policy</a>
+          <a href="">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="scripts/homepage.js"></script>
 </body>
 </html>

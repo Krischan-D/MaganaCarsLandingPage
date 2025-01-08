@@ -17,6 +17,11 @@
   .car-item {
     flex: 0 0 calc((100% - 20px) / 2); /* Show 2 cars per row on tablets */
   }
+  .services-container{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    row-gap: 3em;
+  }
 }
 
 @media (max-width: 768px) {
@@ -229,6 +234,13 @@
   .view-button {
     font-size: 12px; /* Reduce button font size */
     padding: 6px 12px; /* Adjust button padding */
+  }
+  
+  .services-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
+    row-gap: 3em;
   }
 }
 

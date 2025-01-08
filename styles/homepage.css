@@ -10,7 +10,12 @@ html{
   font-family: Poppins, sans-serif;
 }
 
-.hero-section{
+
+section{
+    min-height: 100vh;
+    /* border: 1px solid red; */
+}
+.main-hero-section{
     height: 100vh;
     width: 100%;
     background-image: url('../images/homepagebg.png');
@@ -20,9 +25,10 @@ html{
     padding-top:5em ;
     background-color: gray;
     mix-blend-mode: darken;
+    display: flex;
 }
 
-.hero-section::before {
+.main-hero-section::before {
     content: ''; /* Required for the pseudo-element to work */
     position: absolute; /* Position the overlay over the .hero-section */
     top: 0;
@@ -37,6 +43,7 @@ html{
 .container{
     max-width: 1400px;
     width: 100%;
+    /* border: 1px solid red; */
     margin: 0 auto;
 }
 
@@ -44,13 +51,23 @@ html{
     z-index: 1;
 }
 .homepage-container{
-    padding-inline: 0;
+    padding-inline: 1rem;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #000;
+    margin: 0 auto;
 }
 
+
 .homepage-navbar{
-    background-color: transparent;
     color: #fff;
+    background-color: transparent;
     padding-inline: 0;
+    border: 0;
+    padding-top: 1em;
 }
 
 .menu ul li a, .login-menu a{
@@ -58,24 +75,30 @@ html{
 }
 
 
+
 .hero-text{
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 5em;
+    margin: auto 0;
     color: #fff;
     z-index: 4;
-    h1{
-        font-size: 4rem;
-        
-    }
-    
-    p{
-        width: 70%;
-        margin: 0 auto;
-    }
+ 
 }
+
+
+.hero-text h1 {
+    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size */
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive font size */
+    width: 70%;
+    margin: 0 auto 2em; /* Center and add spacing */
+}
+
 
 .accent-button{
     width: fit-content;
@@ -89,4 +112,148 @@ html{
     padding-inline: 1.5em;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.services-section {
+    padding-top: 5em;
+  }
+  
+  .services-section h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive font size */
+  }
+  
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 2em;
+    row-gap: 3em;
+    padding: 1em; /* Add padding for spacing */
+  }
+  
+  .services {
+    margin-top: 3em;
+  }
+  
+  .service {
+    height: 250px;
+    border: 1px solid hsl(0, 0%, 80%);
+    position: relative;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .service h2 {
+    margin-top: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(1.1rem, 3vw, 1.25rem); /* Responsive font size */
+  }
+  
+  .service p {
+    line-height: 1.5rem;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem); /* Responsive font size */
+    margin-top: 1em;
+  }
+  
+  .icon-container {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    box-shadow: 0px 5px 8px hsl(0, 0%, 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+  }
+  
+  .icon-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Ensure the icon fits inside the container */
+  }
+
+
+  .blog-container{
+    display: flex;
+    flex-direction: column;
+}
+  
+.blogs-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    /* border: 1px solid red; */
+    gap: 2em;
+    justify-content: center;
+}
+
+.image-container{
+    height: 40%;
+    width: 100%;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+
+.blog-card{
+    flex: 0 0 calc((100% - 80px) / 3);
+    border: 1px solid hsl(0, 0%, 80%);
+    height: 550px;
+    padding: 1em;
+    border-radius: 26px;
+    position: relative;
+}
+
+.blog-date {
+    font-size: clamp(0.75rem, 2vw, 0.9rem); /* Responsive font size */
+    color: #ccc;
+    margin-top: 0.5em;
+  }
+  
+  .blog-title {
+    font-size: clamp(1.1rem, 4vw, 1.25rem); /* Responsive font size */
+    margin-top: 1em;
+  }
+  
+  .blog-description {
+    font-size: clamp(0.8rem, 2.5vw, 1rem); /* Responsive font size */
+    margin-top: 1em;
+    color: #aeaeae;
+    margin-bottom: 3em;
+    font-weight: 300;
+  }
+.blog-label{
+    width: fit-content;
+    padding: .5em 1.5em;
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    z-index: 2;
+    font-size: .8rem;
+    border-radius: 1.5em;
+}
+
+.learn-more-button{
+    position: absolute;
+    bottom: 20px;
+    font-size: clamp(0.8rem, 2.5vw, 1rem); /* Responsive font size */
 }
