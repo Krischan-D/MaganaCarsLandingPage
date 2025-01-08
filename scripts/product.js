@@ -226,7 +226,6 @@ function filterRecommendCars(array, maxPrice){
   
 const maxPrice = 1500000
 const recommendedCars = filterRecommendCars(car_information, maxPrice)
-console.log(recommendedCars)
 
 export function renderRecommendedCars() {
     let recommendedCarsHTML = '';

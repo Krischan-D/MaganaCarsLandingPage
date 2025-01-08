@@ -85,12 +85,16 @@
     
       .menu ul li {
         margin-right: 0;
-        width: 90%;
+        width: 100%;
         margin-top: 1em;
+      }
+
+      .menu ul .username{
+        width: 100%;
       }
     
       .menu.active {
-        height: 400px; /* Adjust height to fit content */
+        height: 440px; /* Adjust height to fit content */
       }
     
       .for-dropdown{

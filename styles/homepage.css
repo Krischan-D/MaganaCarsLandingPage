@@ -52,15 +52,33 @@ section{
 }
 .homepage-container{
     padding-inline: 1rem;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Blur effect */
-    border-radius: 10px; /* Rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for depth */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    color: #000;
+    color: #fff;
     margin: 0 auto;
 }
 
+.active{
+  padding-inline: 1rem;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #000;
+  margin: 0 auto;
+}
+
+.active-link{
+  background: #ff4c4c;
+}
+
+.menu-active{
+  color: #000  !important;
+  border-color: #000 !important;
+}
+
+.menu ul li a.menu-active, .login-menu a.menu-active{
+  color: #000
+}
 
 .homepage-navbar{
     color: #fff;
@@ -74,6 +92,9 @@ section{
     color: #fff;
 }
 
+.username{
+  border-color: #fff;
+}
 
 
 .hero-text{
@@ -100,6 +121,7 @@ section{
 }
 
 
+
 .accent-button{
     width: fit-content;
     margin: 0 auto;
@@ -112,6 +134,42 @@ section{
     padding-inline: 1.5em;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.recommended-cars{
+  padding-top: 0;
+}
+
+.recommended-text{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1{
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.view-button{
+  border: 1px solid #ff4c4c;
+  color: #ff4c4c;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.view-button:hover{
+  color: #fff;
+  background-color: #ff4c4c;
+}
+
+.cars-container{
+  margin-top: 4em;
 }
 
 .services-section {
@@ -257,3 +315,4 @@ section{
     bottom: 20px;
     font-size: clamp(0.8rem, 2.5vw, 1rem); /* Responsive font size */
 }
+
