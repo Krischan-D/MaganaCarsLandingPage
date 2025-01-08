@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagnaCars</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/mediaQueries.css">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="icon" type="image/png" href="images/logos/favicon.png">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar homepage-navbar">
+        <div class="container homepage-container">
+          <a href="#" class="logo">
+            <!-- <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="logo-img" /> -->
+            <span class="logo-text">MaganaCars</span>
+          </a>
+          <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+            <span class="sr-only"></span>
+            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+          </button>
+          <div id="navbar-menu" class="menu">
+            <ul>
+              <li><a href="#home-section" class="nav-link active">Home</a></li>
+              <li><a href="#brands-section" class="nav-link">Brands</a></li>
+              <!-- <li><a href="#" class="nav-link">About us</a></li> -->
+              <li><a href="#recomended-section" class="nav-link">Recommended Cars</a></li>
+              <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              <li><a href="#faqs-section" class="nav-link">FAQs</a></li>
+              <a href="login.html" class="button login-button for-dropdown"><i class='bx bx-user'></i>Login</a>
+            </ul>
+          </div>
+          <div class="login-menu">
+            <a href="login.html" class="button login-button"><i class='bx bx-user'></i>Login</a>
+          </div>
+        </div>
+    
+    </nav>
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Drive Your Dream Car Today!</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit eligendi, 
+                    qui dolorem placeat assumenda quod libero minus minima expedita enim aspernatur 
+                    tempore facere nemo consequatur soluta distinctio, nostrum atque nobis!
+                </p>
+                <button class="accent-button">Explore cars</button>
+            </div>
+        </div>
+    </section>
+      <script src="scripts/homepage.js"></script>
+</body>
+</html>

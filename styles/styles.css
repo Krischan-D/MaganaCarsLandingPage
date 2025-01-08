@@ -10,6 +10,7 @@ html{
   font-family: Poppins, sans-serif;
 }
 
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
@@ -57,8 +58,11 @@ button, .button{
 
 .container {
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 0 auto; 
+}
+
+.nav-container{
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,13 +76,13 @@ button, .button{
 }
 
 .logo img {
-  height: 2rem;
+  height: 2.5rem;
 }
 
 .logo span {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 600;
-  margin-left: 0.75rem;
+  margin-left: 0.2rem;
 }
 
 .menu-toggle {
@@ -170,7 +174,7 @@ button, .button{
   align-items: self-start;
   justify-content: center;
   position: relative;
-  padding-top: 2em;
+  /* padding-top: 2em; */
   margin-top: 60px;
 }
 
@@ -275,13 +279,13 @@ section{
 } */
 
 .brands-section {
+  padding-inline: 0;
   padding-top: 5em;
 }
 .car-brands{
   width: 100%; /* Full width of the viewport */
-  max-width: 1400px;
+  max-width: 100%;
   height: auto;
-  /* border: 1px solid red; */
   margin: 0 auto;
   padding-bottom: 4rem;
   position: relative;
@@ -413,45 +417,39 @@ section{
 
 }
 
-.recommended-cars{
-  max-width: 1400px;
-  width: 100%;
-  /* min-height: 100vh; */
+.recommended-section {
+  min-height: 100vh; /* Ensure the section is at least the height of the viewport */
+  padding-inline: 0; /* Remove horizontal padding if needed */
+  padding-bottom: 2em; /* Add padding at the bottom to prevent content from being cut off */
+}
 
+.recommended-cars {
+  width: 100%;
   margin: 0 auto;
-  /* border: 1px solid red; */
-  height: 100%;
-  padding: 1em;
-  padding-top: 6em;
+  padding-top: 6em; /* Add padding at the top */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 2em; */
-
- 
 }
 
-.recommended-cars h1{
+.recommended-cars h1 {
   text-align: center;
   font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 2em;
 }
 
-.recommended-cars .cars-container{
+.recommended-cars .cars-container {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   gap: 1em;
   flex-wrap: wrap;
-
-
+  height: auto; /* Let the height be determined by the content */
 }
-
-
 
 .recommended-cars .cars-container .car-card {
   width: 300px;
-  height: 400px;
+  height: 400px; /* Fixed height for each card */
   border: 1px solid #e5e7eb;
   padding-bottom: 2em;
   border-radius: 1em;
@@ -464,90 +462,84 @@ section{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
 }
 
-
-.recommended-cars .cars-container .car-card  .img-container {
+.recommended-cars .cars-container .car-card .img-container {
   height: 50%;
   width: 100%;
   object-fit: cover;
-
 }
 
-.recommended-cars .cars-container .car-card  .img-container img {
+.recommended-cars .cars-container .car-card .img-container img {
   height: 100%;
   width: 100%;
-  
 }
 
 .recommended-cars .cars-container .car-card .car-information {
   padding: 1em;
 }
 
-.recommended-cars .cars-container .car-card .car-information h1{
+.recommended-cars .cars-container .car-card .car-information h1 {
   text-align: start;
   margin: 0;
   font-size: 1rem;
 }
-
 
 .recommended-cars .cars-container .car-card .car-specification-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-bottom: 2px solid gray;
   padding-bottom: 1em;
-  /* gap: 0.2em; Add gap between items */
 }
 
-.recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications{
- display: flex;
- /* justify-content: center; */
- align-items: center;
- gap: .5em;
- margin-top: .5em;
-
- p{
-  font-size: .9rem;
- }
-
+.recommended-cars .cars-container .car-card .car-information .car-specifications {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.5em;
 }
 
-.recommended-cars .cars-container .car-card .car-information .car-specification-container .car-specifications svg{
+.recommended-cars .cars-container .car-card .car-information .car-specifications p {
+  font-size: 0.9rem;
+}
+
+.recommended-cars .cars-container .car-card .car-information .car-specifications svg {
   height: 30px;
   width: 30px;
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
-.recommended-cars .cars-container .car-card .car-information .price-button{
+.recommended-cars .cars-container .car-card .car-information .price-button {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: .5em;
+  padding: 0.5em;
 }
 
-.recommended-cars .cars-container .car-card .car-information .price-button span{
+.recommended-cars .cars-container .car-card .car-information .price-button span {
   margin-right: auto;
   font-weight: bold;
- 
- }
- .recommended-cars .cars-container .car-card .car-information .price-button button{
+}
 
+.recommended-cars .cars-container .car-card .car-information .price-button button {
   border-radius: 10px;
   border: none;
   background-color: #ff4c4c;
   color: #fff;
   cursor: pointer;
- 
- }
+}
  
 
 .hero-section{
   /* min-height: 100vh; */
   height: 100%;
-  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
+
+  
+}
+
+.hero-container{
   display: flex;
   margin-top: 6em;
-  
 }
 
 .hero-section .left-col, .right-col{
@@ -829,19 +821,21 @@ i.button:active {
 
 
 .faqs-section{
-  max-width: 1400px;
-  margin: 0 auto;
   width: 100%;
-  /* height: 100%; */
   min-height: 100vh;
+  display: flex;
+
+}
+
+.faqs-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6em;
-  padding-inline: 1em;
+  width: 100%;
 }
 
-.faqs-section >{
+
+.faqs-answer-section >{
   text-align: center;
 }
 
@@ -849,7 +843,7 @@ i.button:active {
   font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
-.faqs-section .faqs-container{
+.faqs-answer-container{
   display: flex;
   flex-direction: column;
   width: 70%;
