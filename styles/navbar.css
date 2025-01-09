@@ -10,41 +10,6 @@ html{
   font-family: Poppins, sans-serif;
 }
 
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
- 
-  /* overflow-x: hidden; Prevent horizontal scrolling */
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9;
-  opacity: 0; /* Start with 0 opacity */
-  transition: opacity 0.3s ease; /* Add transition */
-  pointer-events: none; /* Allow clicks to pass through when hidden */
-}
-
-body.overlay-active::before {
-  opacity: 1; /* Fade in */
-  pointer-events: auto; /* Enable clicks when visible */
-}
-
-p {
-  font-size: clamp(1rem, 2vw, 1.1rem); /* Responsive font size */
-  line-height: 1.6; /* Improve readability */
-}
-
-button, .button{
-  padding: .75em 1em;
-}
-
 /* Navbar Styles */
 .navbar {
   background-color: white;
@@ -58,12 +23,16 @@ button, .button{
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem;
+}
+
+.nav-container {
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo Styles */
 .logo {
   display: flex;
   align-items: center;
@@ -72,15 +41,16 @@ button, .button{
 }
 
 .logo img {
-  height: 2rem;
+  height: 2.5rem;
 }
 
 .logo span {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 600;
-  margin-left: 0.75rem;
+  margin-left: 0.2rem;
 }
 
+/* Menu Toggle (Hamburger Icon) */
 .menu-toggle {
   display: none;
   background: none;
@@ -94,6 +64,7 @@ button, .button{
   height: 1.25rem;
 }
 
+/* Menu Styles */
 .menu ul {
   display: flex;
   list-style: none;
@@ -123,37 +94,89 @@ button, .button{
   background-color: #ff4c4c;
 }
 
+/* Login Button Styles */
+.login-button {
+  text-decoration: none;
+  color: #000;
+  padding: 0.5em 1em;
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  transition: all 0.2s ease;
+}
+
+.login-button i {
+  font-size: 1.2rem;
+}
+
+.login-button:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+  border: 1px solid #ff4c4c;
+}
+
+/* Dropdown Icon Styles */
+.for-dropdown {
+  align-items: center;
+  gap: 0.5em;
+  display: none;
+}
+
+.for-dropdown i {
+  margin-right: 0.3em;
+  margin-top: -10px;
+  height: 100%;
+}
 
 
-  .login-button{
-    text-decoration: none;
-    color: #000;
-    padding: .5em 1em;
-    border: 1px solid #000;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: .2em;
-    transition: all .2s ease;
 
-    i{
-      font-size: 1.2rem;
-    }
+
+
+
+
+/* Responsive Styles for Navbar */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show the hamburger menu toggle */
   }
 
-  .login-button:hover{
-    background-color: #ff4c4c;
-    color: #fff;
-    border: 1px solid #ff4c4c;
+  .menu {
+    position: absolute;
+    top: 72px; /* Position below the navbar */
+    left: 0;
+    right: 0;
+    background-color: #f3f4f6; /* Light gray background for the menu */
+    border: 1px solid #f6f6f6; /* Add a subtle border */
+    overflow: hidden;
+    width: inherit;
+    margin: 0 1em; /* Add margin for better spacing */
+    height: 0; /* Start with 0 height */
+    border-radius: 10px; /* Rounded corners */
+    transition: height 0.3s ease-in-out; /* Smooth height transition */
   }
-  .for-dropdown{
-    align-items: center;
-    gap: .5em;
-    display: none;
 
-    i{
-      margin-right: .3em;
-      margin-top: -10px;
-      height: 100%;
-    }
+  .login-menu {
+    display: none; /* Hide the login menu on smaller screens */
   }
+
+  .menu ul {
+    flex-direction: column; /* Stack menu items vertically */
+    padding: 1em; /* Add padding for spacing */
+    gap: 1em; /* Add gap between menu items */
+    width: 100%;
+  }
+
+  .menu ul li {
+    margin-right: 0; /* Remove right margin for stacked items */
+  }
+
+  .menu.active {
+    height: 400px; /* Expand the menu to fit content */
+  }
+
+  .for-dropdown {
+    display: block; /* Show dropdown indicators */
+  }
+}

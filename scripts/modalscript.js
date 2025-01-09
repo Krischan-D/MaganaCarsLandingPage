@@ -1,3 +1,5 @@
+
+import { carData } from "./product.js";
 const modal = document.getElementById("modal");
 const closeModal = document.querySelector(".close");
 const brandButtons = document.querySelectorAll(".brand-button");
@@ -10,48 +12,7 @@ const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 
 // Sample data for car brands and their cars
-const carData = {
-  Toyota: {
-    logo: "./assets/logos/toyota_logo.png",
-    description: "Toyota, a Japanese multinational corporation and one of the largest car manufacturers globally. Toyota is recognized for its durability, innovation in hybrid technology (e.g., Prius), and a commitment to sustainability with a broad lineup ranging from economy cars to luxury vehicles.",
-    cars: [
-      { name: "AVALON", image: "./assets/Toyota/Avalon_2020Model.png" },
-      { name: "CAMRY", image: "./assets/Toyota/Camry_2024Model.png" },
-      { name: "COROLLA", image: "./assets/Toyota/Corolla_2023Model.png" },
-      { name: "SUPRA", image: "./assets/Toyota/Supra_2023Model.png" },
-    ],
-  },
-  Mitsubishi: {
-    logo: "./assets/logos/mitsubishi_logo.png",
-    description: "Mitsubishi Motors, a Japanese brand with a diverse range of vehicles, including compact cars, SUVs, and electric vehicles. Mitsubishi is known for its rugged 4WD models and a strong presence in motorsports, especially rally racing.",
-    cars: [
-      { name: "OUTLANDER", image: "./assets/Mitsubishi/Outlander_2024Model.png" },
-      { name: "LANCER EVO", image: "./assets/Mitsubishi/LancerEvo_2015Model.png" },
-      { name: "MIRAGE G4", image: "./assets/Mitsubishi/MirageG4_2024Model.png" },
-      { name: "ECLIPSE CROSS", image: "./assets/Mitsubishi/EclipseCross_2024Blue.png" },
-    ],
-  },
-  Nissan: {
-    logo: "./assets/logos/nissan_logo.png",
-    description: "Nissan, another leading Japanese automaker, Nissan is known for its reliable cars, trucks, and SUVs. The brand is also a pioneer in electric vehicles, with models like the Nissan Leaf. Nissan emphasizes technology, performance, and design in its offerings.",
-    cars: [
-      { name: "ALTIMA", image: "./assets/Nissan/Altima_2024Model.png" },
-      { name: "FRONTIER", image: "./assets/Nissan/Frontier_2024Model.png" },
-      { name: "GT-R", image: "./assets/Nissan/GT-R_2024Model.png" },
-      { name: "MAXIMA", image: "./assets/Nissan/Maxima_2024Model.png" },
-    ],
-  },
-  Hyundai: {
-    logo: "./assets/logos/hyundai_logo.png",
-    description: "Hyundai, A South Korean automaker known for producing affordable, reliable, and technologically advanced cars. Hyundai has made a name for itself with its emphasis on fuel efficiency, safety, and quality warranties.",
-    cars: [
-      { name: "ACCENT", image: "./assets/Hyundai/Accent_2022Model.png" },
-      { name: "KONA", image: "./assets/Hyundai/Kona_2022Model.png" },
-      { name: "SANTA FE", image: "./assets/Hyundai/SantaFe_2022Model.png" },
-      { name: "TUCSON", image: "./assets/Hyundai/Tucson_2022Model.png" },
-    ],
-  },
-};
+
 
 // Slide counter
 let currentSlideIndex = 0;

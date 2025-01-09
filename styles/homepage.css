@@ -54,6 +54,10 @@ section{
     padding-inline: 1rem;
     color: #fff;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 1em;
 }
 
 .active{
@@ -92,9 +96,47 @@ section{
     color: #fff;
 }
 
+.login-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.menu-cart{
+  display: flex;
+  gap: 1em;
+  color: #fff;
+}
+.cart-dropdown{
+  display: none;
+}
+.cart-button{
+  font-size: 2rem;
+  color: #fff;
+}
+
+.menu-toggle{
+  color: #fff;
+}
+
+.toggle-active{
+  color: #000;
+}
+
+
+.username.toggle-active{
+  color: #000;
+  border: 1px solid #000;
+}
+
+
 .username{
   border-color: #fff;
+  color: #fff;
 }
+
+
 
 
 .hero-text{

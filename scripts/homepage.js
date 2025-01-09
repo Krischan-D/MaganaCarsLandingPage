@@ -2,6 +2,7 @@ import { renderRecommendedCars } from "./product.js";
 import { renderServices } from "./services.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
 import { renderBlogs } from "./blogs.js";
+// import { navigation } from "./navbar.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -43,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.querySelector('.homepage-container')
   const menuLinks = document.querySelectorAll('.menu ul li a'); // Select all menu links
   const usernameLinks = document.querySelectorAll('.username')
-
+  const menuToggle = document.getElementById('menu-toggle')
+  const cartButton = document.querySelectorAll('.bx-cart')
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         const sectionId = entry.target.id ;
@@ -52,11 +54,15 @@ const observer = new IntersectionObserver((entries)=>{
             if(sectionId === 'main-section'){
                 navbar.classList.remove('active')
                 menuLinks.forEach(link => link.classList.remove('menu-active'));
-                usernameLinks.forEach(link => link.classList.remove('menu-active'));
+                usernameLinks.forEach(link => link.classList.remove('toggle-active'));
+                menuToggle.classList.remove('toggle-active');
+                cartButton.forEach(button => button.classList.remove('toggle-active'));
             }else{
                 navbar.classList.add('active')
                 menuLinks.forEach(link => link.classList.add('menu-active'));
-                usernameLinks.forEach(link => link.classList.add('menu-active'))
+                usernameLinks.forEach(link => link.classList.add('toggle-active'))
+                menuToggle.classList.add('toggle-active');
+                cartButton.forEach(button => button.classList.add('toggle-active'));
             }
         }
     })

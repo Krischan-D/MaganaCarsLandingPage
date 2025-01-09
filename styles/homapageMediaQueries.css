@@ -60,6 +60,7 @@
         transform: translateX(-50%);
         right: 0;
         width: 95%;
+        padding-inline: 1em;
         background-color: rgba(255, 255, 255, 0.2); /* Glass morphism effect */
         backdrop-filter: blur(10px); /* Blur effect */
         border-radius: 10px;
@@ -68,7 +69,10 @@
         transition: height 0.3s ease;
         z-index: 1000; /* Ensure the menu is above other content */
       }
-    
+      
+      .cart-dropdown{
+        display: block;
+      }
     
       .login-menu {
         display: none;
@@ -95,6 +99,7 @@
     
       .menu.active {
         height: 440px; /* Adjust height to fit content */
+        /* padding: 1em; */
       }
     
       .for-dropdown{

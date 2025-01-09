@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MagnaCars</title>
-    <link rel="stylesheet" href="styles/navbar.css">
+    <!-- <link rel="stylesheet" href="styles/navbar.css"> -->
     <!-- <link rel="stylesheet" href="styles/mediaQueries.css"> -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/homepage.css">
@@ -23,6 +23,9 @@
             <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
             <span class="logo-text">MaganaCars</span>
           </a>
+
+
+         <div class="menu-cart">
           <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
             <span class="sr-only"></span>
             <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -30,14 +33,14 @@
                 d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
+          <a href="" class="cart-button cart-dropdown"><i class='bx bx-cart' ></i></a>
+         </div>
           <div id="navbar-menu" class="menu ">
             <ul>
               <li><a href="#home-section" class="nav-link active-link">Home</a></li>
-              <li><a href="#brands-section" class="nav-link">Brands</a></li>
-              <!-- <li><a href="#" class="nav-link">About us</a></li> -->
-              <li><a href="#recomended-section" class="nav-link">Recommended Cars</a></li>
-              <li><a href="#contact-section" class="nav-link">Contact</a></li>
-              <li><a href="#faqs-section" class="nav-link">FAQs</a></li>
+              <li><a href="products.html" class="nav-link">Products</a></li>
+              <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+              <li><a href="#contact-section" class="nav-link">About Us</a></li>
               <a href="login.html" class="button login-button for-dropdown username" id="username">
                 <i class='bx bx-user'></i>
                 <span class="username-text"></span>
@@ -45,6 +48,7 @@
             </ul>
           </div>
           <div class="login-menu">
+            <a href="" class="cart-button"><i class='bx bx-cart' ></i></a>
             <a href="login.html" class="button login-button username" id="username">
               <i class='bx bx-user'></i>
   

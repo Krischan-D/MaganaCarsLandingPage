@@ -1,0 +1,156 @@
+<nav class="navbar homepage-navbar">
+    <div class="container homepage-container">
+      <a href="#" class="logo">
+        <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">MaganaCars</span>
+      </a>
+      <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+        <span class="sr-only"></span>
+        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div id="navbar-menu" class="menu ">
+        <ul>
+          <li><a href="#home-section" class="nav-link active-link">Home</a></li>
+          <li><a href="#products." class="nav-link">Products</a></li>
+          <!-- <li><a href="#" class="nav-link">About us</a></li> -->
+          <li><a href="#recomended-section" class="nav-link">Blogs</a></li>
+          <li><a href="#contact-section" class="nav-link">About us</a></li>
+          <a href="login.html" class="button login-button for-dropdown username" id="username">
+            <i class='bx bx-user'></i>
+            <span class="username-text"></span>
+          </a>
+        </ul>
+      </div>
+      <div class="login-menu">
+        <a href="" class="cart-button"><i class='bx bx-cart' ></i></a>
+        <a href="login.html" class="button login-button username" id="username">
+          <i class='bx bx-user'></i>
+
+          <span class="username-text"></span>
+        </a>
+      </div>
+    </div>
+
+</nav>
+
+<style>
+  .homepage-container{
+    padding-inline: 1rem;
+    color: #fff;
+    margin: 0 auto;
+  }
+
+.active{
+  padding-inline: 1rem;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #000;
+  margin: 0 auto;
+}
+
+.active-link{
+  background: #ff4c4c;
+}
+
+.menu-active{
+  color: #000  !important;
+  border-color: #000 !important;
+}
+
+.menu ul li a.menu-active, .login-menu a.menu-active{
+  color: #000
+}
+
+.homepage-navbar{
+    color: #fff;
+    background-color: transparent;
+    padding-inline: 0;
+    border: 0;
+    padding-top: 1em;
+    display: flex;
+    
+}
+
+.menu ul li a, .login-menu a{
+    color: #fff;
+}
+
+
+
+
+.login-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.cart-button{
+  font-size: 2rem;
+}
+
+.username{
+  border-color: #fff;
+  color: #fff;
+}
+
+
+.menu {
+  position: absolute;
+  top: 100%; /* Position below the navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  width: 95%;
+  padding-inline: 1em;
+  background-color: rgba(255, 255, 255, 0.2); /* Glass morphism effect */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border-radius: 10px;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+  z-index: 1000; /* Ensure the menu is above other content */
+}
+
+.menu-toggle{
+  color: #fff;
+}
+
+.login-menu {
+  display: none;
+}
+
+.menu ul {
+  flex-direction: column;
+  padding: 0;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul li {
+  margin-right: 0;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.menu ul .username{
+  width: 100%;
+}
+
+.menu.active {
+  height: 440px; /* Adjust height to fit content */
+  /* padding: 1em; */
+}
+
+.for-dropdown{
+  display: block;
+}
+</style>

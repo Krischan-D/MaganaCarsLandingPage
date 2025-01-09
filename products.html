@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagnaCars</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <!-- <link rel="stylesheet" href="styles/mediaQueries.css"> -->
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="icon" type="image/png" href="images/logos/favicon.png">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <nav class="navbar product-navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">MaganaCars</span>
+      </a>
+      <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+        <span class="sr-only"></span>
+        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div id="navbar-menu" class="menu ">
+        <ul>
+          <li><a href="homepage.html" class="nav-link ">Home</a></li>
+          <li><a href="products.html" class="nav-link active-link">Products</a></li>
+          <li><a href="#recomended-section" class="nav-link">Blogs</a></li>
+          <li><a href="#contact-section" class="nav-link">About us</a></li>
+          <a href="login.html" class="button login-button for-dropdown username" id="username">
+            <i class='bx bx-user'></i>
+            <span class="username-text">Christian</span>
+          </a>
+        </ul>
+      </div>
+      <div class="login-menu">
+        <a href="" class="cart-button"><i class='bx bx-cart' ></i></a>
+        <a href="login.html" class="button login-button username" id="username">
+          <i class='bx bx-user'></i>
+
+          <span class="username-text">Christian</span>
+        </a>
+      </div>
+    </div>
+
+  </nav>
+
+  <script  type="module" src="scripts/product-listing.js"></script>
+</body>
+</html>
