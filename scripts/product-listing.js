@@ -1,7 +1,7 @@
 import { navigation } from "./navbar.js";
 import { car_information } from "./product.js";``
 import { renderUsername } from "./displayUsername.js";
-import {renderCarPrducts} from "./product-cars.js"
+import {renderCarProducts} from "./product-cars.js"
 
 toggleFilter();
 
@@ -23,7 +23,10 @@ function toggleFilter() {
         overlay.classList.remove("active"); // Hide the overlay
     });
 }
-  
+
+
+
+
   // Close the sidebar when the close button is clicked
   
 
