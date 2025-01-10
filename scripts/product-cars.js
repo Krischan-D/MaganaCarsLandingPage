@@ -35,13 +35,30 @@ export function renderCarProducts(filteredCars = updatedCarInformation) {
     });
 
     container.innerHTML = carsHTML;
+
+ 
+
+
+  
 }
 
 // Initial rendering of car products
 renderCarProducts();
+   let errorResult = 
 
+    `
+        <div class="nocarsfound-container">
+                <div class="nocarfound-img">
+                <img src="images/no-result.png" alt="">
+                </div>
+                <h3>No Cars Found</h3>
+                <p>Try search other cars  </p>
+        </div>
+        
+    `
 // Search functionality
 const searchInput = document.querySelector('[data-search-input]');
+const error = document.querySelector('.nocarsfound-container')
 searchInput.addEventListener('input', (e) => {
     const value = e.target.value.toLowerCase();
 
@@ -50,7 +67,8 @@ searchInput.addEventListener('input', (e) => {
     });
 
     if (filteredCars.length === 0) {
-        document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
+        document.getElementById('car-cards-container').innerHTML = errorResult;
+        error.style.display = 'flex'
     } else {
         renderCarProducts(filteredCars);
     }
@@ -127,7 +145,7 @@ function applyFilters(){
         filteredCars = filteredCars.filter((car) => car.brand.toLowerCase() === selectedBrand.toLowerCase());
     }
 
-    if(selectedType){
+    if(selectedType && selectedType.value !== 'all'){
         filteredCars = filteredCars.filter((car)=>{
             return car.type.toLowerCase() === selectedType.value.toLowerCase()
         })

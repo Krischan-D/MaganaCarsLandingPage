@@ -155,7 +155,7 @@ button {
   flex-direction: column;
   z-index: 0;
   overflow: hidden; /* Prevent overflow */
-
+  position: relative;
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -351,11 +351,32 @@ button {
   visibility: hidden; /* Hide */
 }
 
+.nocarsfound-container{
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid red;
+  z-index: 2;
+}
 
 
 
+.nocarsfound-container .nocarfound-img{
+  height: 20%;
+  width: 15%;
+  object-fit: cover;
 
-
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
 
 
 
@@ -412,6 +433,18 @@ button {
   .filter-btn {
     display: block;
   }
+
+  
+.nocarsfound-container .nocarfound-img{
+  height: 20%;
+  width: 15%;
+  object-fit: cover;
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
 }
 
 @media (max-width: 480px) {
@@ -427,4 +460,16 @@ button {
       width: 100%;
     }
   }
+
+    
+.nocarsfound-container .nocarfound-img{
+  height: 20%;
+  width: 30%;
+  object-fit: cover;
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
 }
