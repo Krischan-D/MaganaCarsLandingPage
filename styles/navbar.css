@@ -10,13 +10,34 @@ html{
   font-family: Poppins, sans-serif;
 }
 
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 8;
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.3s ease; /* Add transition */
+  pointer-events: none; /* Allow clicks to pass through when hidden */
+}
+
+body.overlay-active::before {
+  opacity: 1; /* Fade in */
+  pointer-events: auto; /* Enable clicks when visible */
+}
+
+
 /* Navbar Styles */
 .navbar {
   background-color: white;
   border-bottom: 1px solid #e5e7eb;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 15;
   width: 100%;
 }
 
@@ -30,6 +51,103 @@ html{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.login-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+/* Navbar Container */
+.container {
+
+  padding-inline: 1rem;
+  color: #000;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+/* Active Link State */
+.active-link {
+  background: #ff4c4c;
+  color: #fff;
+}
+
+/* Menu Active State */
+.menu-active {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+/* .menu ul li a.menu-active,
+.login-menu a.menu-active {
+  color: #000;
+} */
+
+/* Navbar Styling */
+.homepage-navbar {
+  color: #fff;
+
+  padding-inline: 0;
+  border: 0;
+  padding-top: 1em;
+}
+
+/* Menu Links */
+.menu ul li a,
+.login-menu a {
+  color: #000;
+}
+
+/* Login Menu */
+.login-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+/* Menu Cart */
+.menu-cart {
+  display: flex;
+  gap: 1em;
+  color: #fff;
+}
+
+/* Cart Dropdown */
+.cart-dropdown {
+  display: none;
+}
+
+/* Cart Button */
+.cart-button {
+  font-size: 2rem;
+  color: #000;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  color: #000;
+}
+
+/* Toggle Active State */
+.toggle-active {
+  color: #000;
+}
+
+/* Username Styling */
+.username.toggle-active {
+  color: #000;
+  border: 1px solid #000;
+}
+
+.username {
+  border-color: #fff;
+  color: #000;
 }
 
 /* Logo Styles */
@@ -135,16 +253,34 @@ html{
 
 
 
-
 /* Responsive Styles for Navbar */
 @media (max-width: 768px) {
+
+  .menu-cart{
+    display: flex;
+    gap: 1em;
+    color: #fff;
+    margin-left: auto;
+  }
+  .cart-button{
+    display: none;
+  }
   .menu-toggle {
     display: block; /* Show the hamburger menu toggle */
   }
-
+  .cart-dropdown {
+    display: block;
+  }
+  .login-button{
+    display: none;
+  }
+  .container{
+    justify-content: space-between;
+    padding-inline: 1em;
+  }
   .menu {
     position: absolute;
-    top: 72px; /* Position below the navbar */
+    top: 80px; /* Position below the navbar */
     left: 0;
     right: 0;
     background-color: #f3f4f6; /* Light gray background for the menu */
@@ -155,6 +291,7 @@ html{
     height: 0; /* Start with 0 height */
     border-radius: 10px; /* Rounded corners */
     transition: height 0.3s ease-in-out; /* Smooth height transition */
+
   }
 
   .login-menu {
@@ -166,6 +303,7 @@ html{
     padding: 1em; /* Add padding for spacing */
     gap: 1em; /* Add gap between menu items */
     width: 100%;
+    z-index: 999;
   }
 
   .menu ul li {

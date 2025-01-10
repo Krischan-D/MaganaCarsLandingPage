@@ -73,7 +73,10 @@
       .cart-dropdown{
         display: block;
       }
-    
+      
+      .login-button{
+        display: none;
+      }
       .login-menu {
         display: none;
       }

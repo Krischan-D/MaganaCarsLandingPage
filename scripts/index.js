@@ -1,7 +1,7 @@
 import { renderBrands } from "./brands.js";
 import { renderFAQs } from "./faqs.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
-import {renderRecommendedCars} from "./product.js"
+import {renderRecommendedCars} from "./recommendedCars.js"
 import { navigation } from "./navbar.js";
 
 

@@ -1,58 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MagnaCars</title>
-    <link rel="stylesheet" href="styles/navbar.css">
-    <!-- <link rel="stylesheet" href="styles/mediaQueries.css"> -->
-    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
-    <link rel="stylesheet" href="styles/products.css">
-    <link rel="icon" type="image/png" href="images/logos/favicon.png">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MagnaCars</title>
+  <link rel="stylesheet" href="styles/navbar.css">
+  <!-- <link rel="stylesheet" href="styles/mediaQueries.css"> -->
+  <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+  <link rel="stylesheet" href="styles/products.css">
+  <link rel="icon" type="image/png" href="images/logos/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-  <nav class="navbar product-navbar">
-    <div class="container nav-container">
+
+<body class="">
+  <div class="overlay"></div>
+  <nav class="navbar">
+    <div class="container ">
       <a href="#" class="logo">
         <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
         <span class="logo-text">MaganaCars</span>
       </a>
-      <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
-        <span class="sr-only"></span>
-        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15" />
-        </svg>
-      </button>
+
+
+      <div class="menu-cart">
+        <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+          <span class="sr-only"></span>
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <a href="" class="cart-button cart-dropdown"><i class='bx bx-cart'></i></a>
+      </div>
       <div id="navbar-menu" class="menu ">
         <ul>
-          <li><a href="homepage.html" class="nav-link ">Home</a></li>
-          <li><a href="products.html" class="nav-link active-link">Products</a></li>
-          <li><a href="#recomended-section" class="nav-link">Blogs</a></li>
-          <li><a href="#contact-section" class="nav-link">About us</a></li>
+          <li><a href="#home-section" class="nav-link active-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+          <li><a href="#contact-section" class="nav-link">About Us</a></li>
           <a href="login.html" class="button login-button for-dropdown username" id="username">
             <i class='bx bx-user'></i>
-            <span class="username-text">Christian</span>
+            <span class="username-text"></span>
           </a>
         </ul>
       </div>
       <div class="login-menu">
-        <a href="" class="cart-button"><i class='bx bx-cart' ></i></a>
+        <a href="" class="cart-button"><i class='bx bx-cart'></i></a>
         <a href="login.html" class="button login-button username" id="username">
           <i class='bx bx-user'></i>
 
-          <span class="username-text">Christian</span>
+          <span class="username-text"></span>
         </a>
       </div>
     </div>
-
   </nav>
 
-  <script  type="module" src="scripts/product-listing.js"></script>
+  <section id="products-section">
+    <div class="container products-container">
+      <div class="filter-container" id="filter-container">
+        <div class="filter-header">
+          <h3>Filter</h3>
+          <i class='bx bx-x' id="close-filter"></i>
+        </div>
+        <span>Filter by Brand:</span>
+        <select id="brand">
+          <option value="all">All Brands</option>
+          <option value="toyota">Toyota</option>
+          <option value="honda">Honda</option>
+          <option value="ford">Ford</option>
+          <option value="bmw">BMW</option>
+        </select>
+
+        <span>Filter by Type:</span>
+        <div class="radio-filed">
+          <label for="sedan">
+            <input type="radio" name="type" id="sedan">Sedan
+          </label>
+          <label for="SUV">
+            <input type="radio" name="type" id="SUV">
+            SUV
+          </label>
+          <label for="Luxury">
+            <input type="radio" name="type" id="Luxury">
+            Luxury Car
+          </label>
+        </div>
+
+        <span>Filter by Price:</span>
+        <div class="radio-filed">
+          <label for="highestToLowest">
+            <input type="radio" name="price" id="highestToLowest">Highest to Lowest
+          </label>
+          <label for="lowestToHighest">
+            <input type="radio" name="price" id="lowestToHighest">
+            Lowest to Highest
+          </label>
+        </div>
+      </div>
+
+
+      <div class="cars-container">
+        <div class="search-filter">
+          <label class="label">
+            <button class="search-button"><i class='bx bx-search-alt-2' style='color:#ffffff'></i></button>
+            <input type="text" class="search_bar" placeholder="Search for something..." />
+          </label>
+          <button class="filter-btn" id="filter-btn">Filters</button>
+        </div>
+        <div class="cars-cards-container">
+          <div class="car-card">
+            <h3>Accent</h3>
+            <h2>1,300,400</h2>
+            <div class="image-container">
+              <img src="images/Hyundai/accent_2022Model.png" alt="">
+            </div>
+            <div class="car-specs-container">
+              <div class="car-specs">
+                <img src="images/icons/wheel-icon.png" alt="">
+                <p>Auto</p>
+              </div>
+              <div class="car-specs">
+                <img src="images/icons/gas-icon.png" alt="">
+                <p>UNL</p>
+              </div>
+              <div class="car-specs">
+                <img src="images/icons/seats-icon.png" alt="">
+                <p>Seats</p>
+              </div>
+
+            </div>
+            <div class="view-car-button">
+              <a href="product.html" class="button">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></a>
+            </div>
+          </div>
+          <div class="car-card">
+            <h3>Accent</h3>
+            <h2>1,300,400</h2>
+            <div class="image-container">
+              <img src="images/Hyundai/accent_2022Model.png" alt="">
+            </div>
+            <div class="car-specs-container">
+              <div class="car-specs">
+                <img src="images/icons/wheel-icon.png" alt="">
+                <p>Auto</p>
+              </div>
+              <div class="car-specs">
+                <img src="images/icons/gas-icon.png" alt="">
+                <p>UNL</p>
+              </div>
+              <div class="car-specs">
+                <img src="images/icons/seats-icon.png" alt="">
+                <p>Seats</p>
+              </div>
+
+            </div>
+            <div class="view-car-button">
+              <a href="product.html" class="button">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></a>
+            </div>
+          </div>
+          <div class="car-card">
+            <h3>Accent</h3>
+            <h2>1,300,400</h2>
+            <div class="image-container">
+              <img src="images/Hyundai/accent_2022Model.png" alt="">
+            </div>
+            <div class="car-specs-container">
+              <div class="car-specs">
+                <img src="images/icons/wheel-icon.png" alt="">
+                <p>Auto</p>
+              </div>
+              <div class="car-specs">
+                <img src="images/icons/gas-icon.png" alt="">
+                <p>UNL</p>
+              </div>
+              <div class="car-specs">
+                <img src="images/icons/seats-icon.png" alt="">
+                <p>Seats</p>
+              </div>
+
+            </div>
+            <div class="view-car-button">
+              <a href="product.html" class="button">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></a>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="scripts/product-listing.js"></script>
 </body>
+
 </html>

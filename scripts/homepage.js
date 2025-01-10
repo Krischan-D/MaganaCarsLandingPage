@@ -1,7 +1,8 @@
-import { renderRecommendedCars } from "./product.js";
+import {renderRecommendedCars} from "./recommendedCars.js"
 import { renderServices } from "./services.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
 import { renderBlogs } from "./blogs.js";
+import { renderUsername } from "./displayUsername.js";
 // import { navigation } from "./navbar.js";
 
 
@@ -46,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const usernameLinks = document.querySelectorAll('.username')
   const menuToggle = document.getElementById('menu-toggle')
   const cartButton = document.querySelectorAll('.bx-cart')
+
+
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         const sectionId = entry.target.id ;
@@ -66,7 +69,7 @@ const observer = new IntersectionObserver((entries)=>{
             }
         }
     })
-},{threshold: 0.40})
+},{threshold: 0.30})
 
 
 Array.from(sections).forEach((section)=>{
@@ -75,12 +78,6 @@ Array.from(sections).forEach((section)=>{
 
 
 
-const username = localStorage.getItem('username');
-
-const usernameDisplay = document.querySelectorAll('.username-text')
-usernameDisplay.forEach(element => {
-    element.innerHTML = username;
-});
  
 
 

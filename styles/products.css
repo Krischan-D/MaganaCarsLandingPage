@@ -1,39 +1,396 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
-html{
+
+/* General Styles */
+html {
   scroll-behavior: smooth;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins, sans-serif;
 }
 
-
-.product-navbar{
-  /* border-bottom: 1px solid gray; */
-  box-shadow: 5px 5px 10px hsl(0, 0%, 90%);
+body {
+  background-color: #f4f4f4;
 }
-.login-menu{
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.3s ease; /* Add transition */
+  pointer-events: none; /* Allow clicks to pass through when hidden */
+}
+
+body.overlay-active::before {
+  opacity: 1; /* Fade in */
+  pointer-events: auto; /* Enable clicks when visible */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 19; /* Ensure it appears above other content */
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Allow clicks to pass through when hidden */
+}
+
+.overlay.active {
+  opacity: 1; /* Fade in */
+  pointer-events: auto; /* Enable clicks when visible */
+}
+
+section {
+  height: 100vh;
+  border: 1px solid red;
+}
+
+button {
+  padding: 0.7em 1em;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+/* Products Section */
+#products-section {
+  padding-top: 7em;
+}
+
+.products-container {
+  display: flex;
+  gap: 2em;
+  height: 80vh; /* Fixed height for the container */
+}
+
+/* Filter Container */
+.filter-container {
+  width: 20%;
+  height: 100%;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.filter-header h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.filter-header i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  display: none;
+}
+
+.filter-header i:hover {
+  color: #ff4c4c;
+}
+
+.filter-container span {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.filter-container select {
+  width: 100%;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.radio-filed label {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5em;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.radio-filed input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+/* Cars Container */
+.cars-container {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Search Filter */
+.search-filter {
+  padding: 1em;
+  display: flex;
   gap: 1em;
-}
+  border-bottom: 1px solid #e5e7eb;
   
-.cart-button{
-    font-size: 2rem;
-    color: #000;
 }
 
-.username{
-    border-color: #000;
-    color: #000;
+.filter-btn{
+  display: none;
 }
 
+.search-filter label {
+  position: relative;
+  display: block;
+  width: 50%;
+}
 
-.active-link{
-  background: #ff4c4c;
+.search-filter input {
+  width: 100%;
+  padding: 0.7em 1em;
+  padding-left: 4em; /* Space for the search icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.search-filter .search-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 1em;
+  background-color: #ff4c4c;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.search-filter .search-button i {
+  font-size: 1.2rem;
   color: #fff;
+}
+
+/* Cars Cards Container */
+.cars-cards-container {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  overflow-y: auto; /* Add scroll if content overflows */
+  height: calc(100% - 80px); /* Adjust height to fit remaining space */
+}
+
+/* Car Card */
+.car-card {
+  background-color: #fff;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  padding: 1em;
+  height: 290px;
+  max-width: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Required for absolute positioning of the button */
+  transition: border 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.car-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.car-card h2 {
+  font-size: 1.25rem;
+}
+
+.image-container {
+  height: 40%;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Car Specs Container */
+.car-specs-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  position: relative;
+  opacity: 1; /* Initially visible */
+  visibility: visible; /* Initially visible */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.car-specs {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align icons and text */
+}
+
+.car-specs img {
+  height: 30px;
+  width: 30px;
+}
+
+.car-specs p {
+  margin-top: 0.5em;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* View Cart Button */
+.view-car-button {
+  position: absolute;
+  bottom: 1em; /* Position at the bottom of the card */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 90%; /* Adjust width as needed */
+  height: fit-content;
+  padding: 0.5em;
+  display: flex; /* Ensure the button is in the layout */
+  justify-content: center;
+  background-color: #ff4c4c;
+  align-items: center;
+  border-radius: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+}
+
+.view-car-button .button {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: bold;
+}
+
+.view-car-button span {
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: hsla(0, 0%, 99%, 0.645);
+  padding-inline: 0.2em;
+  border-radius: 5px;
+  width: 30px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  justify-content: center; /* Center the icon */
+}
+/* Hover Effect */
+.car-card:hover {
+  border: 4px solid #ff4c4c; /* Add border on hover */
+}
+
+.car-card:hover .view-car-button {
+  opacity: 1; /* Fade in */
+  visibility: visible; /* Make visible */
+}
+
+.car-card:hover .car-specs-container {
+  opacity: 0; /* Fade out */
+  visibility: hidden; /* Hide */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .filter-container {
+    width: 250px; /* Fixed width for the sidebar */
+    height: 100%;
+    position: fixed; /* Fixed position for the sidebar */
+    top: 0;
+    left: -250px; /* Hide the sidebar by default */
+    transition: left 0.3s ease; /* Smooth transition for sliding */
+    z-index: 20; /* Ensure it appears above other content */
+  }
+
+  /* Show the sidebar when it has the "active" class */
+  .filter-container.active {
+    left: 0;
+  }
+
+  /* Show the close button on smaller screens */
+  .filter-header i {
+    display: block;
+  }
+
+  /* Overlay for when the sidebar is open */
+
+
+
+  .overlay.active {
+    display: block; /* Show the overlay when the sidebar is open */
+  }
+
+  /* Adjust the cars container to take full width */
+  .cars-container {
+    width: 100%;
+  }
+
+  /* Show the filter button on smaller screens */
+  .filter-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-filter{
+    width: 100%;
+    flex-direction: column;
+
+    label{
+      width: 100%;
+    }
+  }
 }
