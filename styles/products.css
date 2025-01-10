@@ -139,6 +139,7 @@ button {
   gap: 0.5em;
   font-size: 0.9rem;
   color: #333;
+  margin-left: .5em;
   margin-bottom: 0.5em;
 }
 
@@ -238,7 +239,7 @@ button {
 }
 
 .image-container {
-  height: 40%;
+  height: 50%;
   width: 100%;
 }
 
