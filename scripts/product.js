@@ -19,6 +19,7 @@ export const car_information = [
     model_year: "2020",
     color: "Winter White, Aqua Blue",
     price: "₱1,350,000",
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded"], // Abbreviated
       transmission: "Auto",
@@ -33,6 +34,7 @@ export const car_information = [
     model_year: "2022",
     color: "Stormy Sea, Calypso Red",
     price: "₱2,100,000",
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded"], // Abbreviated
       transmission: "Auto",
@@ -48,6 +50,7 @@ export const car_information = [
     model_year: "2022",
     color: "Blue Wave, Pulse Red",
     price: "₱1,250,000",
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded"], // Abbreviated
       transmission: "Auto",
@@ -63,6 +66,7 @@ export const car_information = [
     model_year: "2023",
     color: "White, Blue",
     price: "₱1,200,000",
+    type: "Sedan", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded"], // Abbreviated
       transmission: "Auto",
@@ -77,6 +81,7 @@ export const car_information = [
     model_year: "2023",
     color: "White",
     price: "₱5,000,000",
+    type: "Luxury Car", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded"], // Abbreviated
       transmission: "Auto, Manual",
@@ -91,6 +96,7 @@ export const car_information = [
     model_year: "2024",
     color: "White",
     price: "₱2,300,000",
+    type: "Sedan", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded"], // Abbreviated
       transmission: "Auto",
@@ -105,6 +111,7 @@ export const car_information = [
     model_year: "2020",
     color: "Silver Metallic",
     price: "₱2,800,000",
+    type: "Luxury Car", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded V-6"], // Abbreviated
       transmission: "Auto",
@@ -120,6 +127,7 @@ export const car_information = [
     model_year: "2020",
     color: "Silver Metallic",
     price: "₱750,000",
+    type: "Sedan", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded I-3"], // Abbreviated
       transmission: "Auto",
@@ -134,6 +142,7 @@ export const car_information = [
     model_year: "2020",
     color: "White",
     price: "₱1,800,000",
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded I-4"], // Abbreviated
       transmission: "Auto",
@@ -148,6 +157,7 @@ export const car_information = [
     model_year: "2015",
     color: "Cream White",
     price: "₱2,500,000",
+    type: "Sedan", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Intercooled Turbo Premium Unleaded I-4"], // Abbreviated
       transmission: "Auto",
@@ -162,6 +172,7 @@ export const car_information = [
     model_year: "2024",
     color: "Calypso Red",
     price: "₱1,700,000",
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Intercooled Turbo Regular Unleaded I-4"], // Abbreviated
       transmission: "Auto",
@@ -176,6 +187,7 @@ export const car_information = [
     model_year: "2024",
     color: "Metallic Black",
     price: "₱1,900,000",
+    type: "Sedan", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded I-4"], // Abbreviated
       transmission: "Auto",
@@ -190,6 +202,7 @@ export const car_information = [
     model_year: "2023",
     color: "Dark Gray Metallic",
     price: "₱2,400,000",
+    type: "Luxury Car", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Premium Unleaded V-6"], // Abbreviated
       transmission: "Auto",
@@ -204,6 +217,7 @@ export const car_information = [
     model_year: "2024",
     color: "Silver Metallic",
     price: "₱1,600,000",
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded V-6"], // Abbreviated
       transmission: "Auto",
@@ -218,6 +232,7 @@ export const car_information = [
     model_year: "2024",
     color: "Dirty-White Metallic",
     price: "₱8,500,000",
+    type: "Luxury Car", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Regular Unleaded V-6"], // Abbreviated
       transmission: "Auto",

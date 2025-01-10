@@ -55,3 +55,169 @@ searchInput.addEventListener('input', (e) => {
         renderCarProducts(filteredCars);
     }
 });
+
+
+
+// function logStatus() {
+//     // Get the selected value from the dropdown
+//     const selectedBrand = document.getElementById('brand').value;
+//     console.log('Selected Brand:', selectedBrand);
+//     displayByBrand(selectedBrand)
+  
+//     // Get the selected radio button for "type"
+//     const selectedType = document.querySelector('input[name="type"]:checked');
+//     if (selectedType) {
+//       console.log('Selected Type:', selectedType.value);
+//     } else {
+//       console.log('No type selected.');
+//     }
+  
+//     // Get the selected radio button for "price"
+//     const selectedPrice = document.querySelector('input[name="price"]:checked');
+//     if (selectedPrice) {
+//       console.log('Selected Price Filter:', selectedPrice.value);
+//     } else {
+//       console.log('No price filter selected.');
+//     }
+//   }
+  
+//   // Add event listeners to the dropdown and radio buttons
+  
+//   // Dropdown change event
+//   document.getElementById('brand').addEventListener('change', logStatus);
+  
+//   // Radio button change events for "type"
+//   document.querySelectorAll('input[name="type"]').forEach(radio => {
+//     radio.addEventListener('change', logStatus);
+//   });
+  
+//   // Radio button change events for "price"
+//   document.querySelectorAll('input[name="price"]').forEach(radio => {
+//     radio.addEventListener('change', logStatus);
+//   });
+
+
+//   function displayByBrand(brand){
+//     const filteredBrand  = updatedCarInformation.filter((car)=>{
+//         return car.brand.toLowerCase() === brand.toLowerCase()
+//     })
+//     console.log(filteredBrand)
+
+//     if(brand === 'all'){
+//         renderCarProducts(updatedCarInformation)
+//     }
+
+//     if(filteredBrand.length === 0){
+//         document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
+//     }   
+//     else{
+//         renderCarProducts(filteredBrand)
+//     }
+//   }
+
+
+function applyFilters(){
+    const selectedBrand = document.getElementById('brand').value;
+    const selectedType = document.querySelector('input[name="type"]:checked');
+    const selectedPrice = document.querySelector('input[name="price"]:checked');
+
+    let filteredCars = updatedCarInformation;
+
+    if (selectedBrand && selectedBrand !== 'all') {
+        filteredCars = filteredCars.filter((car) => car.brand.toLowerCase() === selectedBrand.toLowerCase());
+    }
+
+    if(selectedType){
+        filteredCars = filteredCars.filter((car)=>{
+            return car.type.toLowerCase() === selectedType.value.toLowerCase()
+        })
+    }
+
+    if (selectedPrice) {
+
+
+        filteredCars = filteredCars.map((car) => ({
+            ...car,
+            price: Number(car.price.replace("₱", "").replace(/,/g, "")),
+        }));
+
+
+        if (selectedPrice.value === 'highestToLowest') {
+            filteredCars.sort((a, b) => b.price - a.price);
+        } else if (selectedPrice.value === 'lowestToHighest') {
+            filteredCars.sort((a, b) => a.price - b.price);
+        }
+    }
+
+    if (filteredCars.length === 0) {
+        document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
+    } else {
+        renderCarProducts(filteredCars);
+    }
+}
+
+  // Dropdown change event
+  document.getElementById('brand').addEventListener('change', applyFilters);
+  
+  // Radio button change events for "type"
+  document.querySelectorAll('input[name="type"]').forEach(radio => {
+    radio.addEventListener('change', applyFilters);
+  });
+  
+  // Radio button change events for "price"
+  document.querySelectorAll('input[name="price"]').forEach(radio => {
+    radio.addEventListener('change', applyFilters);
+  });
+
+//   function applyFilters() {
+//     // Get the selected value from the dropdown
+//     const selectedBrand = document.getElementById('brand').value;
+
+//     // Get the selected radio button for "type"
+//     const selectedType = document.querySelector('input[name="type"]:checked');
+
+//     // Get the selected radio button for "price"
+//     const selectedPrice = document.querySelector('input[name="price"]:checked');
+
+//     // Filter cars based on brand
+//     let filteredCars = updatedCarInformation;
+//     if (selectedBrand && selectedBrand !== 'all') {
+//         filteredCars = filteredCars.filter((car) => car.brand.toLowerCase() === selectedBrand.toLowerCase());
+//     }
+
+//     // Filter cars based on type
+//     if (selectedType) {
+//         filteredCars = filteredCars.filter((car) => car.type.toLowerCase() === selectedType.value.toLowerCase());
+//     }
+
+//     // Filter cars based on price
+//     if (selectedPrice) {
+//         if (selectedPrice.value === 'highestToLowest') {
+//             filteredCars.sort((a, b) => b.price - a.price);
+//         } else if (selectedPrice.value === 'lowestToHighest') {
+//             filteredCars.sort((a, b) => a.price - b.price);
+//         }
+//     }
+
+//     // Render the filtered cars
+//     if (filteredCars.length === 0) {
+//         document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
+//     } else {
+//         renderCarProducts(filteredCars);
+//     }
+// }
+
+// // Add event listeners to the dropdown and radio buttons
+
+// // Dropdown change event
+// document.getElementById('brand').addEventListener('change', applyFilters);
+
+// // Radio button change events for "type"
+// document.querySelectorAll('input[name="type"]').forEach(radio => {
+//     radio.addEventListener('change', applyFilters);
+// });
+
+// // Radio button change events for "price"
+// document.querySelectorAll('input[name="price"]').forEach(radio => {
+//     radio.addEventListener('change', applyFilters);
+// });

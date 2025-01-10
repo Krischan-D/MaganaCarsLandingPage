@@ -70,39 +70,38 @@
         <span>Filter by Brand:</span>
         <select id="brand">
           <option value="all">All Brands</option>
+          <option value="hyundai">Hyundai</option>
+          <option value="mitsubishi">Mitsubishi</option>
+          <option value="nissan">Nissan</option>
           <option value="toyota">Toyota</option>
-          <option value="honda">Honda</option>
-          <option value="ford">Ford</option>
-          <option value="bmw">BMW</option>
         </select>
 
+   
         <span>Filter by Type:</span>
         <div class="radio-filed">
           <label for="sedan">
-            <input type="radio" name="type" id="sedan">Sedan
+            <input type="radio" name="type" id="sedan" value="sedan">Sedan
           </label>
           <label for="SUV">
-            <input type="radio" name="type" id="SUV">
-            SUV
+            <input type="radio" name="type" id="SUV" value="SUV">SUV
           </label>
           <label for="Luxury">
-            <input type="radio" name="type" id="Luxury">
-            Luxury Car
+            <input type="radio" name="type" id="Luxury" value="Luxury Car">Luxury Car
           </label>
         </div>
+
 
         <span>Filter by Price:</span>
         <div class="radio-filed">
           <label for="highestToLowest">
-            <input type="radio" name="price" id="highestToLowest">Highest to Lowest
+            <input type="radio" name="price" id="highestToLowest" value="highestToLowest">Highest to Lowest
           </label>
           <label for="lowestToHighest">
-            <input type="radio" name="price" id="lowestToHighest">
+            <input type="radio" name="price" id="lowestToHighest" value="lowestToHighest">
             Lowest to Highest
           </label>
         </div>
       </div>
-
 
       <div class="cars-container">
         <div class="search-filter">
