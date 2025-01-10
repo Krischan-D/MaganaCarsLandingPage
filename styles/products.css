@@ -230,7 +230,6 @@ button {
   gap: 1em;
   overflow-y: auto; /* Add scroll if content overflows */
   height: calc(100% - 80px); /* Adjust height to fit remaining space */
-  justify-content: center;
   position: relative;
 }
 
