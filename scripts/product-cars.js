@@ -1,5 +1,19 @@
 import { car_information, updatedCarInformation } from "./product.js";
 
+
+let errorResult = 
+
+    `
+        <div class="nocarsfound-container">
+                <div class="nocarfound-img">
+                <img src="images/no-result.png" alt="">
+                </div>
+                <h3>No Cars Found</h3>
+                <p>Try search other cars  </p>
+        </div>
+        
+    `
+
 // Function to render car products
 export function renderCarProducts(filteredCars = updatedCarInformation) {
     let container = document.getElementById('car-cards-container');
@@ -28,7 +42,7 @@ export function renderCarProducts(filteredCars = updatedCarInformation) {
               </div>
             </div>
             <div class="view-car-button">
-              <a href="product.html" class="button">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></a>
+              <a href="details.html" class="button">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></a>
             </div>
         </div>
         `;
@@ -36,6 +50,13 @@ export function renderCarProducts(filteredCars = updatedCarInformation) {
 
     container.innerHTML = carsHTML;
 
+    if (filteredCars.length === 0) {
+        // Display the error UI
+        container.innerHTML = errorResult;
+    } else {
+        // Render the cars
+        container.innerHTML = carsHTML;
+    }
  
 
 
@@ -44,18 +65,7 @@ export function renderCarProducts(filteredCars = updatedCarInformation) {
 
 // Initial rendering of car products
 renderCarProducts();
-   let errorResult = 
-
-    `
-        <div class="nocarsfound-container">
-                <div class="nocarfound-img">
-                <img src="images/no-result.png" alt="">
-                </div>
-                <h3>No Cars Found</h3>
-                <p>Try search other cars  </p>
-        </div>
-        
-    `
+   
 // Search functionality
 const searchInput = document.querySelector('[data-search-input]');
 const error = document.querySelector('.nocarsfound-container')
@@ -76,62 +86,6 @@ searchInput.addEventListener('input', (e) => {
 
 
 
-// function logStatus() {
-//     // Get the selected value from the dropdown
-//     const selectedBrand = document.getElementById('brand').value;
-//     console.log('Selected Brand:', selectedBrand);
-//     displayByBrand(selectedBrand)
-  
-//     // Get the selected radio button for "type"
-//     const selectedType = document.querySelector('input[name="type"]:checked');
-//     if (selectedType) {
-//       console.log('Selected Type:', selectedType.value);
-//     } else {
-//       console.log('No type selected.');
-//     }
-  
-//     // Get the selected radio button for "price"
-//     const selectedPrice = document.querySelector('input[name="price"]:checked');
-//     if (selectedPrice) {
-//       console.log('Selected Price Filter:', selectedPrice.value);
-//     } else {
-//       console.log('No price filter selected.');
-//     }
-//   }
-  
-//   // Add event listeners to the dropdown and radio buttons
-  
-//   // Dropdown change event
-//   document.getElementById('brand').addEventListener('change', logStatus);
-  
-//   // Radio button change events for "type"
-//   document.querySelectorAll('input[name="type"]').forEach(radio => {
-//     radio.addEventListener('change', logStatus);
-//   });
-  
-//   // Radio button change events for "price"
-//   document.querySelectorAll('input[name="price"]').forEach(radio => {
-//     radio.addEventListener('change', logStatus);
-//   });
-
-
-//   function displayByBrand(brand){
-//     const filteredBrand  = updatedCarInformation.filter((car)=>{
-//         return car.brand.toLowerCase() === brand.toLowerCase()
-//     })
-//     console.log(filteredBrand)
-
-//     if(brand === 'all'){
-//         renderCarProducts(updatedCarInformation)
-//     }
-
-//     if(filteredBrand.length === 0){
-//         document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
-//     }   
-//     else{
-//         renderCarProducts(filteredBrand)
-//     }
-//   }
 
 
 function applyFilters(){
@@ -150,7 +104,6 @@ function applyFilters(){
             return car.type.toLowerCase() === selectedType.value.toLowerCase()
         })
     }
-
     if (selectedPrice) {
 
 
@@ -168,7 +121,7 @@ function applyFilters(){
     }
 
     if (filteredCars.length === 0) {
-        document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
+        document.getElementById('car-cards-container').innerHTML = errorResult;
     } else {
         renderCarProducts(filteredCars);
     }

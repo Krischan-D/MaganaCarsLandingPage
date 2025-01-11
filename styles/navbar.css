@@ -207,7 +207,7 @@ body.overlay-active::before {
   background-color: #f3f4f6;
 }
 
-.menu ul li a.active {
+.menu ul li a.active-link {
   color: white;
   background-color: #ff4c4c;
 }
