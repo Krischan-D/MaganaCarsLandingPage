@@ -1,5 +1,5 @@
 import { car_information, updatedCarInformation } from "./product.js";
-
+import {getCar} from "./detailsRoute.js"
 
 let errorResult = 
 
@@ -42,24 +42,13 @@ export function renderCarProducts(filteredCars = updatedCarInformation) {
               </div>
             </div>
             <div class="view-car-button">
-              <a href="details.html" class="button">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></a>
+              <button class="button" data-car-id="${car.id}">View Car <span> <i class='bx bx-right-arrow-alt' style='color:#ffffff' ></i></span></button>
             </div>
         </div>
         `;
     });
 
     container.innerHTML = carsHTML;
-
-    if (filteredCars.length === 0) {
-        // Display the error UI
-        container.innerHTML = errorResult;
-    } else {
-        // Render the cars
-        container.innerHTML = carsHTML;
-    }
- 
-
-
   
 }
 
@@ -140,55 +129,25 @@ function applyFilters(){
     radio.addEventListener('change', applyFilters);
   });
 
-//   function applyFilters() {
-//     // Get the selected value from the dropdown
-//     const selectedBrand = document.getElementById('brand').value;
 
-//     // Get the selected radio button for "type"
-//     const selectedType = document.querySelector('input[name="type"]:checked');
+function viewCar(){
+   
+    const viewCarButtons = document.querySelectorAll('.view-car-button button');
+    viewCarButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const carId = e.target.getAttribute('data-car-id');
+            window.location.href = `details.html?carId=${carId}`;
+            
+        });
+    });
 
-//     // Get the selected radio button for "price"
-//     const selectedPrice = document.querySelector('input[name="price"]:checked');
+    
+}
 
-//     // Filter cars based on brand
-//     let filteredCars = updatedCarInformation;
-//     if (selectedBrand && selectedBrand !== 'all') {
-//         filteredCars = filteredCars.filter((car) => car.brand.toLowerCase() === selectedBrand.toLowerCase());
-//     }
+viewCar()
 
-//     // Filter cars based on type
-//     if (selectedType) {
-//         filteredCars = filteredCars.filter((car) => car.type.toLowerCase() === selectedType.value.toLowerCase());
-//     }
 
-//     // Filter cars based on price
-//     if (selectedPrice) {
-//         if (selectedPrice.value === 'highestToLowest') {
-//             filteredCars.sort((a, b) => b.price - a.price);
-//         } else if (selectedPrice.value === 'lowestToHighest') {
-//             filteredCars.sort((a, b) => a.price - b.price);
-//         }
-//     }
 
-//     // Render the filtered cars
-//     if (filteredCars.length === 0) {
-//         document.getElementById('car-cards-container').innerHTML = '<p class="no-items">No cars found</p>';
-//     } else {
-//         renderCarProducts(filteredCars);
-//     }
-// }
 
-// // Add event listeners to the dropdown and radio buttons
 
-// // Dropdown change event
-// document.getElementById('brand').addEventListener('change', applyFilters);
 
-// // Radio button change events for "type"
-// document.querySelectorAll('input[name="type"]').forEach(radio => {
-//     radio.addEventListener('change', applyFilters);
-// });
-
-// // Radio button change events for "price"
-// document.querySelectorAll('input[name="price"]').forEach(radio => {
-//     radio.addEventListener('change', applyFilters);
-// });

@@ -321,6 +321,10 @@ button {
   display: flex;
   align-items: center;
   gap: 0.5em;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   font-weight: bold;
 }
 
