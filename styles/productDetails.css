@@ -34,6 +34,7 @@ body {
     height: 100%;
     padding: 1em;
     position: relative;
+    margin-top: 1em;
 }
 
 .car-summary {
@@ -48,7 +49,6 @@ body {
 }
 
 .car-name {
-
     display: flex;
     flex-direction: column;
 }
@@ -187,7 +187,7 @@ button {
     position: absolute;
     color: 000;
     z-index: 2;
-    padding: .5em 1em;
+    padding: .5em .7em;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -196,10 +196,17 @@ button {
 .back-button i{
     text-decoration: none;
     color: #fff;
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
     
 }
 
+
+@media (max-width: 1024px) {
+    .car-container{
+        margin-top: 2em;
+    }
+
+}
 
 @media (max-width: 768px) {
     .overview-container {
@@ -262,6 +269,10 @@ button {
     }
     .car-specs-container {
         margin-top: 1em;
+    }
+
+    .img-container img {
+        width: 100%;
     }
     
 }
