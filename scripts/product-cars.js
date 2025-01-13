@@ -135,7 +135,9 @@ function viewCar(){
     const viewCarButtons = document.querySelectorAll('.view-car-button button');
     viewCarButtons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            const carId = e.target.getAttribute('data-car-id');
+            const buttonElement = e.target.closest('.button');
+            const carId = buttonElement.getAttribute('data-car-id');
+            console.log(carId)
             window.location.href = `details.html?carId=${carId}`;
             
         });
