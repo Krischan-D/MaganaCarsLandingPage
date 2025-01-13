@@ -306,9 +306,6 @@ button {
   height: fit-content;
   padding: 0.2em;
   display: flex; /* Ensure the button is in the layout */
-  justify-content: center;
-  background-color: #ff4c4c;
-  align-items: center;
   border-radius: 10px;
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
   opacity: 0; /* Initially hidden */
@@ -325,6 +322,11 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  background-color: #ff4c4c;
+  width: 100%;
+  justify-content: center;
+  padding: .5em 0;
+  border-radius: 10px;
   font-weight: bold;
 }
 
