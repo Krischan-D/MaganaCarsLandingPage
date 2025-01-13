@@ -114,6 +114,22 @@ section{
 .cart-button{
   font-size: 2rem;
   color: #fff;
+  position: relative;
+}
+
+.dot-indicator{
+  position: absolute;
+  display: none;
+  top: 0px;
+  right: 3px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.dot-indicator.active-cart{
+  display: block;
 }
 
 .menu-toggle{

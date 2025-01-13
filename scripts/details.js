@@ -1,4 +1,5 @@
 import { updatedCarInformation } from "./product.js";
+import {getCarCart} from "./cartProducts.js"
 
 
 
@@ -99,5 +100,5 @@ function renderCar (car){
 const addToCartBtn = document.querySelector('.addToCart-btn');
 
 addToCartBtn.addEventListener('click', ()=>{
-    getCar(callback)
+    getCar(getCarCart)
 })

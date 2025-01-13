@@ -2,6 +2,7 @@ import { navigation } from "./navbar.js";
 import { car_information } from "./product.js";``
 import { renderUsername } from "./displayUsername.js";
 import {renderCarProducts} from "./product-cars.js"
+import {cartIndicator} from "./cartProducts.js"
 
 toggleFilter();
 

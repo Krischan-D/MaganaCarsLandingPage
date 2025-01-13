@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
+                <span class="logo-text">MaganaCars</span>
+            </a>
+            <div class="menu-cart">
+                <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <a href="" class="cart-button cart-dropdown active-cart"><i class='bx bx-cart'></i></a>
+            </div>
+            <div id="navbar-menu" class="menu">
+                <ul>
+                    <li><a href="homepage.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+                    <li><a href="#contact-section" class="nav-link">About Us</a></li>
+                    <a href="login.html" class="button login-button for-dropdown username" id="username">
+                        <i class='bx bx-user'></i>
+                        <span class="username-text"></span>
+                    </a>
+                </ul>
+            </div>
+            <div class="login-menu">
+                <a href="" class="cart-button active-cart"><i class='bx bx-cart'></i></a>
+                <a href="login.html" class="button login-button username" id="username">
+                    <i class='bx bx-user'></i>
+                    <span class="username-text"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container cart-page-container">
+                <div class="cart-container">
+                    <div class="title">My Cart</div>
+                    <div class="itemsCart">
+                        <div class="cartProducts" id="cartProducts-container">
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-container">
+                    <div class="summary">
+                        <span>Order Summary</span>
+                        <div class="order-summary">
+                            <div class="sub-total">
+                                <span>Sub-total <span id="total-item">(0)</span> items</span>
+                            </div>
+                            <div class="shipping">
+                                <div class="shipping-info">
+                                    <div class="lower-info">
+                                        <span>Shipping</span>
+                                        <div class="info-container">
+                                            <p>From addidas to Philippines</p>
+                                            <span>Php 49.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <div class="total-amount">
+                                    <span>Total <small>(Including GST)</small></span>
+                                    <span id="overall-amount">Php 2,000</span>
+                                </div>
+                                <button>Proceed to Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="scripts/cart.js" type="module"></script>
+</body>
+</html>

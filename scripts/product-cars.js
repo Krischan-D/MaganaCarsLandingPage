@@ -1,5 +1,5 @@
 import { car_information, updatedCarInformation } from "./product.js";
-import {getCar} from "./detailsRoute.js"
+import {cartIndicator} from "./cartProducts.js"
 
 let errorResult = 
 
@@ -50,6 +50,7 @@ export function renderCarProducts(filteredCars = updatedCarInformation) {
 
     container.innerHTML = carsHTML;
   
+    viewCar()
 }
 
 // Initial rendering of car products
@@ -114,6 +115,7 @@ function applyFilters(){
     } else {
         renderCarProducts(filteredCars);
     }
+
 }
 
   // Dropdown change event

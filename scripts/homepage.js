@@ -3,6 +3,7 @@ import { renderServices } from "./services.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
 import { renderBlogs } from "./blogs.js";
 import { renderUsername } from "./displayUsername.js";
+import {cartIndicator} from "./cartProducts.js"
 // import { navigation } from "./navbar.js";
 
 

@@ -121,12 +121,46 @@ body.overlay-active::before {
 /* Cart Dropdown */
 .cart-dropdown {
   display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Cart Button */
 .cart-button {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 1.5rem);
   color: #000;
+  display: flex;
+  justify-content: center;
+  padding: 0.5em .5em;
+  border-radius: 10px;
+  text-decoration: none;
+  position: relative;
+}
+
+.dot-indicator{
+  position: absolute;
+  display: none;
+  top: 8px;
+  right: 3px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+
+.dot-indicator.active-cart{
+  display: block;
+}
+.active-cart{
+  background-color: #ff4c4c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  i{
+    color: #fff;
+    padding-left: auto 0;
+  }
 }
 
 /* Menu Toggle Button */
@@ -270,6 +304,8 @@ body.overlay-active::before {
   }
   .cart-dropdown {
     display: block;
+    opacity: 1;
+    pointer-events: auto;
   }
   .login-button{
     display: none;
@@ -316,5 +352,17 @@ body.overlay-active::before {
 
   .for-dropdown {
     display: block; /* Show dropdown indicators */
+  }
+}
+
+
+
+@media (max-width: 468px) {
+  .menu-cart{
+    gap: .5em;
+  }
+
+  .cart-dropdown {
+    padding: .2em .3em;
   }
 }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkoutstyles.css">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+</head>
+<body id="checkout">
+    <nav class="navbar">
+        <div class="container ">
+          <a href="#" class="logo">
+            <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
+            <span class="logo-text">MaganaCars</span>
+          </a>
+    
+    
+          <div class="menu-cart">
+            <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+              <span class="sr-only"></span>
+              <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+            <a href="cart.html" class="cart-button cart-dropdown"><i class='bx bx-cart'></i><span class="dot-indicator"></span></a>
+          </div>
+          <div id="navbar-menu" class="menu ">
+            <ul>
+              <li><a href="homepage.html" class="nav-link ">Home</a></li>
+              <li><a href="products.html" class="nav-link active-link">Products</a></li>
+              <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+              <li><a href="#contact-section" class="nav-link">About Us</a></li>
+              <a href="login.html" class="button login-button for-dropdown username" id="username">
+                <i class='bx bx-user'></i>
+                <span class="username-text"></span>
+              </a>
+            </ul>
+          </div>
+          <div class="login-menu">
+            <a href="cart.html" class="cart-button"><i class='bx bx-cart'></i><span class="dot-indicator"></span></a>
+            <a href="login.html" class="button login-button username" id="username">
+              <i class='bx bx-user'></i>
+    
+              <span class="username-text"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+
+    <div class="form-container">
+        <h2>Checkout</h2>
+        <p>Shipping Information</p>
+
+        <div class="shipping-options">
+            <label for="delivery" class="option">
+                <input type="radio" name="shipping" id="delivery" data-active="del" required>
+                <img src="./assets/Icons/delivery-truck.png" alt="Delivery Logo">
+                <p>Delivery</p>
+            </label>
+        
+            <label for="pickup" class="option">
+                <input type="radio" name="shipping" id="pickup" data-active="pick" required >
+                <img src="./assets/Icons/delivery.png" alt="Pickup Logo">
+                <p>Pickup</p>
+            </label>
+        </div>
+
+        <form id="account-details">
+            <label for="full-name">Full name</label>
+            <input type="text" id="full-name" placeholder="Enter full name" required>
+    
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="Enter email address" required>
+    
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" placeholder="Enter phone number" required>
+    
+            <label for="country">Country</label>
+            <input type="text" id="country" placeholder="Enter country" required>
+    
+            <div class="address-fields">
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="Enter city" required>
+                </div>
+                <div>
+                    <label for="state">State</label>
+                    <input type="text" id="state" placeholder="Enter state" required>
+                </div>
+                <div id="zip-field">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" id="zip" placeholder="Enter Zip Code" required>
+                </div>
+            </div>
+    
+            <label class="terms">
+                <input type="checkbox" class="terms-checkbox" required>
+                I have read and agree to the Terms and Conditions
+            </label>
+
+        </form>
+    </div>
+    <div class="review-cart">
+        <h2>Review Your Cart</h2>
+        <div class="cart-items">
+            <!-- First item -->
+            <div class="cart-item">
+                <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Hyundai Tucson</h3>
+                    <p>Quantity: <span class="quantity">1</span></p>
+                    <p>Price: ₱1,350,000</p>
+                </div>
+            </div>
+            <!-- Second item -->
+            <div class="cart-item">
+                <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Hyundai Tucson</h3>
+                    <p>Quantity: <span class="quantity">1</span></p>
+                    <p>Price: ₱1,350,000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <p>Subtotal: <span class="subtotal">₱2,700,000</span></p>
+            <p>Shipping: <span class="shipping">₱13,000</span></p>
+            <p>Total: <span class="total">₱2,713,000</span></p>
+        </div>
+
+        <button class="checkout-button">Checkout</button>
+    </div>
+
+    <div id="review-payment-modal" class="review-payment-modal">
+        <div class="review-payment-modal-content">
+            <button id="close-review-payment-modal" class="close-modal-btn">&times;</button>
+            <h2>Order Confirmation</h2>
+            <div class="order-confirmation">
+                <div class="details">
+                    <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson">
+                    <span>Hyundai Tucson x1</span>
+                    <span>₱1,350,000</span>
+                </div>
+                <div class="details">
+                    <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson">
+                    <span>Hyundai Tucson x1</span>
+                    <span>₱1,350,000</span>
+                </div>
+                <div class="total">
+                    Subtotal: ₱2,700,000 <br>
+                    Shipping: ₱13,000 <br>
+                    <strong>Total: ₱2,713,000</strong>
+                </div>
+            </div>
+    
+            <div class="payment-method">
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <label><input type="radio" name="payment" value="MasterCard"> <img src="./assets/icons/money.png" alt="MasterCard"></label>
+                    <label><input type="radio" name="payment" value="Visa"> <img src="./assets/icons/visa.png" alt="Visa"></label>
+                    <label><input type="radio" name="payment" value="PayPal"> <img src="./assets/icons/paypal.png" alt="PayPal"></label>
+                </div>
+            </div>
+    
+            <div class="card-inputs">
+                <label>Cardholder Name</label>
+                <input type="text" placeholder="Enter cardholder name">
+    
+                <label>Card Number</label>
+                <input type="text" placeholder="Enter card number">
+    
+                <div class="half-input">
+                    <label>Expiration</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+                <div class="half-input">
+                    <label>CVV</label>
+                    <input type="text" placeholder="Enter CVV">
+                </div>
+            </div>
+    
+            <button class="review-payment-modal-button proceed-payment-btn">Submit Payment</button>
+        </div>
+    </div>
+
+    <script src="checkoutscript.js"></script>
+</body>
+</html>
