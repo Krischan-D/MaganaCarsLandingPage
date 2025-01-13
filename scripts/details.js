@@ -6,12 +6,16 @@ const urlParams = new URLSearchParams(window.location.search);
 const carId = urlParams.get('carId');
 
 
-updatedCarInformation.forEach(element => {
-    if(element.id === carId){
-        renderCar(element)
-    }
-});
+function getCar(callback){
+    updatedCarInformation.forEach(element => {
+        if(element.id === carId){
+            callback(element)
+        }
+    });
+    
+}
 
+getCar(renderCar);
 function renderCar (car){
     const detailsContainer = document.getElementById('details-container');
     if (!detailsContainer) {
@@ -90,3 +94,10 @@ function renderCar (car){
    
     
 }
+
+
+const addToCartBtn = document.querySelector('.addToCart-btn');
+
+addToCartBtn.addEventListener('click', ()=>{
+    getCar(callback)
+})

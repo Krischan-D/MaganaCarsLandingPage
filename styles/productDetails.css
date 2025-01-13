@@ -175,9 +175,26 @@ button {
     border-radius: 1em;
     font-weight: bold;
     font-size: clamp(.8rem, 4vw, 1.2rem);
+    cursor: pointer;
 }
 
+.cart-button{
+    background-color: #ff4c4c;
+    padding: .5em .7em;
+    display: flex;
+    width: fit-content;
+    text-decoration: none;
+    border-radius: 10px;    
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+}   
 
+.cart-button i{
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    color: #fff;
+}
 
 .back-button{
     top: 20px;
@@ -196,7 +213,7 @@ button {
 .back-button i{
     text-decoration: none;
     color: #fff;
-    font-size: clamp(1.3rem, 4vw, 1.7rem);
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
     
 }
 
