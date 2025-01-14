@@ -1,8 +1,6 @@
 import { updatedCarInformation } from "./product.js";
 import {getCarCart} from "./cartProducts.js"
-
-
-
+import {useAlert} from "./alrert.js"
 const urlParams = new URLSearchParams(window.location.search);
 const carId = urlParams.get('carId');
 
@@ -98,7 +96,10 @@ function renderCar (car){
 
 
 const addToCartBtn = document.querySelector('.addToCart-btn');
-
+useAlert(addToCartBtn)
 addToCartBtn.addEventListener('click', ()=>{
+   
     getCar(getCarCart)
 })
+
+
