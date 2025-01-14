@@ -89,18 +89,19 @@ function removeItem(){
 
 
 
-function getTotal() {
+export function getTotal() {
     const totalPrice = cart.reduce((total, item) => {
         const price = parseFloat(item.price.replace("₱", "").replace(/,/g, ""));
         return total + (price * item.quantity);
     }, 0);
 
     console.log(totalPrice.toLocaleString());
-
-    const total = document.getElementById('overall-amount');
+    
     if (total) {
         total.innerHTML = `Php ${totalPrice.toLocaleString()}`;
     }   
+
+ 
 }
 
 function totalItems(){
@@ -108,6 +109,7 @@ function totalItems(){
     total.innerHTML = `(${cart.length})`
 }
 
+const total = document.getElementById('overall-amount');
 getTotal()
 
 totalItems()
@@ -138,3 +140,9 @@ function quantityControl(){
 quantityControl()
 
 
+
+
+const button = document.getElementById('toCheckoutBtn')
+button.addEventListener('click', ()=>{
+    window.location.href = 'checkout.html'
+})

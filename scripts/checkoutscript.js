@@ -1,16 +1,9 @@
+import {cart} from "./cartProducts.js"
+import {renderUsername} from "./displayUsername.js"
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Script loaded and DOM is ready.");
 
-    // Highlight active navigation link
-    const currentPage = document.body.id;
-    const links = document.querySelectorAll(".nav-bar ul li a");
-    links.forEach(link => {
-        if (link.getAttribute("data-active") === currentPage) {
-            link.classList.add("active");
-        }
-    });
-
-    // Handle shipping options
     const shippingOptions = document.querySelectorAll(".shipping-options label.option input");
     shippingOptions.forEach(option => {
         option.addEventListener("click", () => {
@@ -20,14 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 opt.parentElement.style.backgroundColor = "#ffffff";
             });
             option.parentElement.classList.add("active");
-            option.parentElement.style.borderColor = "#ec5b5b";
-            option.parentElement.style.backgroundColor = "#ff454588";
+         
         });
 
-        // Hover effect
+        
         option.parentElement.addEventListener("mouseover", () => {
             option.parentElement.style.borderColor = "#f85757ef";
-            option.parentElement.style.backgroundColor = "#ff454588";
+            option.parentElement.style.backgroundColor = "#ff4f4c5a";
         });
         option.parentElement.addEventListener("mouseout", () => {
             if (option.checked) {
@@ -41,21 +33,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Cart calculation and review modal logic
-    const cartItems = document.querySelectorAll(".cart-item");
-    const subtotalElement = document.querySelector(".subtotal");
-    const totalElement = document.querySelector(".total");
-    let total = 0;
+    // const cartItems = document.querySelectorAll(".cart-item");
+    // const subtotalElement = document.querySelector(".subtotal");
+    // const totalElement = document.querySelector(".total");
+    // let total = 0;
 
-    cartItems.forEach(item => {
-        const priceElement = item.querySelector(".cart-item-details p:nth-child(2)");
-        const quantityElement = item.querySelector(".cart-item-details p:nth-child(1) .quantity");
-        const quantity = parseInt(quantityElement.textContent);
-        const price = parseFloat(priceElement.textContent.replace(/[^\d.]/g, ""));
-        total += price * quantity;
-    });
+    // cartItems.forEach(item => {
+    //     const priceElement = item.querySelector(".cart-item-details p:nth-child(2)");
+    //     const quantityElement = item.querySelector(".cart-item-details p:nth-child(1) .quantity");
+    //     const quantity = parseInt(quantityElement.textContent);
+    //     const price = parseFloat(priceElement.textContent.replace(/[^\d.]/g, ""));
+    //     total += price * quantity;
+    // });
 
-    subtotalElement.textContent = total.toLocaleString("en-US", { style: "currency", currency: "PHP" });
-    totalElement.textContent = total.toLocaleString("en-US", { style: "currency", currency: "PHP" });
+    // subtotalElement.textContent = total.toLocaleString("en-US", { style: "currency", currency: "PHP" });
+    // totalElement.textContent = total.toLocaleString("en-US", { style: "currency", currency: "PHP" });
     
 });
 
@@ -145,5 +137,88 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     });
 });
+
+
+
+const selectedPrice = document.querySelector('input[name="terms"]:checked');
+
+// if(!selectedPrice){
+//     checkoutButton.removeEventListener('click', ()=>{
+//         checkoutButton.style.hover = 'none'
+//     })
+// }
+
+function renderReviewCart(){
+    let reviewCart = ''
+    cart.forEach((car)=>{
+        if(!car.shippingFee){
+            car.shippingFee = calculateShippingByTier(car.price)
+        }
+
+        reviewCart += 
+        `
+             <div class="cart-item">
+                <img src="${car.car_image}" alt="Hyundai Tucson" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>${car.brand} ${car.model_name}</h3>
+                    <p>Quantity: <span class="quantity">${car.quantity}x</span></p>
+                    <p>Price: ${car.price}</p>
+                </div>
+            </div>
+        
+        
+        `
+
+        document.getElementById('cart-items').innerHTML = reviewCart
+    })
+    
+}
+
+
+renderReviewCart()
+const subtotal = document.getElementById('subtotal-total')
+export function getTotal() {
+    const totalPrice = cart.reduce((total, item) => {
+        const price = parseFloat(item.price.replace("₱", "").replace(/,/g, ""));
+        return total + (price * item.quantity);
+    }, 0);
+
+    // console.log(totalPrice.toLocaleString());
+    
+    // if (subtotal) {
+    //     subtotal.innerHTML = `Php ${totalPrice.toLocaleString()}`;
+    // }   
+
+    // return  `Php ${totalPrice.toLocaleString()}`;
+    return totalPrice
+
+}
+
+subtotal.innerHTML = `Php ${getTotal().toLocaleString()}`;
+
+
+
+function calculateShippingByTier(carPrice) {
+    if (carPrice <= 1000000) {
+        return 15000; // ₱10,000 for cars under ₱1,000,000
+    } else if (carPrice > 1000000 && carPrice <= 2000000) {
+        return 20000; // ₱15,000 for cars between ₱1,000,000 and ₱2,000,000
+    } else {
+        return 25000; // ₱20,000 for cars over ₱2,000,000
+    }
+}
+
+
+
+function getTotalShipingFee(){
+
+    const totalShippingFee = cart.reduce((total, item)=>{
+        return total + (item.shippingFee * item.quantity)
+    },0 )
+    return totalShippingFee
+}
+
+const shipping = document.getElementById('shipping').innerHTML = `Php ${getTotalShipingFee().toLocaleString()}`
+const total = document.getElementById('total').innerHTML = `Php ${(getTotalShipingFee() + getTotal()).toLocaleString()}`
 
 
