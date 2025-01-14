@@ -82,6 +82,7 @@ function removeItem(){
             renderCart()
             getTotal()
             totalItems()
+            emptyCartUI()
         })
     })
 }
@@ -146,3 +147,12 @@ const button = document.getElementById('toCheckoutBtn')
 button.addEventListener('click', ()=>{
     window.location.href = 'checkout.html'
 })
+
+function emptyCartUI(){
+    const emptyUI =  document.getElementById('empty-cart')
+
+    if(cart.length === 0){
+        emptyUI.style.display = 'flex'
+    }
+}
+emptyCartUI()

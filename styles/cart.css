@@ -47,7 +47,6 @@ html {
 .itemsCart {
     width: 100%;
     height: auto;
-    background-color: #f4f4f4;
     border-radius: 1.5rem;
 }
 
@@ -309,13 +308,74 @@ html {
     border: none;
 }
 
+.itemsCart{
+    position: relative;
+    /* border: 1px solid red; */
+    height: 90%;
+    margin-top: 1em;
+}
 
+.empty-cart-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Take full height of the parent */
+    padding: 2em; /* Add padding for better spacing */
+}
+
+.empty-cart-container .img-container {
+    width: 120px; 
+    height: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em; 
+}
+
+.empty-cart-container .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.empty-cart-container .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em; 
+}
+
+.empty-cart-container .text-container h3 {
+    color: #7c7c7c;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+}
+
+.empty-cart-container .text-container p {
+    color: #7c7c7c;
+    font-size: clamp(0.8rem, 4vw, 1rem);
+}
+
+.empty-cart-container .checkout-products-btn {
+    text-decoration: none;
+    background-color: #ff4c4c;
+    color: #fff;
+    font-size: clamp(0.7rem, 4vw, 0.9rem);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.empty-cart-container .checkout-products-btn:hover {
+    background-color: #e63c3c; 
+}
 
 @media (max-width: 1000px) {
-    .order-summary{
-
-    }
-
+   
     .shipping .shipping-info .lower-info .info-container {
         flex-direction: column;
     }
@@ -338,6 +398,11 @@ html {
 
     .checkout-container {
         margin-top: 2em;
+        
+    }
+
+    .cart-container{
+        min-height: 50vh;
     }
 
     .cart-content {
@@ -377,5 +442,10 @@ html {
     }
     .order-summary{
         margin-top: 1em;
+    }
+
+    .empty-cart-container .img-container {
+        width: 80px;
+        height: 80px;
     }
 }

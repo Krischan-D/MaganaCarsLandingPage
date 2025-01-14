@@ -54,3 +54,6 @@ export function addToCart(newItem) {
     console.log('Updated Cart:', cart);
 }
 
+
+
+
