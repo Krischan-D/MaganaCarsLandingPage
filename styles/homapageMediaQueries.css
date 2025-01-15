@@ -210,6 +210,13 @@
     .hero-container{
         padding: 0;
     }
+
+    .recommended-text{
+      flex-direction: column;
+    }
+
+
+
     .blog-container{
         padding: 0;
     }

@@ -501,7 +501,13 @@ section{
   font-size: 0.9rem;
 }
 
-.recommended-cars .cars-container .car-card .car-information .car-specifications svg {
+.recommended-cars .cars-container .car-card .car-information .car-specifications svg{
+  height: 30px;
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.recommended-cars .cars-container .car-card .car-information .car-specifications img {
   height: 30px;
   width: 30px;
   flex-shrink: 0;

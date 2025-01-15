@@ -72,17 +72,25 @@ section{
 }
 
 .active-link{
-  background: #ff4c4c;
+  /* background: #ff4c4c; */
+  border-bottom: 5px solid #ff4c4c;
 }
 
 .menu-active{
   color: #000  !important;
-  border-color: #000 !important;
+
 }
 
+
 .menu ul li a.menu-active, .login-menu a.menu-active{
-  color: #000
+  color: #fff
 }
+
+
+.menu ul li a.home-active-link{
+  color: #fff
+}
+
 
 .homepage-navbar{
     color: #fff;
@@ -210,15 +218,19 @@ section{
   }
 }
 
+
+
 .view-button{
   border: 1px solid #ff4c4c;
   color: #ff4c4c;
   background-color: transparent;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: clamp(9.rem, 5vw, 1rem);
   display: flex;
   align-items: center;
+  padding: .5em 1em;
   gap: .5em;
+ text-decoration: none;
 }
 
 .view-button:hover{
@@ -351,7 +363,7 @@ section{
   .blog-description {
     font-size: clamp(0.8rem, 2.5vw, 1rem); /* Responsive font size */
     margin-top: 1em;
-    color: #aeaeae;
+    color: #575859;
     margin-bottom: 3em;
     font-weight: 300;
   }

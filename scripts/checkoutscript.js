@@ -1,7 +1,7 @@
 import {cart} from "./cartProducts.js"
 import {renderUsername} from "./utils/displayUsername.js"
 import {navigation} from "./navbar.js"
-// import {validateCheckoutDetails} from "./chekcoutValidation.js"
+import {useAlert} from "./utils/alrert.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Script loaded and DOM is ready.");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
          
         });
 
-        
+    
         option.parentElement.addEventListener("mouseover", () => {
             option.parentElement.style.borderColor = "#f85757ef";
             option.parentElement.style.backgroundColor = "#ff4f4c5a";
@@ -34,22 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Cart calculation and review modal logic
-    // const cartItems = document.querySelectorAll(".cart-item");
-    // const subtotalElement = document.querySelector(".subtotal");
-    // const totalElement = document.querySelector(".total");
-    // let total = 0;
-
-    // cartItems.forEach(item => {
-    //     const priceElement = item.querySelector(".cart-item-details p:nth-child(2)");
-    //     const quantityElement = item.querySelector(".cart-item-details p:nth-child(1) .quantity");
-    //     const quantity = parseInt(quantityElement.textContent);
-    //     const price = parseFloat(priceElement.textContent.replace(/[^\d.]/g, ""));
-    //     total += price * quantity;
-    // });
-
-    // subtotalElement.textContent = total.toLocaleString("en-US", { style: "currency", currency: "PHP" });
-    // totalElement.textContent = total.toLocaleString("en-US", { style: "currency", currency: "PHP" });
+   
     
 });
 
@@ -88,14 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Submit Payment button (you can customize this as needed)
     submitPaymentButton.addEventListener('click', () => {
-        // Perform payment submission logic here
-        alert('Payment Submitted Successfully!');
+    
         closeModal();
-        // Optionally, redirect to a confirmation page
-        // window.location.href = 'confirmation.html';
     });
+    
+    useAlert(submitPaymentButton, 'Order Confirmed!', 'Thank you for shopping', 'success')
+    localStorage.removeItem('cart');
 
-        // Fade animation for modal
     document.querySelector('.checkout-button').addEventListener('click', () => {
         const modal = document.getElementById('review-payment-modal');
         modal.style.display = 'block';

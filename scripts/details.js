@@ -98,7 +98,7 @@ function renderCar (car){
 
 
 const addToCartBtn = document.querySelector('.addToCart-btn');
-useAlert(addToCartBtn)
+useAlert(addToCartBtn, 'Success', 'Added to Cart', 'success')
 addToCartBtn.addEventListener('click', ()=>{
    
     getCar(getCarCart)

@@ -36,8 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
-  
-        // Prevent clicks inside the menu from closing it
+
         menu.addEventListener('click', function (event) {
             event.stopPropagation();
         });
@@ -47,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const sections = document.getElementsByTagName('section')
   const navbar = document.querySelector('.homepage-container')
-  const menuLinks = document.querySelectorAll('.menu ul li a'); // Select all menu links
+  const homeNavlink = document.getElementById('active-nav-link')
+  const menuLinks = document.querySelectorAll('.menu ul li a');
   const usernameLinks = document.querySelectorAll('.username')
   const menuToggle = document.getElementById('menu-toggle')
   const cartButton = document.querySelectorAll('.bx-cart')
@@ -67,6 +67,7 @@ const observer = new IntersectionObserver((entries)=>{
             }else{
                 navbar.classList.add('active')
                 menuLinks.forEach(link => link.classList.add('menu-active'));
+                homeNavlink.classList.add('home-active-link')
                 usernameLinks.forEach(link => link.classList.add('toggle-active'))
                 menuToggle.classList.add('toggle-active');
                 cartButton.forEach(button => button.classList.add('toggle-active'));
