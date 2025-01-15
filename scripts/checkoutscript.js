@@ -73,12 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Submit Payment button (you can customize this as needed)
     submitPaymentButton.addEventListener('click', () => {
-    
         closeModal();
+        modal.style.display = 'none';
+        setTimeout(()=>{
+            window.location.href
+        })
+       
     });
     
-    useAlert(submitPaymentButton, 'Order Confirmed!', 'Thank you for shopping', 'success')
-    localStorage.removeItem('cart');
+    useAlert(submitPaymentButton, 'Order Confirmed!', 'Thank you for shopping', 'success', clearCart)
+    
+    function clearCart(){
+        localStorage.removeItem('cart');
+        window.location.href = 'homepage.html'
+    }
+  
+
 
     document.querySelector('.checkout-button').addEventListener('click', () => {
         const modal = document.getElementById('review-payment-modal');
@@ -105,72 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     });
 });
-
-
-
-function validateField(field) {
-    const value = field.value.trim();
-    let isValid = true;
-
-    const errorMessage = document.querySelector('.error-message');
-    if (!errorMessage) {
-        console.error('Error message element not found for', field);
-        return false;
-    }
-
-    if (value === '') {
-        setErrorFor(field, errorMessage, 'This field cannot be blank');
-        isValid = false;
-    } else if (field.id === 'email' && !isValidEmail(value)) {
-        setErrorFor(field, errorMessage, 'Please enter a valid email address');
-        isValid = false;
-    } else if (field.id === 'phone' && !isValidPhone(value)) {
-        setErrorFor(field, errorMessage, 'Please enter a valid phone number');
-        isValid = false;
-    } else if (field.id === 'zip' && !isValidZip(value)) {
-        setErrorFor(field, errorMessage, 'Please enter a valid zip code');
-        isValid = false;
-    } else {
-        setSuccessFor(field, errorMessage);
-    }
-
-    return isValid;
-}
-
-
-
-function setErrorFor(field, errorMessage, message) {
-    field.classList.add('error');
-    errorMessage.textContent = message;
-    errorMessage.style.display = 'block';
-}
-
-function setSuccessFor(field, errorMessage) {
-    field.classList.remove('error');
-    errorMessage.textContent = '';
-    errorMessage.style.display = 'none';
-}
-function isValidEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-function isValidPhone(phone) {
-    const re = /^\d{10}$/; // Example: 10-digit phone number
-    return re.test(phone);
-}
-
-function isValidZip(zip) {
-    const re = /^\d{5}$/; // Example: 5-digit zip code
-    return re.test(zip);
-}
-
-
-
-
-
-
-
 
 
 
