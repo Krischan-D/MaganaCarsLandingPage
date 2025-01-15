@@ -1,5 +1,7 @@
 import {cart} from "./cartProducts.js"
-import {renderUsername} from "./displayUsername.js"
+import {renderUsername} from "./utils/displayUsername.js"
+import {navigation} from "./navbar.js"
+// import {validateCheckoutDetails} from "./chekcoutValidation.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Script loaded and DOM is ready.");
@@ -58,38 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('review-payment-modal');
     const closeModalButton = document.getElementById('close-review-payment-modal');
     const submitPaymentButton = document.querySelector('.proceed-payment-btn');
-
     // Function to open modal
     const openModal = () => {
-        // Populate the review details
-        document.getElementById('review-full-name').textContent = document.getElementById('full-name').value;
-        document.getElementById('review-email').textContent = document.getElementById('email').value;
-        document.getElementById('review-phone').textContent = document.getElementById('phone').value;
-        document.getElementById('review-country').textContent = document.getElementById('country').value;
-        document.getElementById('review-city').textContent = document.getElementById('city').value;
-        document.getElementById('review-state').textContent = document.getElementById('state').value;
-        document.getElementById('review-zip').textContent = document.getElementById('zip').value;
-
-        // Show modal with animation
         modal.classList.add('show');
     };
-
     // Function to close modal
     const closeModal = () => {
-        // Hide modal with animation
         modal.classList.remove('show');
     };
 
     // Event listener for opening the modal
     checkoutButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent form submission if inside a form
-        // Validate form before opening modal
-        const form = document.getElementById('account-details');
-        if (form.checkValidity()) {
-            openModal();
-        } else {
-            form.reportValidity();
-        }
+        e.preventDefault(); 
+        openModal()
+       
     });
 
     // Event listener for closing the modal
@@ -111,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // window.location.href = 'confirmation.html';
     });
 
-        //Fade animation for modal
+        // Fade animation for modal
     document.querySelector('.checkout-button').addEventListener('click', () => {
         const modal = document.getElementById('review-payment-modal');
         modal.style.display = 'block';
@@ -140,14 +124,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
+
+    const errorMessage = document.querySelector('.error-message');
+    if (!errorMessage) {
+        console.error('Error message element not found for', field);
+        return false;
+    }
+
+    if (value === '') {
+        setErrorFor(field, errorMessage, 'This field cannot be blank');
+        isValid = false;
+    } else if (field.id === 'email' && !isValidEmail(value)) {
+        setErrorFor(field, errorMessage, 'Please enter a valid email address');
+        isValid = false;
+    } else if (field.id === 'phone' && !isValidPhone(value)) {
+        setErrorFor(field, errorMessage, 'Please enter a valid phone number');
+        isValid = false;
+    } else if (field.id === 'zip' && !isValidZip(value)) {
+        setErrorFor(field, errorMessage, 'Please enter a valid zip code');
+        isValid = false;
+    } else {
+        setSuccessFor(field, errorMessage);
+    }
+
+    return isValid;
+}
+
+
+
+function setErrorFor(field, errorMessage, message) {
+    field.classList.add('error');
+    errorMessage.textContent = message;
+    errorMessage.style.display = 'block';
+}
+
+function setSuccessFor(field, errorMessage) {
+    field.classList.remove('error');
+    errorMessage.textContent = '';
+    errorMessage.style.display = 'none';
+}
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function isValidPhone(phone) {
+    const re = /^\d{10}$/; // Example: 10-digit phone number
+    return re.test(phone);
+}
+
+function isValidZip(zip) {
+    const re = /^\d{5}$/; // Example: 5-digit zip code
+    return re.test(zip);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 const selectedPrice = document.querySelector('input[name="terms"]:checked');
-
-// if(!selectedPrice){
-//     checkoutButton.removeEventListener('click', ()=>{
-//         checkoutButton.style.hover = 'none'
-//     })
-// }
-
 function renderReviewCart(){
     let reviewCart = ''
     cart.forEach((car)=>{
@@ -203,8 +248,11 @@ function calculateShippingByTier(carPrice) {
         return 15000; // ₱10,000 for cars under ₱1,000,000
     } else if (carPrice > 1000000 && carPrice <= 2000000) {
         return 20000; // ₱15,000 for cars between ₱1,000,000 and ₱2,000,000
-    } else {
-        return 25000; // ₱20,000 for cars over ₱2,000,000
+    }else if (carPrice > 3000000 && carPrice <= 5000000){
+        return 50000
+    }  
+    else {
+        return 65000; // ₱20,000 for cars over ₱2,000,000
     }
 }
 

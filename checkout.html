@@ -54,7 +54,7 @@
     <div class="form-container">
         <h2>Checkout</h2>
         <p>Shipping Information</p>
-
+        <small class="error-message"></small>
         <div class="shipping-options">
             <label for="delivery" class="option">
                 <input type="radio" name="shipping" id="delivery" data-active="del" required>
@@ -120,12 +120,19 @@
         </div>
 
         <div class="cart-summary">
-            <p>Subtotal: <span class="subtotal" id="subtotal-total">₱2,700,000</span></p>
-            <p>Shipping: <span class="shipping" id="shipping">₱13,000</span></p>
-            <p>Total: <span class="total" id="total" >₱2,713,000</span></p>
+
+            <div class="summary">
+                <p>Subtotal:</p> <span class="subtotal" id="subtotal-total">₱2,700,000</span>
+            </div>
+            <div class="summary">
+                <p>Shipping:</p>  <span class="shipping" id="shipping">₱13,000</span>
+            </div>
+            <div class="summary">
+                <p>Total:</p> <span class="total" id="total" >₱2,713,000</span>
+            </div>
         </div>
 
-        <button class="checkout-button">Checkout</button>
+        <button class="checkout-button" id="checkout-button">Checkout</button>
     </div>
    </div>
 

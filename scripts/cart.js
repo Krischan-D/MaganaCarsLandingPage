@@ -1,5 +1,5 @@
 import { navigation } from "./navbar.js";
-import {renderUsername} from "./displayUsername.js"
+import {renderUsername} from "./utils/displayUsername.js"
 import {cart, saveToLocalStorage} from "./cartProducts.js"
 
 

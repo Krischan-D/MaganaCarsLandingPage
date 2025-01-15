@@ -194,29 +194,6 @@
     }
 
 
-  .footer-container{
-    padding: 1em;
-  }
-
-  .footer-container .footer-columns {
-    flex-direction: column;
-  }
-
-  .footer-container .footer-columns .left-footer,
-  .right-footer {
-    width: 100%;
-    padding: 1em;
-  }
-
-  .footer-container .footer-columns .left-footer p,
-  .newsletter-input {
-    width: 100%;
-  }
-
-  .footer-container .footer-columns .left-footer .newsletter-input {
-    width: 100%;
-  }
-
   /* Modal adjustments for smaller screens */
   .modal-content {
     width: 90vw; /* Reduce modal width on smaller screens */
@@ -314,30 +291,10 @@
     font-size: 0.75em;
   }
 
-  .footer-container .right-footer .links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .footer-container .right-footer .links .col {
-    width: 100%;
-  }
-
-  .copyrights {
-    flex-direction: column;
-    gap: 1em;
-    padding: 1em;
-  }
-
-  .footer-container .footer-columns .left-footer .newsletter-input {
-    flex-direction: column;
-  }
 
   .hero-section .right-col .image-container {
     height: 100%;
   }
-
-  /* Modal adjustments for very small screens */
   .modal-content {
     width: 95vw; /* Further reduce modal width */
     padding: 10px; /* Further reduce padding */

@@ -1,4 +1,4 @@
-import { car_information, updatedCarInformation } from "./product.js";
+import { car_information, updatedCarInformation } from "./data/product.js"
 import {cartIndicator} from "./cartProducts.js"
 
 let errorResult = 

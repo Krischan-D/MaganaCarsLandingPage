@@ -1,4 +1,4 @@
-import {car_information} from "./product.js"
+import {car_information} from "./data/product.js"
 
 function filterRecommendCars(array, maxPrice){
     return array.filter((car)=>{

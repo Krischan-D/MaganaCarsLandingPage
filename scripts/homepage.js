@@ -1,14 +1,17 @@
 import {renderRecommendedCars} from "./recommendedCars.js"
 import { renderServices } from "./services.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
-import { renderBlogs } from "./blogs.js";
-import { renderUsername } from "./displayUsername.js";
+import { renderBlogs } from "./blogsData.js";
+import { renderUsername } from "./utils/displayUsername.js";
 import {cartIndicator} from "./cartProducts.js"
+
 // import { navigation } from "./navbar.js";
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
     // Get the menu toggle button and the menu
+    AOS.init();
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('navbar-menu');
   
