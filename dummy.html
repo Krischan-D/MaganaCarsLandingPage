@@ -1,176 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eng">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dummy.css">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="styles/navbar.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MagnaCars</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="icon" type="image/png" href="images/logos/favicon.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body id="checkout">
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
-                <span class="logo-text">MaganaCars</span>
-            </a>
-            <div class="menu-cart">
-                <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
-                    <span class="sr-only"></span>
-                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <a href="cart.html" class="cart-button cart-dropdown"><i class='bx bx-cart'></i><span class="dot-indicator"></span></a>
-            </div>
-            <div id="navbar-menu" class="menu">
-                <ul>
-                    <li><a href="homepage.html" class="nav-link">Home</a></li>
-                    <li><a href="products.html" class="nav-link active-link">Products</a></li>
-                    <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-                    <li><a href="#contact-section" class="nav-link">About Us</a></li>
-                    <a href="login.html" class="button login-button for-dropdown username" id="username">
-                        <i class='bx bx-user'></i>
-                        <span class="username-text"></span>
-                    </a>
-                </ul>
-            </div>
-            <div class="login-menu">
-                <a href="cart.html" class="cart-button"><i class='bx bx-cart'></i><span class="dot-indicator"></span></a>
-                <a href="login.html" class="button login-button username" id="username">
-                    <i class='bx bx-user'></i>
-                    <span class="username-text"></span>
-                </a>
-            </div>
-        </div>
-    </nav>
-    <div class="checkout-container">
-        <div class="form-container">
-            <h2>Checkout</h2>
-            <p>Shipping Information</p>
-            <div class="shipping-options">
-                <label for="delivery" class="option">
-                    <input type="radio" name="shipping" id="delivery" data-active="del" required>
-                    <img src="./assets/Icons/delivery-truck.png" alt="Delivery Logo">
-                    <p>Delivery</p>
-                </label>
-                <label for="pickup" class="option">
-                    <input type="radio" name="shipping" id="pickup" data-active="pick" required>
-                    <img src="./assets/Icons/delivery.png" alt="Pickup Logo">
-                    <p>Pickup</p>
-                </label>
-            </div>
-            <form id="account-details">
-                <div class="input-field">
-                    <label for="full-name">Full name</label>
-                    <input type="text" id="full-name" placeholder="Enter full name" required>
-                </div>
-                <div class="input-field">
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" placeholder="Enter email address" required>
-                </div>
-                <div class="input-field">
-                    <label for="phone">Phone number</label>
-                    <input type="tel" id="phone" placeholder="Enter phone number" required>
-                </div>
-                <div class="input-field">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" placeholder="Enter country" required>
-                </div>
-                <div class="address-fields">
-                    <div class="input-field">
-                        <label for="city">City</label>
-                        <input type="text" id="city" placeholder="Enter city" required>
-                    </div>
-                    <div class="input-field">
-                        <label for="state">State</label>
-                        <input type="text" id="state" placeholder="Enter state" required>
-                    </div>
-                    <div class="input-field" id="zip-field">
-                        <label for="zip">Zip Code</label>
-                        <input type="text" id="zip" placeholder="Enter Zip Code" required>
-                    </div>
-                </div>
-                <label class="terms">
-                    <input type="checkbox" class="terms-checkbox" required>
-                    I have read and agree to the Terms and Conditions
-                </label>
-            </form>
-        </div>
-        <div class="review-cart">
-            <h2>Review Your Cart</h2>
-            <div class="cart-items">
-                <div class="cart-item">
-                    <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h3>Hyundai Tucson</h3>
-                        <p>Quantity: <span class="quantity">1</span></p>
-                        <p>Price: ₱1,350,000</p>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h3>Hyundai Tucson</h3>
-                        <p>Quantity: <span class="quantity">1</span></p>
-                        <p>Price: ₱1,350,000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-summary">
-                <p>Subtotal: <span class="subtotal">₱2,700,000</span></p>
-                <p>Shipping: <span class="shipping">₱13,000</span></p>
-                <p>Total: <span class="total">₱2,713,000</span></p>
-            </div>
-            <button class="checkout-button">Checkout</button>
-        </div>
+
+<body>
+  <nav class="navbar">
+    <div class="container ">
+      <a href="#" class="logo">
+        <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">MaganaCars</span>
+      </a>
+
+
+      <div class="menu-cart">
+        <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+          <span class="sr-only"></span>
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <a href="cart.html" class="cart-button cart-dropdown"><i class='bx bx-cart'></i><span
+            class="dot-indicator"></span></a>
+      </div>
+      <div id="navbar-menu" class="menu ">
+        <ul>
+          <li><a href="homepage.html" class="nav-link ">Home</a></li>
+          <li><a href="products.html" class="nav-link ">Products</a></li>
+          <li><a href="blogs.html" class="nav-link active-link">Blogs</a></li>
+          <li><a href="#contact-section" class="nav-link">About Us</a></li>
+          <a href="login.html" class="button login-button for-dropdown username" id="username">
+            <i class='bx bx-user'></i>
+            <span class="username-text"></span>
+          </a>
+        </ul>
+      </div>
+      <div class="login-menu">
+        <a href="cart.html" class="cart-button"><i class='bx bx-cart'></i><span class="dot-indicator"></span></a>
+        <a href="login.html" class="button login-button username" id="username">
+          <i class='bx bx-user'></i>
+
+          <span class="username-text"></span>
+        </a>
+      </div>
     </div>
-    <div id="review-payment-modal" class="review-payment-modal">
-        <div class="review-payment-modal-content">
-            <button id="close-review-payment-modal" class="close-modal-btn">&times;</button>
-            <h2>Order Confirmation</h2>
-            <div class="order-confirmation">
-                <div class="details">
-                    <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson">
-                    <span>Hyundai Tucson x1</span>
-                    <span>₱1,350,000</span>
-                </div>
-                <div class="details">
-                    <img src="./assets/cars/Hyundai/Tucson_2020Model.png" alt="Hyundai Tucson">
-                    <span>Hyundai Tucson x1</span>
-                    <span>₱1,350,000</span>
-                </div>
-                <div class="total">
-                    Subtotal: ₱2,700,000 <br>
-                    Shipping: ₱13,000 <br>
-                    <strong>Total: ₱2,713,000</strong>
-                </div>
-            </div>
-            <div class="payment-method">
-                <h3>Payment Method</h3>
-                <div class="payment-options">
-                    <label><input type="radio" name="payment" value="MasterCard"> <img src="./assets/icons/money.png" alt="MasterCard"></label>
-                    <label><input type="radio" name="payment" value="Visa"> <img src="./assets/icons/visa.png" alt="Visa"></label>
-                    <label><input type="radio" name="payment" value="PayPal"> <img src="./assets/icons/paypal.png" alt="PayPal"></label>
-                </div>
-            </div>
-            <div class="card-inputs">
-                <label>Cardholder Name</label>
-                <input type="text" placeholder="Enter cardholder name">
-                <label>Card Number</label>
-                <input type="text" placeholder="Enter card number">
-                <div class="half-input">
-                    <label>Expiration</label>
-                    <input type="text" placeholder="MM/YY">
-                </div>
-                <div class="half-input">
-                    <label>CVV</label>
-                    <input type="text" placeholder="Enter CVV">
-                </div>
-            </div>
-            <button class="review-payment-modal-button proceed-payment-btn">Submit Payment</button>
-        </div>
+  </nav>
+
+  <section class="blog1" id="blog-section">
+    <div class="image-container">
+      <div class="text-overlay">
+        <h1>Car Maintenance Tips</h1>
+      </div>
+      <div class="image-con">
+        <img src="images/hero-image.webp" alt="blog-pic" class="responsive-image">
+      </div>
     </div>
-    <script src="checkoutscript.js"></script>
+  </section>
+  <div class="flex-container">
+    <div class="left-sidebar">
+      <div class="date">
+        Date
+        <p>1 Jan 2025</p>
+      </div>
+      <div class="social-links">
+        <div class="social-link">
+          <p>Facebook <a href="https://facebook.com/MaganaCars" target="_blank">MagnaCars</a></p>
+        </div>
+        <div class="social-link">
+          <p>Instagram <a href="https://instagram.com/MaganaCars" target="_blank">@MaganaCars</a></p>
+        </div>
+        <div class="social-link">
+          <p>Twitter <a href="https://twitter.com/MaganaCars" target="_blank">@MaganaCars</a></p>
+        </div>
+        <div class="social-link">
+          <p>YouTube <a href="https://youtube.com/MaganaCars" target="_blank">MagnaCars</a></p>
+        </div>
+        <div class="social-link">
+          <p>LinkedIn <a href="https://linkedin.com/MaganaCars" target="_blank">MagnaCars</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="blog-container">
+      <div class="blog-content">
+        <strong>
+          Regular car maintenance is crucial for the longevity of your vehicle and ensures it performs at its best.
+          Whether you're a seasoned car owner or a first-time buyer, following these simple yet effective car
+          maintenance tips can save you money, improve safety, and enhance the driving experience.
+        </strong>
+        <div class="intro">
+          <strong>
+            Introduction
+          </strong>
+          <p>Maintaining your car is essential for its longevity and performance. Routine maintenance not only extends
+            your vehicle’s life but also helps prevent costly repairs. Whether you’re a seasoned driver or a new car
+            owner, here are essential maintenance tips that will keep your car in top shape.</p>
+        </div>
+        <img src="https://www.pilawyers.com/wp-content/uploads/2022/03/negligent-vehicle-maintenance-social.png"
+          alt="Maintenance" class="responsive-image">
+        <div class="blog-post">
+          <h2>1. Regular Oil Changes</h2>
+          <p>Oil lubricates engine parts, preventing wear and overheating. Change your oil every 3,000–7,000 miles,
+            depending on your car’s make and model.</p>
+        </div>
+        <div class="blog-post">
+          <h2>2. Tire Maintenance</h2>
+          <p>Check tire pressure monthly to ensure safety and fuel efficiency. Rotate tires every 6,000–8,000 miles for
+            even wear.</p>
+        </div>
+        <div class="blog-post">
+          <h2>3. Brake Checks</h2>
+          <p>Listen for squeaking or grinding sounds, which may indicate worn-out brake pads. Get your brakes inspected
+            every 12,000 miles.</p>
+        </div>
+        <div class="blog-post">
+          <h2>4. Battery Care</h2>
+          <p>Clean battery terminals and check for corrosion. Replace your battery every 3-5 years.</p>
+        </div>
+        <div class="blog-post">
+          <h2>5. Fluid Inspection</h2>
+          <p>Regularly check and top up transmission, brake, and coolant fluids to keep systems running smoothly.</p>
+        </div>
+        <div class="conclusion">
+          <p>Regular car maintenance protects your investment by preventing costly repairs and breakdowns. By staying on
+            top of oil changes, tire checks, brake inspections, fluid levels, and battery care, your car will run more
+            efficiently, with better fuel economy and enhanced safety.</p>
+          <p>Proactive maintenance saves you time, money, and stress, helping avoid larger issues down the road. A
+            little care now ensures a reliable, long-lasting car.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="blog-previews">
+    <h2>Other Blogs</h2>
+    <div class="preview-container">
+      <div class="preview">
+        <img src="blog2.webp" alt="Blog 2" class="responsive-image">
+        <h3>Top 10 Car Accessories</h3>
+        <p>Discover the must-have accessories for your car.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="preview">
+        <img src="blog3.webp" alt="Blog 3" class="responsive-image">
+        <h3>Electric Cars: The Future</h3>
+        <p>Learn about the benefits of electric vehicles.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="preview">
+        <img src="blog4.webp" alt="Blog 4" class="responsive-image">
+        <h3>Winter Driving Tips</h3>
+        <p>Stay safe on the road during winter with these tips.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+
 </body>
+</body>
+
 </html>

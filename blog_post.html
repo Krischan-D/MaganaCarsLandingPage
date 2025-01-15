@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MagnaCars</title>
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/blogDetails.css">
+  <link rel="icon" type="image/png" href="images/logos/favicon.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container ">
+      <a href="#" class="logo">
+        <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">MaganaCars</span>
+      </a>
+
+
+      <div class="menu-cart">
+        <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
+          <span class="sr-only"></span>
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <a href="cart.html" class="cart-button cart-dropdown"><i class='bx bx-cart'></i><span
+            class="dot-indicator"></span></a>
+      </div>
+      <div id="navbar-menu" class="menu ">
+        <ul>
+          <li><a href="homepage.html" class="nav-link ">Home</a></li>
+          <li><a href="products.html" class="nav-link ">Products</a></li>
+          <li><a href="blogs.html" class="nav-link active-link">Blogs</a></li>
+          <li><a href="#contact-section" class="nav-link">About Us</a></li>
+          <a href="login.html" class="button login-button for-dropdown username" id="username">
+            <i class='bx bx-user'></i>
+            <span class="username-text"></span>
+          </a>
+        </ul>
+      </div>
+      <div class="login-menu">
+        <a href="cart.html" class="cart-button"><i class='bx bx-cart'></i><span class="dot-indicator"></span></a>
+        <a href="login.html" class="button login-button username" id="username">
+          <i class='bx bx-user'></i>
+
+          <span class="username-text"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="wrapper-section" id="home-section">
+    <div class="container wrapper" id="overview-container">
+      <div class="image-container">
+          <img src="images/imageslider1.avif" alt="" />
+          <div class="overlay">
+            <span>News    <span>January 1, 2025</span></span>
+            <h1>Essential Car Maintenance Tips to Keep Your Vehicle Running Smoothly</h1>
+            <p>Provide practical advice to help car owners maintain their vehicles, ensuring longevity and optimal performance.</p>
+         
+          </div>
+      </div>
+  </section>
+
+  <section class="main-section">
+    <div class="blog-container" id="blog-container">
+    
+
+      <aside id="aside">
+        <div class="aside-header">
+            <h2>Other Blogs</h2>
+        </div>
+
+        <div class="other-blogs-container" id="relatedBlogsContainer">
+           <div class="aside-blogs">
+              <div class="other-blog-image">
+                <img src="images/imageslider4.png" alt="">
+              </div>
+              <div class="other-blog-description">
+                <h2>Latest Automotive News and Trends</h2>
+                <p>Keep your audience informed about the newest developments in the automotive industry, including vehicle releases, technological advancements, and market trends.</p>
+              </div>
+              <button class="aside-blog-button">Learn more</button>
+           </div>
+           <div class="aside-blogs">
+            <div class="other-blog-image">
+              <img src="images/imageslider4.png" alt="">
+            </div>
+            <div class="other-blog-description">
+              <h2>Latest Automotive News and Trends</h2>
+              <p>Keep your audience informed about the newest developments in the automotive industry, including vehicle releases, technological advancements, and market trends.</p>
+            </div>
+            <button class="aside-blog-button">Learn more</button>
+         </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+
+  <script src="scripts/blogDetails.js" type="module"></script>
+</body>
+
+</html>

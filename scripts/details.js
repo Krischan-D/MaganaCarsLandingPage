@@ -1,6 +1,8 @@
 import { updatedCarInformation } from "./data/product.js"
 import {getCarCart} from "./cartProducts.js"
 import {useAlert} from "./utils/alrert.js"
+
+
 const urlParams = new URLSearchParams(window.location.search);
 const carId = urlParams.get('carId');
 

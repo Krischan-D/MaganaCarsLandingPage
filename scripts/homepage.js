@@ -1,7 +1,7 @@
 import {renderRecommendedCars} from "./recommendedCars.js"
 import { renderServices } from "./services.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
-import { renderBlogs } from "./blogsData.js";
+import { renderBlogs } from "./renderBlogs.js";
 import { renderUsername } from "./utils/displayUsername.js";
 import {cartIndicator} from "./cartProducts.js"
 
