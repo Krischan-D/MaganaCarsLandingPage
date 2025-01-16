@@ -56,7 +56,7 @@ const carData = {
     logo: "images/logos/hyundai_logo.png",
     description: "Hyundai, A South Korean automaker known for producing affordable, reliable, and technologically advanced cars. Hyundai has made a name for itself with its emphasis on fuel efficiency, safety, and quality warranties.",
     cars: [
-      { name: "ACCENT", image: "images/Hyundai/Accent_2022Model.png" },
+      { name: "ACCENT", image: "images/Hyundai/accent_2022Model.png" },
       { name: "KONA", image: "images/Hyundai/Kona_2022Model.png" },
       { name: "SANTA FE", image: "images/Hyundai/SantaFe_2022Model.png" },
       { name: "TUCSON", image: "images/Hyundai/Tucson_2020Model.png" },
