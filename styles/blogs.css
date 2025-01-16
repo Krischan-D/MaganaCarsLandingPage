@@ -160,7 +160,8 @@ button,
 
 .blog-card {
   flex: 0 0 calc((100% - 80px) / 3);
-  border: 1px solid hsl(0, 0%, 80%);
+  box-shadow: 0 5px 10px hsl(0, 0%, 90%);
+  background-color: #fff;
   height: 550px;
   padding: 1em;
   border-radius: 26px;
@@ -217,7 +218,18 @@ button,
   padding-inline: 1.5em;
   border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
+
+.accent-button:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.accent-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
 
 
 .hero-section{
@@ -339,9 +351,22 @@ button,
 }
 
 
+.start-reading-btn{
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  cursor: pointer;
+}
 
 
 
+.start-reading-btn:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.start-reading-btn:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
 
 
 

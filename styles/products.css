@@ -336,6 +336,15 @@ button {
   padding: .5em 0;
   border-radius: 10px;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.view-car-button .button:hover{
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+.view-car-button .button:active{
+  transform: scale(0.95);
 }
 
 .view-car-button span {

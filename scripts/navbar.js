@@ -36,3 +36,49 @@ export function navigation(){
 }
 
 navigation()
+
+export function getTheme() {
+    const themeBtns = document.querySelectorAll('.theme-btn');
+
+    // Function to update the theme and button states
+    const updateTheme = (isDark) => {
+        if (isDark) {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+        }
+        // Sync all theme buttons
+        themeBtns.forEach(btn => {
+            btn.checked = isDark;
+        });
+    };
+
+    // Check local storage for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        updateTheme(true); // Apply dark theme
+    } else {
+        updateTheme(false); // Apply light theme
+    }
+
+    // Add event listeners to all theme buttons
+    themeBtns.forEach(btn => {
+        btn.addEventListener('change', () => {
+            updateTheme(btn.checked); // Update theme based on button state
+          
+        });
+    });
+
+    // Sync theme buttons on window resize (e.g., when layout changes)
+    window.addEventListener('resize', () => {
+        const currentTheme = localStorage.getItem('theme');
+        themeBtns.forEach(btn => {
+            btn.checked = currentTheme === 'dark';
+        });
+    });
+}
+
+// Call the function to initialize the theme
+getTheme();

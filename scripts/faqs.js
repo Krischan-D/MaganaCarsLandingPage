@@ -48,7 +48,7 @@ export function renderFAQs(){
               </svg>
              ${faq.question} 
              </div>
-              <button id="question-button"><i class='bx bx-chevron-down' style='color:#000' ></i></button></div>
+              <button id="question-button"><i class='bx bx-chevron-down' ></i></button></div>
             <div class="answer" id=""> ${faq.answer} </div>
           </div>
         `

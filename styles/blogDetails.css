@@ -245,7 +245,20 @@ aside ul li a:hover {
   cursor: pointer;
   color: #fff;
   border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
+
+.aside-blog-button:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.aside-blog-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {

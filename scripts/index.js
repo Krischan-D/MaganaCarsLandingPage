@@ -2,7 +2,7 @@ import { renderBrands } from "./brands.js";
 import { renderFAQs } from "./faqs.js";
 import { renderTestimonials, testimonialFunction } from "./testimonial.js";
 import {renderRecommendedCars} from "./recommendedCars.js"
-import { navigation } from "./navbar.js";
+import { navigation, getTheme } from "./navbar.js";
 
 
 
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
       // Scroll to the corresponding section
       const targetId = link.getAttribute('href');
-      console.log(targetId)
+
 
     const targetSection = document.querySelector(targetId);
     if (targetSection) {
@@ -149,3 +149,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 })
+
+
+// const themeBtn = document.getElementById('theme-btn');
+// console.log(themeBtn)
+// // Check local storage for saved theme preference
+// const savedTheme = localStorage.getItem('theme');
+// if (savedTheme === 'dark') {
+//   document.body.classList.add('dark-theme');
+//   themeBtn.checked = true;
+// }
+
+// // Toggle theme on button click
+// themeBtn.addEventListener('change', () => {
+//   console.log('clicked')
+//   if (themeBtn.checked) {
+//     document.body.classList.add('dark-theme');
+//     localStorage.setItem('theme', 'dark');
+//     console.log('Dark theme is ON');
+//   } else {
+//     document.body.classList.remove('dark-theme');
+//     localStorage.setItem('theme', 'light');
+//     console.log('Dark theme is OFF');
+//   }
+// });
+

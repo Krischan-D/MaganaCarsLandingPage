@@ -1,3 +1,57 @@
+:root {
+  /* Light Theme (Default) */
+  --primary-color: #ff4c4c; /* Red color */
+  --secondary-color: #ff9a44; /* Orange color */
+  --background-color: #f5f5f5; /* Light gray background */
+  --text-color: #333333; /* Dark gray text */
+  --card-bg: #f5f5f5;
+  --container-bg: #f5f5f5;
+  --light-text-color: #777777; /* Light gray text */
+  --border-color: #e5e7eb; /* Light border color */
+  --white: #ffffff; /* White color */
+  --black: #000000; /* Black color */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
+  --gradient1: #f9f9f9;
+  --gradient2: #f9f9f9;
+  --icon-color: #000000;
+  --shadow-subtle-glow: 0 0 10px rgba(233, 233, 233, 0.5);
+
+  /* Dark Theme */
+  --dark-primary-color: #ff6b6b; /* Brighter red for dark theme */
+  --dark-secondary-color: #ffa94d; /* Brighter orange for dark theme */
+  --dark-background-color: #1a1a1a; /* Dark background */
+  --dark-card-bg: #292929;
+  --dark-container-bg: #1E201E;
+  --dark-text-color: #e0e0e0; /* Light text for dark background */
+  --dark-light-text-color: #b0b0b0; /* Lighter text for dark background */
+  --dark-border-color: #333333; /* Dark border color */
+  --dark-white: #1a1a1a; /* Dark "white" (used for backgrounds) */
+  --dark-black: #e0e0e0; /* Light "black" (used for text) */
+  --dark-shadow-color: rgba(255, 255, 255, 0.1); /* Shadow color for dark theme */
+  --dark-gradient1: #2f2f2f;
+  --dark-gradient2: #161616;
+  --dark-icon-color: #ffff;
+  --dark-shadow-subtle-glow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme {
+  --primary-color: var(--dark-primary-color);
+  --secondary-color: var(--dark-secondary-color);
+  --background-color: var(--dark-background-color);
+  --text-color: var(--dark-text-color);
+  --light-text-color: var(--dark-light-text-color);
+  --border-color: var(--dark-border-color);
+  --white: var(--dark-white);
+  --black: var(--dark-black);
+  --shadow-color: var(--dark-shadow-color);
+  --card-bg: var(--dark-card-bg);
+  --container-bg: var(--dark-container-bg);
+  --gradient1: var(--dark-gradient1);
+  --gradient2: var(--dark-gradient2);
+  --icon-color: var(--dark-icon-color);
+  --shadow-subtle-glow: var(--dark-shadow-subtle-glow);
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .testimonial-card {
@@ -17,7 +71,8 @@
   .car-item {
     flex: 0 0 calc((100% - 20px) / 2); /* Show 2 cars per row on tablets */
   }
-  .services-container{
+
+  .services-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
     row-gap: 3em;
@@ -28,8 +83,6 @@
   .container {
     margin: 0 1em;
   }
-
-
 
   .wrapper {
     margin-top: 4em;
@@ -49,8 +102,8 @@
     top: 72px;
     left: 0;
     right: 0;
-    background-color: #f3f4f6;
-    border: 1px solid #f6f6f6;
+    background-color: var(--background-color); /* Use theme variable */
+    border: 1px solid var(--border-color); /* Use theme variable */
     overflow: hidden;
     width: inherit;
     margin: 0 1em;
@@ -78,9 +131,10 @@
     height: 400px; /* Adjust height to fit content */
   }
 
-  .for-dropdown{
+  .for-dropdown {
     display: block;
   }
+
   /* Adjust slider for smaller screens */
   .wrapper {
     height: 70vh; /* Reduce height for smaller screens */
@@ -109,19 +163,22 @@
     justify-content: center;
   }
 
-  .hero-section{
+  .hero-section {
     padding: 0;
   }
 
   .recommended-cars {
     padding-top: 2em;
   }
-  .hero-container{
+
+  .hero-container {
     flex-direction: column;
     width: 100%;
     padding-top: 6em;
     width: calc(100% - 32px);
+    gap: 1em;
   }
+
   .hero-section .left-col,
   .right-col {
     width: 100%;
@@ -130,6 +187,8 @@
 
   .hero-section .right-col {
     height: 100%;
+    width: 100%;
+    padding: 0;
   }
 
   .hero-section .left-col {
@@ -140,14 +199,13 @@
     margin-top: 1em;
   }
 
-  .testimonial-section{
+  .testimonial-section {
     padding-inline: 0;
   }
 
   .testimonial-wrapper {
     width: calc(100% - 32px); /* Adjust width to account for margins */
   }
-
 
   .testimonial-card {
     flex: 0 0 calc((100% - 20px) / 2); /* 2 cards per row on tablets */
@@ -178,21 +236,19 @@
     margin-top: 10px; /* Adjust margin for better spacing */
   }
 
-  .faqs-section{
+  .faqs-section {
     width: 100%;
     padding-top: 6em;
     padding-inline: 0;
   }
 
-  .faqs-container{
+  .faqs-container {
     width: 100%;
   }
 
-
   .faqs-answer-container {
-      width: 100%;
-    }
-
+    width: 100%;
+  }
 
   /* Modal adjustments for smaller screens */
   .modal-content {
@@ -212,12 +268,16 @@
     font-size: 12px; /* Reduce button font size */
     padding: 6px 12px; /* Adjust button padding */
   }
-  
-  .services-container{
+
+  .services-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2em;
     row-gap: 3em;
+  }
+
+  .dropdown-swtich{
+    display: flex;
   }
 }
 
@@ -226,8 +286,7 @@
     padding: 1em;
   }
 
-
-  .brands-section{
+  .brands-section {
     padding-top: 6em;
   }
 
@@ -271,30 +330,35 @@
     gap: 5px; /* Further reduce gap between cards */
   }
 
-
-
   .testimonial-card .profile-name img {
     width: 40px; /* Further reduce image size */
     height: 40px;
     margin: 0;
   }
+
   .testimonial-wrapper i.button {
     position: relative;
     top: -30px;
   }
 
-  .testimonial-dot-indicators{
+  .testimonial-dot-indicators {
     position: relative;
-    top: -50px;
+    top: -20px;
   }
+
   .testimonial-author {
     font-size: 0.75em;
   }
 
+  .testimonial-card-buttons {
+    justify-content: center;
+    padding-left: 0;
+  }
 
   .hero-section .right-col .image-container {
     height: 100%;
   }
+
   .modal-content {
     width: 95vw; /* Further reduce modal width */
     padding: 10px; /* Further reduce padding */

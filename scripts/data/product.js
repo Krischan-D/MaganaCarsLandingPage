@@ -157,7 +157,7 @@ export const car_information = [
     model_year: "2015",
     color: "Cream White",
     price: "₱2,500,000",
-    type: "Sedan", // Added type
+    type: "SUV", // Added type
     specifications: {
       fuel_type: fuelTypeAbbreviations["Intercooled Turbo Premium Unleaded I-4"], // Abbreviated
       transmission: "Auto",
@@ -304,5 +304,3 @@ function addCarImages(car_information, carData) {
 
 // Add car images from carData to car_information
 export const updatedCarInformation = addCarImages(car_information, carData);
-
-

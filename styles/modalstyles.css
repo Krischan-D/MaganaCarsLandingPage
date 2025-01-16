@@ -172,12 +172,13 @@
   padding-top: 56.25%; /* Aspect ratio 16:9 */
   position: relative;
   border-radius: 15px;
+  margin-top: 2em;
 }
 
 .car-image-container img {
   position: absolute;
   top: 0;
-  left: 20%;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -185,6 +186,7 @@
 
 .car-name {
   font-size: 18px;
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
   font-weight: bold;
   position: absolute;
   top: 10px;

@@ -2,7 +2,7 @@ export const blogCards = [
   {
       id: 1,
       tag: 'Tips',
-      date: 'January 1, 2025',
+      date: 'January 15, 2025',
       title: 'Car Maintenance Tips',
       overviewTitle: 'Essential Car Maintenance Tips to Keep Your Vehicle Running Smoothly',
       content: 'Provide practical advice to help car owners maintain their vehicles, ensuring longevity and optimal performance.',
@@ -77,7 +77,7 @@ export const blogCards = [
   {
       id: 2,
       tag: 'News',
-      date: 'January 1, 2025',
+      date: 'January 12, 2025',
       title: 'Latest Automotive News and Trends',
       overviewTitle: 'Stay Ahead with the Latest Automotive Innovations and Market Trends',
       content: 'Keep your audience informed about the newest developments in the automotive industry, including vehicle releases, technological advancements, and market trends.',
@@ -145,7 +145,7 @@ export const blogCards = [
   {
       id: 3,
       tag: 'Tips',
-      date: 'January 1, 2025',
+      date: 'January 9, 2025',
       title: 'Driving Tips and Guides',
       overviewTitle: 'Master the Road: Essential Driving Tips for Safety and Confidence',
       content: 'Offer valuable advice to enhance driving skills, safety, and overall road experience for your readers.',
@@ -209,5 +209,74 @@ export const blogCards = [
             </div>
         </article>
       `
+  },
+
+  {
+    id: 4,
+    tag: 'News',
+    date: 'January 17, 2025',
+    title: 'Electric Vehicle Sales Surge in 2024',
+    overviewTitle: 'What It Means for the Future of Car Selling',
+    content: 'The electric vehicle (EV) market is booming, with 2024 sales hitting record highs. This blog explores the latest trends, statistics, and their impact on car sellers. Learn how EV-friendly platforms and the demand for sustainability are reshaping the automotive industry. Stay ahead with insights into this fast-evolving market.',
+    image: {
+      hero: 'images/electric-cars.jpg',
+      content: 'images/blog/content-ev.jpg'
+    },
+    contentHTML: `
+      <article>
+        <div class="blog-preview">
+          <p>The electric vehicle (EV) market has experienced unprecedented growth in 2024, with sales reaching record highs. This surge is driven by advancements in technology, government incentives, and a growing demand for sustainable transportation. In this blog, we’ll explore the factors behind this trend and what it means for the future of car selling.</p>
+        </div>
+
+        <div class="blog-content">
+          <div class="blog-header">
+            <h1>Introduction</h1>
+            <p>2024 has been a landmark year for electric vehicles, with global sales surpassing expectations. This growth is reshaping the automotive industry, creating new opportunities and challenges for car sellers. From EV-friendly platforms to shifting consumer preferences, the landscape of car selling is evolving rapidly.</p>
+          </div>
+
+          <div class="blog-image-container">
+            <img src="images/blog/content-ev.jpg" alt="Electric Vehicle Sales Surge">
+          </div>
+
+          <div class="blog-description">
+            <ol>
+              <div class="description">
+                <li>Record-Breaking Sales</li>
+                <div class="description-text">
+                  <p>In 2024, EV sales have skyrocketed, with millions of units sold worldwide. Countries like Norway, China, and the United States are leading the charge, driven by government incentives and improved charging infrastructure.</p>
+                </div>
+              </div>  
+              <div class="description">
+                <li>Technological Advancements</li>
+                <div class="description-text">
+                  <p>Battery technology has improved significantly, offering longer ranges and faster charging times. Innovations in autonomous driving and connectivity are also making EVs more appealing to consumers.</p>
+                </div>
+              </div>
+              <div class="description">
+                <li>Government Policies</li>
+                <div class="description-text">
+                  <p>Governments worldwide are implementing policies to encourage EV adoption, such as tax credits, subsidies, and stricter emissions regulations. These measures are accelerating the transition to electric mobility.</p>
+                </div>
+              </div>
+              <div class="description">
+                <li>Consumer Demand for Sustainability</li>
+                <div class="description-text">
+                  <p>As environmental awareness grows, consumers are increasingly opting for eco-friendly vehicles. EVs are seen as a key solution to reducing carbon emissions and combating climate change.</p>
+                </div>
+              </div>
+              <div class="description">
+                <li>Impact on Car Sellers</li>
+                <div class="description-text">
+                  <p>The rise of EVs is transforming the car-selling industry. Dealerships are adapting by offering EV-specific services, such as charging station installations and maintenance training. Online platforms are also becoming more EV-friendly, catering to tech-savvy buyers.</p>
+                </div>
+              </div>
+            </ol>
+          </div>
+          <div class="blog-footer">
+            <p>The electric vehicle revolution is well underway, and its impact on the automotive industry is profound. For car sellers, staying ahead of this trend is crucial. By embracing EV-friendly practices and understanding consumer preferences, sellers can position themselves for success in this fast-evolving market. The future of car selling is electric, and the time to adapt is now.</p>
+          </div>
+        </div>
+      </article>
+    `
   }
 ];

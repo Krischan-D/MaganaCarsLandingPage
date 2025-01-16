@@ -81,6 +81,11 @@ section{
 
 }
 
+.menu-active:hover{
+  color: #fff  !important;
+
+}
+
 
 .menu ul li a.menu-active, .login-menu a.menu-active{
   color: #fff
@@ -91,6 +96,24 @@ section{
   color: #fff
 }
 
+
+.menu ul li a:hover{
+  color: #fff;
+  background-color: #ff4c4c;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+
+.menu ul li a:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+
+.accent-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
 
 .homepage-navbar{
     color: #fff;
@@ -154,6 +177,11 @@ section{
   border: 1px solid #000;
 }
 
+.username.toggle-active:hover{
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 
 .username{
   border-color: #fff;
@@ -188,19 +216,46 @@ section{
 
 
 
-.accent-button{
-    width: fit-content;
-    margin: 0 auto;
-    background-color: #ff4c4c;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 2em;
-    border: none;
-    padding-inline: 1.5em;
-    border-radius: 10px;
-    cursor: pointer;
+.accent-button {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #ff4c4c;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 2em;
+  border: none;
+  padding-inline: 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
+
+.accent-button:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+
+.accent-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+.hero-button{
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+.hero-button:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.hero-button:active {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
 
 .recommended-cars{
   padding-top: 0;
@@ -231,12 +286,21 @@ section{
   padding: .5em 1em;
   gap: .5em;
  text-decoration: none;
+ transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
 
-.view-button:hover{
+.view-button:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
   color: #fff;
-  background-color: #ff4c4c;
+  transform: scale(1.05); /* Slightly enlarge the button */
 }
+
+.view-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+
+
 
 .cars-container{
   margin-top: 4em;
@@ -342,7 +406,8 @@ section{
 
 .blog-card{
     flex: 0 0 calc((100% - 80px) / 3);
-    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 0 5px 10px hsl(0, 0%, 90%);
+    background-color: #fff;
     height: 550px;
     padding: 1em;
     border-radius: 26px;

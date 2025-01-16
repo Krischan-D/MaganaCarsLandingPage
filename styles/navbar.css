@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+
 html{
   scroll-behavior: smooth;
 }
@@ -79,7 +82,7 @@ body.overlay-active::before {
 
 /* Menu Active State */
 .menu-active {
-  color: #000 !important;
+  color: var(--black) !important;
   border-color: #000 !important;
 }
 
@@ -102,6 +105,26 @@ body.overlay-active::before {
 .login-menu a {
   color: #000;
 }
+
+
+.menu ul li a:hover{
+  color: #fff;
+  background-color: #ff4c4c;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+
+.menu ul li a:hover {
+  background-color: #e63e3e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+
+
+
+
+
 
 /* Login Menu */
 .login-menu {
@@ -237,12 +260,10 @@ body.overlay-active::before {
   transition: all 300ms ease;
 }
 
-.menu ul li a:hover {
-  background-color: #f3f4f6;
-}
+
 
 .menu ul li a.active-link {
-  color: white;
+  color: #fff;
   background-color: #ff4c4c;
 }
 

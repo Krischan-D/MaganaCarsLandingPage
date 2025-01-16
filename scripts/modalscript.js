@@ -33,15 +33,16 @@ function updateModal(brand) {
 
   // Update car list
   carList.innerHTML = "";
+  
   data.cars.forEach((car) => {
     const carItem = document.createElement("div");
     carItem.classList.add("car-item");
-    carItem.innerHTML = `
+    carItem.innerHTML = 
+    `
       <div class="car-image-container">
         <img src="${car.image}" alt="${car.name}" class="car-image">
       </div>
       <div class="car-name">${car.name}</div>
-      <button class="view-button">View</button>
     `;
     carList.appendChild(carItem);
   });
@@ -52,6 +53,12 @@ function updateModal(brand) {
   updateIndicators();
   modal.style.display = "flex";
 }
+
+
+
+
+
+
 
 // Function to update the visible slide
 function updateSlide() {

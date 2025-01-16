@@ -6,6 +6,12 @@ export function renderBlogs(){
     let blogHTML = ''
 
     blogCards.forEach((blog)=>{
+
+        if(blog.id === 4){
+            return
+        }
+
+
         blogHTML +=
         `
         

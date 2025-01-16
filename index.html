@@ -14,13 +14,14 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class=".dark-theme">
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo">
         <img src="images/logos/magnalogo.png" alt="Logo" class="logo-img" />
-        <span class="logo-text">MaganaCars</span>
+        <span class="logo-text">Carvago</span>
       </a>
+
       <button id="menu-toggle" class="menu-toggle" aria-controls="navbar-menu" aria-expanded="false">
         <span class="sr-only"></span>
         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -37,9 +38,17 @@
           <li><a href="#contact-section" class="nav-link">Contact</a></li>
           <li><a href="#faqs-section" class="nav-link">FAQs</a></li>
           <a href="login.html" class="button login-button for-dropdown"><i class='bx bx-user'></i>Login</a>
+          <label class="switch dropdown-swtich">
+            <input type="checkbox" id="theme-btn" class="theme-btn" >
+            <span class="slider"></span>
+          </label>
         </ul>
       </div>
       <div class="login-menu">
+        <label class="switch">
+          <input type="checkbox" id="theme-btn" class="theme-btn" >
+          <span class="slider"></span>
+        </label>
         <a href="login.html" class="button login-button"><i class='bx bx-user'></i>Login</a>
       </div>
     </div>
@@ -94,7 +103,7 @@
         <div class="left-col">
           <div class="">
             <img src="" alt="">
-            <h1>Why Choose <strong>Magana Cars?</strong></h1>
+            <h1>Why Choose <strong>Carvago?</strong></h1>
           </div>
           <p>
             Discover a wide selection of vehicles, transparent pricing, and expert service—trusted by thousands for
@@ -103,7 +112,7 @@
         </div>
         <div class="right-col">
           <div class="info-container">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
@@ -177,8 +186,8 @@
             <h1>Transparent Pricing</h1>
           </div>
           <div class="info-container">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="size-6">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6" fill="#000000">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
             </svg>
@@ -210,7 +219,7 @@
           <li> Hassle-free experience</li>
         </ul>
   
-        <a href="" class="button">Get Started <i class='bx bx-right-arrow-alt' style='color:#ffffff'></i></a>
+        <a href="login.html" class="button">Get Started <i class='bx bx-right-arrow-alt' style='color:#ffffff;'></i></a>
       </div>
   
       <div class="right-col">
@@ -224,6 +233,9 @@
 
     <div class="container testimonial-wrapper">
       <div class="testimonial-container">
+        <h1>
+          What Our Customers Says About Us
+        </h1>
         <div class="testimonial-carousel">
   
           <div class="testimonial-card">
@@ -282,8 +294,8 @@
         <p>Tacloban City</p>
   
         <div class="contact-buttons">
-          <a href=""><i class='bx bxs-phone' style='color:#000'></i>09999999</a>
-          <a href=""><i class='bx bx-envelope' style='color:#000'></i>maganacars@gmail.com</a>
+          <a href=""><i class='bx bxs-phone' ></i>09999999</a>
+          <a href=""><i class='bx bx-envelope' ></i>carvago@gmail.com</a>
         </div>
   
         <a href="" class="button">Get Started <i class='bx bx-right-arrow-alt' style='color:#ffffff'></i></a>
@@ -307,7 +319,7 @@
           <div class="logo-container">
             <a href="#" class="logo">
               <!-- <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="logo-img" /> -->
-              <span class="logo-text">MaganaCars</span>
+              <span class="logo-text">Carvago</span>
             </a>
           </div>
 
@@ -346,13 +358,14 @@
         </div>
       </div>
       <div class="copyrights">
-        <p>© 2024 MaganaCars.com. All rights reserved</p>
+        <p>© 2024 Carvago.com. All rights reserved</p>
         <a href="">Privacy & Policy</a>
         <a href="">Terms & Conditions</a>
       </div>
     </div>
   </footer>
   <script type="module" src="scripts/index.js"></script>
+  <script  src="scripts/modalscript.js"></script>
 </body>
 
 </html>

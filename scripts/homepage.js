@@ -4,11 +4,16 @@ import { renderTestimonials, testimonialFunction } from "./testimonial.js";
 import { renderBlogs } from "./renderBlogs.js";
 import { renderUsername } from "./utils/displayUsername.js";
 import {cartIndicator} from "./cartProducts.js"
+import {renderFAQs} from "./faqs.js"
+import {toastAlert} from "./utils/alrert.js"
 
 // import { navigation } from "./navbar.js";
 
 
-
+if (!localStorage.getItem('toastShown')) {
+    toastAlert(); // Show the toast alert
+    localStorage.setItem('toastShown', 'true'); // Set the flag in localStorage
+  }
 document.addEventListener('DOMContentLoaded', function () {
     // Get the menu toggle button and the menu
     AOS.init();
@@ -85,4 +90,24 @@ Array.from(sections).forEach((section)=>{
 
  
 
+
+const faqs = document.querySelectorAll('.question-container');
+
+faqs.forEach(faq => {
+  faq.addEventListener('click', function(event) {
+    // Check if the clicked element is the button or its child (icon)
+    const isButton = event.target.closest('button');
+
+    if (isButton || event.currentTarget === faq) {
+      const answer = faq.querySelector('.answer');
+      const icon = faq.querySelector('i');
+
+      // Toggle the 'open' class on the answer
+      answer.classList.toggle('open');
+
+      // Toggle the 'rotate' class on the icon
+      icon.classList.toggle('rotate');
+    }
+  });
+});
 

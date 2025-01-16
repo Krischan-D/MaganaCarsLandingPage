@@ -11,12 +11,12 @@ const brands = [
     },
     {
         brand: 'Nissan',
-        image: 'images/nissan.jpg'
+        image: 'images/logos/nissan_logo.png'
         
     },
     {
         brand: 'Toyota',
-        image: 'images/toyota.jpg'
+          image: 'images/logos/toyota_logo.png'
       
     },
 ]
@@ -183,7 +183,7 @@ function updateModal(brand) {
         <img src="${car.image}" alt="${car.name}" class="car-image">
       </div>
       <div class="car-name">${car.name}</div>
-      <button class="view-button">View</button>
+      
     `;
     carList.appendChild(carItem);
   });
@@ -271,3 +271,12 @@ window.addEventListener("resize", () => {
 });
 
 
+
+const viewBtn = document.querySelectorAll('.view-button')
+viewBtn.forEach(btn => {
+    btn.addEventListener('click', (e)=>{
+      const buttonElement = e.target.closest('.button');
+      const carId = buttonElement.getAttribute('data-car-id');
+      console.log(carId)
+    })
+});
